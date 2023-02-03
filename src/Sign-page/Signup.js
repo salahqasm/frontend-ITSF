@@ -1,10 +1,42 @@
-import Button from "react-bootstrap/Button";
-import Form from "react-bootstrap/Form";
+import { useState } from "react";
 import "./Signup.css";
 function Signup() {
+ 
+  const [user, setUser] = useState("student");
+ 
+  function handleChange(e){
+    console.log(e.target.value);
+    if(e.target.value=="student")
+    {
+      setUser("student");
+    }else{
+      setUser("Company");
+    }
+  }
   return (
-    <div class="main">
-      <div class="signup-outerdiv">
+    <div className="Signup-main">
+      <form class="lform" action="#" method="post">
+
+        <h1 id="lgn">Sign Up</h1>
+        <br/>
+      <input type="radio" name="user" id="student" value="student" onChange={(e)=>handleChange(e)}/><label for="student" >Student</label>
+      
+      <input type="radio" name="user" id="company" value="company" onChange={(e)=>handleChange(e)}/><label for="company">Comapny</label>
+        {/* <hr id="h-r" /> */}
+    
+        <input type="text" placeholder="First Name" required />
+        <input type="text" placeholder="Second Name" required />
+        <input type="text" placeholder="Last Name" required />
+        <input type="email" placeholder="Enter Your E-mail" required />
+
+        <input id="pswrd2" type="password" placeholder="Creat Password" required />
+        <input id="pswrd" type="password" placeholder="Re-Enter Password" required />
+        <input type="submit" value="Sign Up" />
+        {user=="student"?<h1>student</h1>:<h1>Comapny</h1>}
+
+      </form>
+
+      {/* <div class="signup-outerdiv">
         
         <Form>
           <Form.Group className="mb-3" controlId="formBasicCheckbox">
@@ -38,7 +70,7 @@ function Signup() {
             <Form.Control type="email" placeholder="Enter email" />
             {/* <Form.Text className="text-muted">
           We'll never share your email with anyone else.
-        </Form.Text> */}
+        </Form.Text> *
           </Form.Group>
 
           <Form.Group className="mb-3" controlId="formBasicPassword">
@@ -50,7 +82,7 @@ function Signup() {
             Sign up
           </Button>
         </Form>
-      </div>
+      </div> */}
     </div>
   );
 }

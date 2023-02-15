@@ -1,7 +1,24 @@
+import axios from "axios";
 import "./Signin.css";
-import Pic from "../imgs/blacklogo.png";
-
+import Pic from "../../imgs/blacklogo.png";
 function Signin() {
+  async function submitHandler(e) {
+    e.preventDefault();
+    const user = {
+      email: e.target.email.value,
+      password: e.target.password.value
+    }
+    try {
+      const res=await axios.post("http://localhost:3001/signin", {}, { auth: {
+        username: user.email,
+        password: user.password
+      }})
+      console.log(res?.data);
+    }catch(err){
+      console.log(err)
+    }
+  }
+
   return (
     <>
       <div className="Signin-Main-Div">
@@ -25,13 +42,14 @@ function Signin() {
                 style={{ textAlign: "center", paddingTop: "10px" }}
               >
                 <h1 style={{ WebkitTextStroke: "0.5px #2915bd" }}>Login</h1>
-                <form class="login" style={{ textAlign: "center" }}>
+                <form class="login" style={{ textAlign: "center" }} onSubmit={(e) => { submitHandler(e) }}>
                   <div class="login__field">
                     <i class="login__icon fas fa-user"></i>
                     <input
                       type="text"
                       class="login__input"
                       placeholder="Email"
+                      name="email"
                     />
                   </div>
                   <div class="login__field">
@@ -40,6 +58,7 @@ function Signin() {
                       type="password"
                       class="login__input"
                       placeholder="Password"
+                      name="password"
                     />
                   </div>
                   <button
@@ -53,7 +72,7 @@ function Signin() {
                   </button>
                 </form>
                 <br></br>
-                <h6 style={{ color: "#ffffff"}}>Dont have Account yet?! </h6>
+                <h6 style={{ color: "#ffffff" }}>Dont have Account yet?! </h6>
                 <a style={{ color: "#ffffff", fontWeight: "bold" }} href={"/"}>
                   Sign up now
                 </a>

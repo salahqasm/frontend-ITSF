@@ -1,0 +1,51 @@
+.Landing-main {
+    height: 100vh;
+    /* background-color: #EEEEEE; */
+    background-color: #EEEEEE;
+    background-image: radial-gradient(#4e5561 2px, transparent 2px), radial-gradient(#4e5561 2px, #EEEEEE 2px);
+    background-size: 80px 80px;
+    background-position: 0 0, 40px 40px;
+}
+
+.Landing-header {
+    overflow: hidden;
+}
+
+.Landing-left {
+    padding-top:5%;
+    padding-bottom:5%;
+    padding-left:1%;
+    padding-right:1%;
+    position: absolute;
+    left: 0;
+    width: 60%;
+    background-color: #222831;
+    color: #EEEEEE;
+    text-align: center;
+    height:50vh;
+}
+
+.Landing-right {
+    background-color: #EEEEEE;
+    position: absolute;
+    right: 0;
+    width: 40%;
+    text-align: center;
+}
+
+.Landing-right input {
+    width: 100px;
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    margin: 5px;
+}
+
+.Landing-right input:hover {
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}

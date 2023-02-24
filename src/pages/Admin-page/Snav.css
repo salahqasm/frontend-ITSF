@@ -17,7 +17,7 @@
   padding: 40px 0;
   width: 26%;
   /*changes from 200px to 26%*/
-  background-color: #3498db;
+  background-color: #00ADB5;
 }
 
 .side-nav .nav-item {
@@ -25,6 +25,7 @@
   padding: 10px 20px;
   border-bottom: 1px black solid;
   padding: 15px;
+  color:#222831;
 }
 
 .nav-item.active {
@@ -33,9 +34,9 @@
 }
 
 .nav-item:hover {
-  background-color: #084974;
+  background-color: #222831;
   cursor: pointer;
-  color: #fff
+  color: #fff;
 }
 
 .nav-item.active a {

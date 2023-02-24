@@ -4,15 +4,15 @@ import "./Snav.css"
 function Snav(props) {
     
     return <>
-        <div class="anav-container">
-            <nav class="side-nav">
-                <ul class="nav-menu">
+        <div className="anav-container">
+            <nav className="side-nav">
+                <ul className="nav-menu">
                     <img alt="LOGO" src={Pic} width={"100%"} style={{ marginTop: "-40px" }} />
-                    <li class="nav-item" onClick={()=>props.changePage("doctors")} style={{borderTop:"1px black solid"}}><a><i class="fas fa-tachometer-alt"></i><span class="menu-text">Doctors</span></a></li>
-                    <li class="nav-item" onClick={()=>props.changePage("students")}><a><i class="fas fa-user"></i><span class="menu-text">Students</span></a></li>
-                    <li class="nav-item" onClick={()=>props.changePage("companies")}><a><i class="fas fa-file-alt"></i><span class="menu-text">Companies</span></a></li>
-                    <li class="nav-item" onClick={()=>props.changePage("tasks")}><a><i class="fas fa-play "></i><span class="menu-text">Tasks</span></a></li>
-                    <li class="nav-item" onClick={()=>props.changePage("feedback")}><a><i class="fas fa-sign-out-alt"></i><span class="menu-text">Feedback</span></a></li>
+                    <li className="nav-item" onClick={()=>props.changePage("Doctors")} style={{borderTop:"1px black solid"}}><i className="fas fa-tachometer-alt"></i><span className="menu-text">Doctors</span></li>
+                    <li className="nav-item" onClick={()=>props.changePage("Students")}><i className="fas fa-user"></i><span className="menu-text">Students</span></li>
+                    <li className="nav-item" onClick={()=>props.changePage("Companies")}><i className="fas fa-file-alt"></i><span className="menu-text">Companies</span></li>
+                    <li className="nav-item" onClick={()=>props.changePage("Tasks")}><i className="fas fa-play "></i><span className="menu-text">Tasks</span></li>
+                    <li className="nav-item" onClick={()=>props.changePage("Feedback")}><i className="fas fa-sign-out-alt"></i><span className="menu-text">Feedback</span></li>
                 </ul>
             </nav>
         </div>

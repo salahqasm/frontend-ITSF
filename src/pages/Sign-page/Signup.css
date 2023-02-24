@@ -1,128 +1,90 @@
-.Signup-main{
-    height:100vh;
-    width:100%;
-    background-color: lightblue;
+.Signup-main {
+    height: 100vh;
+    width: 100vw;
+    background-color: #008ecf;
+    display: flex;
+
 }
-.lform{
-    width: 600px;
-    padding: 40px;
+
+.Signup-main #header {
     position: absolute;
+    left: 35%;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 50px;
+    font-weight: 900;
+    margin-top: 10px;
+    text-shadow: 0px 0px 19px white;
+}
+
+.Signup-form-container {
+    margin: auto;
+    background-color: #EEEEEE;
+    border-radius: 50px;
+    padding: 10px 60px 40px 60px;
     text-align: center;
-    border-radius: 6px;
-    top:50%;
-    left:50%;
-    background: linear-gradient(rgb(93, 140, 250), rgb(84, 58, 95));
-    box-shadow: 0px 0px 1px 1px rgb(182, 164, 255);
-    transform: translate(-50%, -50%);
-    transition: 1s;
-
-}
-.lform:hover{
-    box-shadow: 0px 0px 1px 1px #7de9aa;
-}
-.lform h1{
-    color: #8da1e9;
-    display: inline;
-    text-transform: uppercase;
-
-}
-.lform #lgn{
-    color: #7de9aa;
-}
-.lform #sgnp a{
-    text-decoration: none;
-    color: #8da1e9;
-}
-.lform #sgnp a:hover{
-    color: #ffffff;
-}
-.lform #h-r{
-    width: 170px;
-    height: 3px;
-    background: #7de9aa;
-    border: none;
-    border-radius: 8px;
+    opacity: 0.9;
 }
 
-.lform input[type="text"], .lform input[type="password"]{
-    border: 0;
-    outline: none;
-    background: none;
-    display: block;
-    margin: 18px auto;
+.Signup-form-container form {
+
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    padding: 14px;
-    border: 2px solid #3498db;
-    border-radius: 24px;
-    width: 260px;
-    font-size: 18px;
-    color: rgb(68, 231, 163);
-    transition: 0.30s;
-}
-.lform input[type="email"]{
-     border: 0;
-    outline: none;
-    background: none;
-    display: block;
-    margin: 18px auto;
-    text-align: center;
-    padding: 14px;
-    border: 2px solid #3498db;
-    border-radius: 24px;
-    width: 260px;
-    font-size: 18px;
-    color: rgb(68, 231, 163);
-    transition: 0.30s;
-}
-.lform input[type="text"]:focus, .lform input[type="password"]:focus{
-    width: 300px;
-    border-color: #7de9aa;
-}
-.lform input[type="email"]:focus{
-  width: 300px;
-  border-color: #7de9aa;
-}
-.lform input[type="submit"]{
-    border: 0;
-    background: none;
-    border: 2px solid #3498db;
-    border-radius: 24px;
-    padding: 10px 40px;
-    font-size: 20px;
-    color: white;
-    cursor: pointer;
-    transition: 0.30s;
-}
-.lform input[type="submit"]:hover{
-    background: #8da1e9;
-}
-.lform #checkbx{
-    color: #67dcc7;
-    font-size: 20px;
-   
-}
-.lform #checkb{
-    border: 0px;
-    width: 4%;
-    height: 1.5em;
-}
-.lform #checkb2{
-    border: 0px;
-    width: 4%;
-    height: 1.5em;
-}
-.lform .ptxt{
-font-size: 20px;
 
 }
-.lform p a{
-    text-decoration: none;
-    color: #5d9d78;
+
+.signup-first-form {
+    width: 100%;
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    /* border-radius: 10px; */
+
+    margin-top:20px;
+    font-weight: bold;
 }
 
-.lform input[type="submit"]:active{
-    transform: scale(1.1);
+.signup-student {}
+
+.signup-student input {
+    background: #ffffff;
+    border: 1px black solid;
+    border-radius: 50px;
+    padding: 5px 15px;
+    margin: 2px 0;
+    width: 100%;
 }
-.lform ::placeholder{
-    color: rgb(116, 199, 240);
+
+.signup-submit-button {
+    width: 100%;
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    
+    font-weight: bold;
 }
+
+.signup-submit-button:hover {
+
+
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}
+
+/* 
+.Signup-form-container input {
+    border: 1px black solid;
+    border-radius: 50px;
+    margin: 8px 0;
+    width: 100%;
+} */

@@ -1,18 +1,19 @@
 import React from "react"
+import { useState } from "react";
 import "./Admin.css";
 import Snav from "./Snav";
-import Pic from "../../imgs/blacklogo.png";
-import { useState } from "react";
+import Companies from "./Companies-Component/Comapies";
 function Admin() {
-    const [page, setPage] = useState("tez");
-    console.log(page);
+    const [page, setPage] = useState("Admin Dashboard");
+    
     return <>
         <div className="admin-main">
             <div className="admin-left">
                 <Snav changePage={setPage} />
             </div>
             <div className="admin-right">
-                <h1>test</h1>
+                <h1 id="adminRightHeader">{page}</h1>
+                <Companies/>
             </div>
         </div>
     </>

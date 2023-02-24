@@ -2,3 +2,13 @@
     display: grid;
     grid-template-columns: 13% 87%;
 }
+
+.admin-right {
+    text-align: center;
+}
+
+#adminRightHeader {
+    color:#EEEEEE;
+    padding: 20px;
+    background-color: #00ADB5;
+}

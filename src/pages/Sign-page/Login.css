@@ -1,17 +1,19 @@
-.Login-main{
-    height:100vh;
-    width:100vw;
+.Login-main {
+    height: 100vh;
+    width: 100vw;
     background-color: #008ecf;
     display: flex;
 }
+
 .form-container {
-    margin:auto;
+    margin: auto;
     background-color: #EEEEEE;
-    border-radius: 50px ;
+    border-radius: 50px;
+    opacity: 0.9;
 }
 
 .sign-in-container {
-    padding:20px;
+    padding: 20px;
 }
 
 .form-container form {
@@ -34,33 +36,38 @@
     width: 100%;
 }
 
+
 .form-container input:hover {
     transform: scale(101%);
 }
 
 .form-container button {
-
-
-    border-radius: 50px;
-    box-shadow: 0 1px 1px;
-    border: 1px solid #008ecf;
-    background: #008ecf;
-    color: #fff;
-    font-size: 12px;
+    width: 100px;
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    margin: 15px;
+    margin-left: 20px;
     font-weight: bold;
-    padding: 12px 45px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
+}
+
+.form-container button:hover {
+
+
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
 }
 
 
-
-.form-container button:focus {
-    outline: none;
+.Login-form-signup{
+    color:blue;
+    text-decoration:none;
+    cursor:pointer;
 }
-
-.form-container button.ghost {
-    background: transparent;
-    border-color: #fff;
+.Login-form-signup:hover{
+    text-decoration: underline;
 }

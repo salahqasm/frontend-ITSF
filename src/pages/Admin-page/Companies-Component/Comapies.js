@@ -6,18 +6,26 @@ import { useState, useEffect } from "react";
 function Companies() {
     const [cookies, setCookie, removeCookie] = useCookies();
     const [companies, setCompanies] = useState([]);
+    const config= {
+        headers: {
+            'authorization': `Bearer ${cookies.token}`
+        }
+    };
     async function getCompanies() {
-        const res = await axios.get('http://localhost:3001/allcompanies', {
-            headers: {
-                'authorization': `Bearer ${cookies.token}`
-            }
-        }, [])
+        const res = await axios.get('http://localhost:3001/allcompanies',config, [])
         setCompanies(res?.data);
     }
     useEffect(() => {
         getCompanies();
     }, [])
-
+   async function deleteHandler(elem) {
+        try{
+            await axios.delete(`http://localhost:3001/deletecompany/${elem.id}`,config,[]);
+            window.location.reload(false);
+        }catch(err){
+            console.log(err);
+        }
+    }
     return <>
         <table className="companies-table">
             <thead>
@@ -28,39 +36,25 @@ function Companies() {
                     <th>Specialization</th>
                     <th>Country</th>
                     <th>City</th>
-                    <th>Role</th>
+                    <th>Status</th>
                     <th>Actions</th>
                 </tr>
             </thead>
             <tbody>
-            <tr>
-                    <td data-column="First Name">James</td>
-                    <td data-column="Last Name">Matman</td>
-                    <td data-column="Job Title">Chief Sandwich Eater</td>
-                    <td data-column="Twitter">@james</td>
-                    <td data-column="Twitter">@james</td>
-                    <td data-column="Twitter">@james</td>
-                    <td data-column="Twitter">@james</td>
-                    <td data-column="Actions" ><a title="delete">❌</a> <a title="edit">✏</a></td>
-                </tr>
-                <tr>
-                    <td data-column="First Name">James</td>
-                    <td data-column="Last Name">Matman</td>
-                    <td data-column="Job Title">Chief Sandwich Eater</td>
-                    <td data-column="Twitter">@james</td>
-                </tr>
-                <tr>
-                    <td data-column="First Name">James</td>
-                    <td data-column="Last Name">Matman</td>
-                    <td data-column="Job Title">Chief Sandwich Eater</td>
-                    <td data-column="Twitter">@james</td>
-                </tr>
-                <tr>
-                    <td data-column="First Name">James</td>
-                    <td data-column="Last Name">Matman</td>
-                    <td data-column="Job Title">Chief Sandwich Eater</td>
-                    <td data-column="Twitter">@james</td>
-                </tr>
+                {
+                    companies.map((elem) => {
+                        return <tr key={elem.id}>
+                                <td>{elem.id}</td>
+                                <td>{elem.name}</td>
+                                <td>{elem.email}</td>
+                                <td>{elem.specialization}</td>
+                                <td>{elem.country}</td>
+                                <td>{elem.city}</td>
+                                <td>{elem.role}</td>
+                                <td><span title="delete" onClick={()=>deleteHandler(elem)}>❌</span> <a title="edit">✏</a></td>
+                            </tr>
+                    })
+                }
 
             </tbody>
         </table>

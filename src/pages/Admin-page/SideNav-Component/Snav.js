@@ -1,5 +1,5 @@
 import React from "react";
-import Pic from "../../imgs/blacklogo.png";
+import Pic from "../../../imgs/blacklogo.png";
 import "./Snav.css"
 function Snav(props) {
     

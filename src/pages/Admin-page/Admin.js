@@ -1,8 +1,9 @@
 import React from "react"
 import { useState } from "react";
 import "./Admin.css";
-import Snav from "./Snav";
+import Snav from "./SideNav-Component/Snav";
 import Companies from "./Companies-Component/Comapies";
+import Doctors from "./Doctors-Component/Doctors";
 function Admin() {
     const [page, setPage] = useState("Admin Dashboard");
     
@@ -13,7 +14,10 @@ function Admin() {
             </div>
             <div className="admin-right">
                 <h1 id="adminRightHeader">{page}</h1>
-                <Companies/>
+                {
+                page==="Companies"?<Companies/>:
+                page==="Doctors"?<Doctors/>:<h1>Welcome to Admin Dashboard</h1>
+                }
             </div>
         </div>
     </>

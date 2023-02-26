@@ -1,26 +1,26 @@
-.companies-table {
+.doctors-table {
 
     /* border-collapse: collapse;  */
     /* margin: ; */
     width: 100%;
 }
 
-.companies-table th {
+.doctors-table th {
     background-color: #eee;
     color: #000;
     padding: 10px;
 
 }
 
-.companies-table tr {
+.doctors-table tr {
     border-bottom: 1px solid #9399a3;
     
 }
 
-.companies-table td {
+.doctors-table td {
     padding-bottom: 10px;
 }
 
-.companies-table tr:nth-of-type(even) {
+.doctors-table tr:nth-of-type(even) {
     background: #eee;
 }

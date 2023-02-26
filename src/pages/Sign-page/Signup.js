@@ -33,6 +33,7 @@ function Signupx() {
 
         } catch (err) {
             console.log(err);
+            window.alert("Email already exists please try another email")
         }
     }
     async function companySignup(e) {
@@ -54,6 +55,7 @@ function Signupx() {
 
         } catch (err) {
             console.log(err);
+            window.alert("Email already exists please try another email")
         }
     }
     return <>

@@ -1,0 +1,59 @@
+.AdminAddDoctor-button{
+    background-color: #00ADB5;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    height: 40px;
+    font-weight: bold;
+    margin-bottom: 10px;;
+}
+.AdminAddDoctor {
+    margin: auto;
+    background-color: #EEEEEE;
+    border-radius: 50px;
+    padding: 10px 60px 40px 60px;
+    text-align: center;
+    opacity: 0.9;
+}
+
+.AdminAddDoctor {
+
+    background-color: #EEEEEE;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+}
+
+.AdminAddDoctor input {
+    background: #ffffff;
+    border: 1px black solid;
+    border-radius: 50px;
+    padding: 5px 15px;
+    margin: 2px 0;
+    width: 100%;
+}
+
+.AdminAddDoctor button {
+    width:30%;
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    
+    font-weight: bold;
+}
+
+.AdminAddDoctor button:hover {
+
+
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}

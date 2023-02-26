@@ -4,7 +4,7 @@ import axios from "axios";
 import { useCookies } from 'react-cookie';
 import { useState, useEffect } from "react";
 function Companies() {
-    const [cookies, setCookie, removeCookie] = useCookies();
+    const [cookies] = useCookies();
     const [companies, setCompanies] = useState([]);
     const config= {
         headers: {
@@ -51,7 +51,7 @@ function Companies() {
                                 <td>{elem.country}</td>
                                 <td>{elem.city}</td>
                                 <td>{elem.role}</td>
-                                <td><span title="delete" onClick={()=>deleteHandler(elem)}>❌</span> <a title="edit">✏</a></td>
+                                <td><span title="delete" onClick={()=>deleteHandler(elem)}>❌</span> <span title="edit">✏</span></td>
                             </tr>
                     })
                 }

@@ -1,0 +1,26 @@
+.students-table {
+
+    /* border-collapse: collapse;  */
+    /* margin: ; */
+    width: 100%;
+}
+
+.students-table th {
+    background-color: #eee;
+    color: #000;
+    padding: 10px;
+
+}
+
+.students-table tr {
+    border-bottom: 1px solid #9399a3;
+    
+}
+
+.students-table td {
+    padding-bottom: 10px;
+}
+
+.students-table tr:nth-of-type(even) {
+    background: #eee;
+}

@@ -4,25 +4,25 @@ import axios from "axios";
 import { useCookies } from 'react-cookie';
 import { useState, useEffect } from "react";
 function Doctors() {
-    const [cookies, setCookie, removeCookie] = useCookies();
+    const [cookies] = useCookies();
     const [doctors, setDoctors] = useState([]);
-    const config= {
+    const config = {
         headers: {
             'authorization': `Bearer ${cookies.token}`
         }
     };
     async function getDoctors() {
-        const res = await axios.get('http://localhost:3001/alldoctors',config, [])
+        const res = await axios.get('http://localhost:3001/alldoctors', config, [])
         setDoctors(res?.data);
     }
     useEffect(() => {
         getDoctors();
     }, [])
-   async function deleteHandler(elem) {
-        try{
-            await axios.delete(`http://localhost:3001/deletedoctor/${elem.id}`,config,[]);
+    async function deleteHandler(elem) {
+        try {
+            await axios.delete(`http://localhost:3001/deletedoctor/${elem.id}`, config, []);
             window.location.reload(false);
-        }catch(err){
+        } catch (err) {
             console.log(err);
         }
     }
@@ -42,19 +42,19 @@ function Doctors() {
             </thead>
             <tbody>
                 {
-                    
+
                     doctors.map((elem) => {
                         console.log(elem);
                         return <tr key={elem.id}>
-                                <td>{elem.id}</td>
-                                <td>{elem.fname}</td>
-                                <td>{elem.lname}</td>
-                                <td>{elem.email}</td>
-                                <td>{elem.specialization}</td>
-                                <td>{elem.department}</td>
-                                <td>{elem.role}</td>
-                                <td><span title="delete" onClick={()=>deleteHandler(elem)}>❌</span> <a title="edit">✏</a></td>
-                            </tr>
+                            <td>{elem.id}</td>
+                            <td>{elem.fname}</td>
+                            <td>{elem.lname}</td>
+                            <td>{elem.email}</td>
+                            <td>{elem.specialization}</td>
+                            <td>{elem.department}</td>
+                            <td>{elem.role}</td>
+                            <td><span title="delete" onClick={() => deleteHandler(elem)}>❌</span> <span title="edit">✏</span></td>
+                        </tr>
                     })
                 }
 

@@ -20,8 +20,15 @@ function Login() {
           password: user.password
         }
       })
-      setCookie("token", res.data.token, { path: '/' });
-      setCookie("user", res.data, { path: '/' });
+      console.log(res.data);
+      if (res.data == "user not found!") {
+        window.alert("Email is not registered")
+      } else if (res.data == "Wrong Password") {
+        window.alert("Wrong Password")
+      } else {
+        setCookie("token", res?.data.token, { path: '/' });
+        setCookie("user", res?.data, { path: '/' });
+      }
       if (res.data.role === "admin" && cookies) { //should be developed .............................................
         navigate('/admin')
       }

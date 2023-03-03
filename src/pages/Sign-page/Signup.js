@@ -3,8 +3,13 @@ import React from "react";
 import { useState } from "react";
 import Pic from "../../imgs/prog-bkg.jpg"
 import "./Signup.css"
+import { useCookies } from "react-cookie";
+import { useNavigate } from "react-router-dom";
+
 function Signupx() {
     const [user, setUser] = useState();
+    const [cookie,setCookie]=useCookies();
+    const navigate=useNavigate();
     function firstForm(e) {
         e.preventDefault();
 
@@ -27,7 +32,9 @@ function Signupx() {
                     password: e.target.password.value
                 }
                 const res = await axios.post('http://localhost:3001/studentsignup', student)
-                console.log(res);
+                setCookie("token", res.data.token, { path: '/' });
+                setCookie("user", res.data, { path: '/' });
+                navigate('/profilepicture');
             }
             // console.log(e.target.fname.value);
 
@@ -49,7 +56,9 @@ function Signupx() {
                     city: e.target.city.value
                 }
                 const res = await axios.post('http://localhost:3001/companysignup', company)
-                console.log(res);
+                setCookie("token", res.data.token, { path: '/' });
+                setCookie("user", res.data, { path: '/' });
+                navigate('/profilepicture');
             }
             // console.log(e.target.fname.value);
 
@@ -99,20 +108,6 @@ function Signupx() {
                             <button className="signup-submit-button" type="submit" value="Sign Up" >Signup</button>
                         </form>
                     </>}
-                {/* <button>Student</button>
-            <button>Company</button> */}
-                {/* <form onSubmit={(e) => { submitHandler(e) }}>
-                    <h1>ITS Freelance</h1>
-                    <label>
-                        <input type="email" placeholder="Email" name="email" />
-                    </label>
-                    <label>
-                        <input type="password" placeholder="Password" name="password" />
-                    </label>
-                    <a href="#">Forgot your password?</a>
-                    <button type="submit">Login</button>
-                    <p>Dont have an account yet?! <a className="Login-form-signup" href="/signup">Sign up</a>.</p>
-                </form> */}
             </div>
         </div>
     </>

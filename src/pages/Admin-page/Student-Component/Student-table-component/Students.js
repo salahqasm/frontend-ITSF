@@ -20,8 +20,8 @@ function Students() {
     }, [])
     async function deleteHandler(elem) {
         try {
-            await axios.delete(`http://localhost:3001/deletestudent/${elem.id}`, config, []);
-            window.location.reload(false);
+            const res=await axios.delete(`http://localhost:3001/deletestudent/${elem.id}`, config, []);
+            setStudents(res?.data);
         } catch (err) {
             console.log(err);
         }

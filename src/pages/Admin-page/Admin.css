@@ -1,9 +1,9 @@
 .admin-main {
     display: grid;
-    grid-template-columns: 13% 87%;
+    grid-template-columns: 10% 90%;
 }
 
-.admin-right {
+.admin-right h1{
     text-align: center;
 }
 

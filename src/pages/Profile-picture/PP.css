@@ -1,0 +1,47 @@
+.PP-main{
+background-color: #393E46;
+text-align: center;
+/* height: 100vh; */
+}
+.PP-header{
+    color:#eee;
+    font-family: 'Montserrat';
+    font-weight: bold;
+    padding:20px;
+}
+.PP-container h5{
+    /* padding-bottom:20px; */
+}
+.PP-container{
+    background-color: white;
+    width: 50%;
+    border-radius: 25px;
+    margin:auto;
+    padding-top:10px;
+}
+.altImgbef{
+    width: 400px;
+    height: 400px;
+    border: 1px black dashed;
+    margin:auto;
+}
+.PP-botton{
+    display: none;
+}
+.PP-submitlabel{
+    cursor: pointer;
+    padding:20px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    margin: 15px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+.PP-submitlabel:hover{
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}

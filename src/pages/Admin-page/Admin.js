@@ -18,7 +18,7 @@ function Admin() {
                 <h1 id="adminRightHeader">{page}</h1>
                 {
                 page==="Companies"?<><Companies/></>:
-                page==="Doctors"?<><AddDoctor/><Doctors/></>:
+                page==="Doctors"?<><Doctors/></>:
                 page==="Students"?<Students/>:<h1>Welcome to Admin Dashboard</h1>
                 }
             </div>

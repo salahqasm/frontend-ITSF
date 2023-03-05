@@ -6,12 +6,14 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-// import Navb from "./Navbar/Navbar"
+import Navb from "./Navbar/Navbar"
 import Admin from "./pages/Admin-page/Admin"
-import Landing from "./pages/home-page/Landing";
+import Landing from "./pages/Landing-page/Landing.js";
 import Signup from "./pages/Sign-page/Signup"
 import Login from "./pages/Sign-page/Login.js"
-import PP from "./pages/Profile-picture/PP";
+import PP from "./pages/Sign-page/Profile-picture-upload/PP";
+import Profile from "./pages/Profile-page/Profile";
+import PageHandler from "./pages/Page-handler/Page-handler";
 
 function App() {
   return (
@@ -23,6 +25,9 @@ function App() {
           <Route path="/admin" exact element={<Admin />} />
           <Route path="/signup" exact element={<Signup />} />
           <Route path="/profilepicture" exact element={<PP />} />
+          <Route path="/test" exact element={<PageHandler />} />
+          <Route path="/test1" exact element={<Profile />} />
+          
           {/* <Route path="*" exact element={<PP />} /> PAGE NOT FOUND ################################# */}
           
         </Routes>

@@ -16,7 +16,7 @@ function Landing() {
         <div className="Landing-main">
             <div className="Landing-header">
                 <div className="Landing-left">
-                    <div class="Landing-content">
+                    <div className="Landing-content">
                         <h2>ITS Freelance</h2>
                         <h2>ITS Freelance</h2>
                     </div>
@@ -28,12 +28,6 @@ function Landing() {
                         <input type="button" value={"signup"} onClick={(e) => handleClick(e)} />
                     </div>
                 </div>
-                {/* <div className="Landing-right">
-                    <h2>Lets Start !</h2><br></br>
-                    <input type="button" value={"login"} />
-
-                    <input type="button" value={"signup"} />
-                </div> */}
             </div>
             <div className="Landing-mid">
                 <div className="Landing-what">

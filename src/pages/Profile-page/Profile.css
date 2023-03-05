@@ -1,0 +1,10 @@
+.profile-main{
+background-color: #eee;
+height: 100vh;
+}
+.profile-header{
+    padding-top:2%;
+    margin-left:2%;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+}

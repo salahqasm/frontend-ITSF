@@ -41,7 +41,7 @@ function Doctors() {
     async function submitHandler(e) {
         e.preventDefault();
         try {
-            const res = await axios.put(`http://localhost:3001/updatedoctor/${update.id}`, update, config)
+            await axios.put(`http://localhost:3001/updatedoctor/${update.id}`, update, config)
             setOpen(o => !o)
         } catch (err) {
             console.log(err);
@@ -52,9 +52,9 @@ function Doctors() {
         <AddDoctor commitChange={setDoctors} />
         <table className="doctors-table">
             <thead>
-                <tr>                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
                     <th>Email</th>
                     <th>Specialization</th>
                     <th>Department</th>
@@ -69,8 +69,7 @@ function Doctors() {
                         console.log(elem);
                         return <tr key={elem.id}>
                             <td>{elem.id}</td>
-                            <td>{elem.fname}</td>
-                            <td>{elem.lname}</td>
+                            <td>{elem.name}</td>
                             <td>{elem.email}</td>
                             <td>{elem.specialization}</td>
                             <td>{elem.department}</td>
@@ -85,10 +84,8 @@ function Doctors() {
                 <Popup open={open} closeOnDocumentClick onClose={closeModal}>
                     <form className="AdminAddDoctor" onSubmit={(e) => { submitHandler(e); }}>
                         <h1>Edit Doctor Account</h1>
-                        <label htmlFor="fname">First Name: </label>
-                        <input type="text" id="fname" name="fname" placeholder="First Name" value={update.fname} onChange={e => handleChange(e)} required />
-                        <label htmlFor="lname">Last Name: </label>
-                        <input type="text" id="lname" name="lname" placeholder="Last Name" value={update.lname} onChange={e => handleChange(e)} required />
+                        <label htmlFor="name">Full Name: </label>
+                        <input type="text" id="name" name="name" placeholder="Full Name" value={update.name} onChange={e => handleChange(e)} required />
                         <br></br>
                         <label htmlFor="email">Email: </label>
                         <input type="email" id="email" name="email" placeholder="Email" value={update.email} onChange={e => handleChange(e)} required />

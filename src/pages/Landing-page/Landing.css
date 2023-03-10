@@ -1,12 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
+.Landing-content{
+  margin-top:10vh;
+}
 .Landing-content h2 {
+
   color: #fff;
   font-size: 7em;
   font-family: "Poppins", sans-serif;
   position: absolute;
-  /* top:20px;
-  left:26%; */
   transform: translate(50%, -100%);
 }
 
@@ -50,7 +52,6 @@
 
 .Landing-main {
   height: 100vh;
-  /* background-color: #EEEEEE; */
   background-color: #EEEEEE;
   background-image: radial-gradient(#4e5561 2px, transparent 2px), radial-gradient(#4e5561 2px, #EEEEEE 2px);
   background-size: 80px 80px;
@@ -58,11 +59,8 @@
 }
 
 .Landing-header {
-  /* overflow: hidden; */
+
   font-family: 'Montserrat', sans-serif;
-  /* display: grid;
-    grid-template-columns: 60% 40%; */
-  width: 100vw;
 
 }
 
@@ -71,11 +69,11 @@
 }
 
 .Landing-left {
+  padding-bottom: 5vh;
   padding-top: 10%;
-  padding-bottom: 1%;
   padding-left: 1%;
   padding-right: 1%;
-  background-color: #222831;
+  /* background-color: #222831; */
   color: #EEEEEE;
   text-align: center;
 
@@ -86,7 +84,8 @@
 }
 
 .Landing-buttons input {
-  width: 100px;
+  opacity: 0.9;
+  width: 150px;
   height: 40px;
   background-color: #222831;
   color: #EEEEEE;
@@ -111,7 +110,7 @@
   -moz-box-shadow: 0px 0px 78px 1px rgba(0, 0, 0, 0.51);
   display: grid;
   grid-template-columns: 1fr 1fr;
-  
+
 }
 
 .Landing-what {
@@ -119,7 +118,7 @@
 
   /* margin-top: 20px; */
   /* height: 100px; */
-  
+
   background-color: #EEEEEE;
   text-align: center;
 }
@@ -130,17 +129,18 @@
 
 }
 
-.Landing-cards{
-  margin:20px;
+.Landing-cards {
+  margin: 20px;
   margin-bottom: 0;
   text-align: center;
   display: grid;
   grid-template-columns: 1fr 1fr;
-  grid-gap:20px;
+  grid-gap: 20px;
 }
-.Landing-card{
+
+.Landing-card {
   background-color: #EEEEEE;
-  padding:10px;
+  padding: 10px;
   text-align: center;
   border: 1px solid #222831;
   border-radius: 20px;

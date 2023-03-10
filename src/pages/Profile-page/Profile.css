@@ -1,10 +1,45 @@
-.profile-main{
-background-color: #eee;
-height: 100vh;
+.profile-main {
+    background-color: #eee;
+    height: 100vh;
 }
-.profile-header{
-    padding-top:2%;
-    margin-left:2%;
+
+.profile-header {
+    padding-top: 2%;
+    margin-left: 2%;
     display: grid;
-    grid-template-columns: 30% 40% 30%;
+    width:80%;
+    margin: auto;
+    grid-template-columns: 40% 60%;
+    grid-gap: 1%;
+}
+
+.profile-box {
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #222831;
+    border-radius: 20px;
+    box-shadow: 0 0 5px #222831;
+    padding-top:20px ;
+}
+.profile-box h3{
+    margin-top:20px;
+}
+.profile-approvedby{
+    border: 1px  dotted black;
+}
+.grid2col{
+    display: grid;
+    grid-template-columns: 25% 70%;
+}
+.grid2col > label{
+    text-align: left;
+}
+.grid2col > input{
+    padding:5px;
+    background-color: #fff;
+    
+    border-radius: 10px;
+}
+.grid2col > *{
+    margin:20px;
 }

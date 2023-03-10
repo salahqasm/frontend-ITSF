@@ -31,9 +31,7 @@ function Students() {
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>First Name</th>
-                    <th>Second Name</th>
-                    <th>Last Name</th>
+                    <th>Name</th>
                     <th>Email</th>
                     <th>Skill</th>
                     <th>Approved by</th>
@@ -48,9 +46,7 @@ function Students() {
                         console.log(elem);
                         return <tr key={elem.id}>
                             <td>{elem.id}</td>
-                            <td>{elem.fname}</td>
-                            <td>{elem.sname}</td>
-                            <td>{elem.lname}</td>
+                            <td>{elem.name}</td>
                             <td>{elem.email}</td>
                             <td>{elem.skill}</td>
                             <td>{elem.approvedby}</td>

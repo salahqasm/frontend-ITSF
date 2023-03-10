@@ -24,9 +24,7 @@ function Signupx() {
         try {
             if (e.target.password.value === e.target.repassword.value) {
                 let student = {
-                    fname: e.target.fname.value,
-                    sname: e.target.sname.value,
-                    lname: e.target.lname.value,
+                    name: e.target.name.value,
                     email: e.target.email.value,
                     skill: e.target.skill.value,
                     password: e.target.password.value
@@ -57,6 +55,7 @@ function Signupx() {
                 }
                 const res = await axios.post('http://localhost:3001/companysignup', company)
                 setCookie("token", res.data.token, { path: '/' });
+                delete res.data.token;
                 setCookie("user", res.data, { path: '/' });
                 navigate('/profilepicture');
             }
@@ -82,15 +81,11 @@ function Signupx() {
                     user === "student" ? <>
                         <h5>Student Signup</h5>
                         <form className="signup-student" onSubmit={(e) => { studentSignup(e) }}>
-                            <input type="text" id="fname" name="fname" placeholder="First Name" required />
-                            <input type="text" id="sname" name="sname" placeholder="Second Name" required />
-                            <input type="text" id="lname" name="lname" placeholder="Last Name" required /><br></br>
+                            <input type="text" id="name" name="name" placeholder="Full Name" required />
                             <input type="text" id="skill" name="skill" placeholder="Skill" required />
-                            <br></br>
                             <input type="email" id="email" name="email" placeholder="Enter Your E-mail" required />
                             <input id="pswrd2" name="password" type="password" placeholder="Creat Password" required />
                             <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" required />
-                            <br></br>
                             <button className="signup-submit-button" type="submit" value="Sign Up" >Signup</button>
                         </form>
                     </> : <>

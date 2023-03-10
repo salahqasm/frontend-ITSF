@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import Navb from "../../Navbar/Navbar";
+
+import FeedbackForm from "../Feedback-component/Feedback-form";
 import Profile from "../Profile-page/Profile";
 
 
@@ -10,7 +12,11 @@ function PageHandler() {
         <Navb changePage={setPage}/>
         {
             page=="profile"?
-            <Profile/>:<></>
+            <Profile/>
+            :page==="feedback"?
+            <FeedbackForm/>
+            :
+            <></>
         }
     </>
 }

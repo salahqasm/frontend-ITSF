@@ -1,0 +1,55 @@
+.Feedback-main {
+    height: 100vh;
+    background-color: #eee;
+    overflow: auto;
+}
+
+.Feedback-inner {
+    width: 60%;
+    /* height:60%; */
+    background-color: #fff;
+    border-radius: 25px;
+    border: 1px #000 solid;
+    margin: auto;
+    margin-top: 40px;
+    padding: 50px;
+}
+.Feedback-inner label{
+    font-size: larger;
+    font-weight: 500;
+    margin: 10px 0;
+}
+.Feedback-inner-input {
+    width: 100%;
+    border: 1px solid #000;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.Feedback-inner textarea {
+    width: 100%;
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 10px;
+    resize: none;
+}
+
+.Feedbacksubmit {
+    width: 150px;
+    height: 40px;
+    float: right;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.Feedbacksubmit:hover {
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}

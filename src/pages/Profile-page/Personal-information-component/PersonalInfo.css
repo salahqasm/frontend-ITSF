@@ -1,9 +1,13 @@
 .PersonalInfo-table {
-    margin-top: 30px;
+    /* margin-top: 30px; */
+    width: 100%;
+    
 }
-
-.PersonalInfo-table tr {
-    border-bottom: 1px solid #c3bfbf;
+.PersonalInfo-table input{
+    margin-top:30px;
+}
+.PersonalInfo-table td,th {
+    padding-top:30px;
 }
 
 .PersonalInfo-table h4 {

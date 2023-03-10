@@ -5,7 +5,7 @@ import { useCookies } from "react-cookie";
 import Pic from "../../../imgs/profileImg.png"
 import "./ProfilePicture-component.css"
 
-function ProfilePicture({id,userType}) {
+function ProfilePicture({id,userType , width}) {
     const [img, setImg] = useState(null);
     const [cookie] = useCookies();
     const config = {
@@ -15,6 +15,7 @@ function ProfilePicture({id,userType}) {
     };
     async function getProfilePicture() {
         const image = await axios.post(`http://localhost:3001/profilepicture/${id}`, { userType:userType }, config)
+        
         if (image) {
             setImg(image.data.profilePicture);
         }
@@ -23,7 +24,7 @@ function ProfilePicture({id,userType}) {
         getProfilePicture();
     }, [])
     return <>
-        <img className="profilePictureStyle" src={img ? `data:image;base64${img}` : `${Pic}`} />
+        <img className="profilePictureStyle" src={img ? `data:image;base64${img}` : `${Pic}`} width={width} />
     </>
 }
 

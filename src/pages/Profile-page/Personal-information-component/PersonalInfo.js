@@ -1,36 +1,38 @@
 import React from "react";
 import "./PersonalInfo.css"
 import { useCookies } from "react-cookie";
+import Approvedby from "../Approvedby-component/Approvedby";
 
 function PersonalInfo() {
     const [cookie] = useCookies();
     const userInfo = cookie.user;
 
     return <>
+
         {
             userInfo.userType === "student" ? <>
                 <table className="PersonalInfo-table">
                     <tbody><tr>
                     {/* <th>Name: </th> */}
-                        <h4><td>{userInfo.fname} {userInfo.sname} {userInfo.lname}</td></h4>
+                        {/* <h4><td>{userInfo.fname} {userInfo.sname} {userInfo.lname}</td></h4> */}
                     </tr>
                         <tr>
                             <th>Email: </th>
-                            <td>{userInfo.email}</td>
+                            <input 
+                            value={userInfo.email} disabled
+                            />
                         </tr>
                         <tr>
                             <th>Skill: </th>
                             <td>{userInfo.skill}</td>
                         </tr>
-                        <tr>
-                            <th>Approved By: </th>
-                            <td>{userInfo.approvedby}</td>
-                        </tr>
+                        
                         {userInfo.purl &&
                             <tr>
                                 <th>Previous projects: </th>
                                 <td>{userInfo.purl}</td>
                             </tr>}
+                            
                     </tbody>
                 </table>
             </>

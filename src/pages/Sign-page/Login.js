@@ -29,11 +29,18 @@ function Login() {
         console.log("Success");
         delete res.data.profilePicture; //cannot store it in cookies LARGE AMOUNT OF DATA
         setCookie("token", res.data.token, { path: '/' });
+        delete res.data.token;
         setCookie("user", res.data, { path: '/' });
       }
       if (res.data.role === "admin" && cookies) { //should be developed .............................................
         navigate('/admin')
+      } else if (res.data.userType === "student" && cookies) {
+        navigate('/home')
+
+      } else if (res.data.userType === "doctor" && cookies) {
+        navigate('/home')
       }
+
     } catch (err) {
       console.log(err)
     }

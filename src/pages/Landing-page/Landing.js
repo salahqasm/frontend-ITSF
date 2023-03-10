@@ -1,5 +1,5 @@
 import React from "react";
-
+import Pic from "../../imgs/college.png"
 import "./Landing.css"
 import { useNavigate } from "react-router-dom";
 function Landing() {
@@ -13,13 +13,14 @@ function Landing() {
         }
     }
     return <>
-        <div className="Landing-main">
-            <div className="Landing-header">
+        <div className="Landing-main" >
+            <div className="Landing-header" style={{backgroundImage:`url(${Pic})`,backgroundSize:"cover",backgroundRepeat:"no-repeat"}}>
                 <div className="Landing-left">
                     <div className="Landing-content">
                         <h2>ITS Freelance</h2>
                         <h2>ITS Freelance</h2>
                     </div>
+                    
                     <div className="Landing-buttons">
                         <br></br>
                         <h5>Join us now !</h5>

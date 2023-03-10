@@ -1,0 +1,79 @@
+.feedback-table {
+    text-align: center;
+    /* border-collapse: collapse;  */
+    /* margin: ; */
+    width: 100%;
+}
+
+.feedback-table th {
+    background-color: #eee;
+    color: #000;
+    padding: 10px;
+
+}
+
+.feedback-table tr {
+    border-bottom: 1px solid #9399a3;
+
+}
+
+.feedback-table td {
+    padding-bottom: 10px;
+    max-width: 200px;
+    ;
+}
+
+.feedback-table tr:nth-of-type(even) {
+    background: #eee;
+}
+
+.feedback-popup {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 20px;
+}
+
+.feedback-popup label {
+    font-size: larger;
+    font-weight: 500;
+    margin: 10px 0;
+}
+
+.feedback-popup input {
+    /* width: 80%; */
+    border: 1px solid #000;
+    border-radius: 10px;
+    height: 40px;
+}
+
+.feedback-popup textarea {
+    /* width: 80%; */
+    height: 100%;
+    border: 1px solid #000;
+    border-radius: 10px;
+    resize: none;
+}
+
+.Feedback-popup-delete {
+    width: 7vw;
+    height: 5vh;
+    background-color: rgb(243, 57, 57);
+    color: #fff;
+    margin: 20px 0;
+}
+
+.Feedback-popup-delete:hover {
+    background-color: rgb(250, 36, 36);
+    color: #fff;
+    margin: 20px 0;
+    border: none;
+}
+
+.Feedback-popup-Read {
+    text-decoration: underline;
+}
+
+.Feedback-popup-Read:hover {
+    color: blue;
+    cursor: pointer;
+}

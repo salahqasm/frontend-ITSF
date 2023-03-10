@@ -25,8 +25,8 @@ function App() {
           <Route path="/admin" exact element={<Admin />} />
           <Route path="/signup" exact element={<Signup />} />
           <Route path="/profilepicture" exact element={<PP />} />
-          <Route path="/test" exact element={<PageHandler />} />
-          <Route path="/test1" exact element={<Profile />} />
+          <Route path="/home" exact element={<PageHandler />} />
+          
           
           {/* <Route path="*" exact element={<PP />} /> PAGE NOT FOUND ################################# */}
           

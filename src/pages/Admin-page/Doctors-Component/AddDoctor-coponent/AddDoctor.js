@@ -19,8 +19,7 @@ function AddDoctor({ commitChange }) {
         e.preventDefault();
         try {
             let doctor = {
-                fname: e.target.fname.value,
-                lname: e.target.lname.value,
+                name: e.target.name.value,
                 email: e.target.email.value,
                 specialization: e.target.specialization.value,
                 department: e.target.department.value,
@@ -45,8 +44,7 @@ function AddDoctor({ commitChange }) {
       <Popup open={open} closeOnDocumentClick onClose={closeModal}>
       <form className="AdminAddDoctor" onSubmit={(e) => { submitHandler(e); }}>
                 <h1>Add New Doctor</h1>
-                <input type="text" id="fname" name="fname" placeholder="First Name" required />
-                <input type="text" id="lname" name="lname" placeholder="Last Name" required />
+                <input type="text" id="name" name="name" placeholder="Full Name" required />
                 <input type="email" id="email" name="email" placeholder="Email" required />
                 <input type="text" id="specialization" name="specialization" placeholder="Specialization" required />
                 <input type="text" id="department" name="department" placeholder="Department" required />

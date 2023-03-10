@@ -5,7 +5,7 @@ import Snav from "./SideNav-Component/Snav.js";
 import Companies from "./Companies-Component/Comapnies-table-component/Comapies.js";
 import Doctors from "./Doctors-Component/Doctors-table-component/Doctors.js";
 import Students from "./Student-Component/Student-table-component/Students.js";
-import AddDoctor from "./Doctors-Component/AddDoctor-coponent/AddDoctor";
+import Feedback from "./Feedback-component/Feedback-table";
 function Admin() {
     const [page, setPage] = useState("Admin Dashboard");
     
@@ -19,7 +19,9 @@ function Admin() {
                 {
                 page==="Companies"?<><Companies/></>:
                 page==="Doctors"?<><Doctors/></>:
-                page==="Students"?<Students/>:<h1>Welcome to Admin Dashboard</h1>
+                page==="Students"?<Students/>:
+                page==="Feedback"?<Feedback/>:
+                <h1>Welcome to Admin Dashboard</h1>
                 }
             </div>
         </div>

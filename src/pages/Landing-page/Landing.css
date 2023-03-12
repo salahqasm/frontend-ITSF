@@ -1,8 +1,9 @@
 @import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900");
 
-.Landing-content{
-  margin-top:10vh;
+.Landing-content {
+  margin-top: 10vh;
 }
+
 .Landing-content h2 {
 
   color: #fff;
@@ -10,6 +11,7 @@
   font-family: "Poppins", sans-serif;
   position: absolute;
   transform: translate(50%, -100%);
+
 }
 
 .Landing-content h2:nth-child(1) {
@@ -52,10 +54,6 @@
 
 .Landing-main {
   height: 100vh;
-  background-color: #EEEEEE;
-  background-image: radial-gradient(#4e5561 2px, transparent 2px), radial-gradient(#4e5561 2px, #EEEEEE 2px);
-  background-size: 80px 80px;
-  background-position: 0 0, 40px 40px;
 }
 
 .Landing-header {
@@ -104,23 +102,22 @@
 }
 
 .Landing-mid {
-  margin-top: 30px;
-  box-shadow: 0px 0px 78px 1px rgba(0, 0, 0, 0.51);
-  -webkit-box-shadow: 0px 0px 78px 1px rgba(0, 0, 0, 0.51);
-  -moz-box-shadow: 0px 0px 78px 1px rgba(0, 0, 0, 0.51);
+
   display: grid;
   grid-template-columns: 1fr 1fr;
+  background-color: #EEEEEE;
+}
 
+.Landing-what img {
+  border-radius: 20px;
+  box-shadow: 0 0 10px black;
 }
 
 .Landing-what {
-  margin-top: 20px;
-
-  /* margin-top: 20px; */
-  /* height: 100px; */
-
+  margin: 20px;
   background-color: #EEEEEE;
   text-align: center;
+  font-size: large;
 }
 
 .Landing-what p {
@@ -130,12 +127,9 @@
 }
 
 .Landing-cards {
-  margin: 20px;
-  margin-bottom: 0;
-  text-align: center;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 20px;
+  padding-top: 2rem;
+  background: #eee;
+
 }
 
 .Landing-card {
@@ -144,4 +138,63 @@
   text-align: center;
   border: 1px solid #222831;
   border-radius: 20px;
+}
+
+/******************************************************/
+
+
+
+
+.container .card {
+  max-width: 300px;
+  height: 215px;
+  margin: 30px 10px;
+  padding: 20px 15px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+  transition: 0.3s ease-in-out;
+  background-color: #222831;
+}
+
+.container .card:hover {
+  height: 450px;
+}
+
+.container .card .imgContainer {
+  position: relative;
+  width: 250px;
+  height: 250px;
+  top: -50px;
+  left: 10px;
+  z-index: 1;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.container .card .imgContainer img {
+  max-width: 100%;
+  border-radius: 4px;
+}
+
+.container .card .content {
+  position: relative;
+  margin-top: -140px;
+  padding: 10px 15px;
+  text-align: center;
+  color: #fff;
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.3s ease-in-out;
+}
+
+.container .card:hover .content {
+  visibility: visible;
+  opacity: 1;
+  margin-top: -40px;
+  transition-delay: 0.3s;
+}
+
+@media (max-width: 330px) {
+  .container .card .imgContainer {
+    left: -2px;
+  }
 }

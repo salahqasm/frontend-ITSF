@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Montserrat:wght@200&display=swap');
+
+.Footer-main {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #222831;
+  color: #fff;
+  padding: 2rem;
+}
+
+.Footer-main h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 3rem;
+}
+
+.Footer-logo {
+  text-align: center;
+}
+
+.Footer-main ul {
+  list-style-type: none;
+}

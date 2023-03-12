@@ -1,5 +1,7 @@
 import React from "react";
 import Pic from "../../imgs/college.png"
+import juPic from "../../imgs/ju.jpg"
+import Footer from "./Footer/Footer";
 import "./Landing.css"
 import { useNavigate } from "react-router-dom";
 function Landing() {
@@ -14,13 +16,13 @@ function Landing() {
     }
     return <>
         <div className="Landing-main" >
-            <div className="Landing-header" style={{backgroundImage:`url(${Pic})`,backgroundSize:"cover",backgroundRepeat:"no-repeat"}}>
+            <div className="Landing-header" style={{ backgroundImage: `url(${Pic})`, backgroundSize: "cover", backgroundRepeat: "no-repeat" }}>
                 <div className="Landing-left">
                     <div className="Landing-content">
                         <h2>ITS Freelance</h2>
                         <h2>ITS Freelance</h2>
                     </div>
-                    
+
                     <div className="Landing-buttons">
                         <br></br>
                         <h5>Join us now !</h5>
@@ -34,45 +36,56 @@ function Landing() {
                 <div className="Landing-what">
                     <h2>What is <span className="Landing-sh2">ITS Freelance</span>?</h2>
                     {/* <p>ITS Freelance is A website that connects companies with skilled students to finish IT related tasks under the leadership of their university doctors </p> */}
-                    <p>Stands for "Inofrmation Technology Students Freelance" It is a website that is directed to IT department in <span style={{ color: "#01731c" }}>University Of Jordan</span>,
+                    <p>Stands for "Inofrmation Technology Students Freelance" <br /> It is a website that is directed to IT department in <a target="_blank" href="http://ju.edu.jo/Home.aspx"><span style={{ color: "#01731c" }}>University Of Jordan</span></a>,
                         aims to connect students who have polished IT skills with
-                        companies which have IT related tasks that in need for Part time or freelancers.</p>
+                        companies which have IT related tasks that in need for Part time or freelancers.
+                        These students are being interviewed by instructional staff that is specialized in their intended skill to make
+                        sure they are good enough to start working on real tasks in the industry</p>
                 </div>
                 <div className="Landing-what">
-                    <h2>How does<span> it work?</span></h2>
-                    <p>
-                        In this system students will get approved by their
-                        department doctors who are specialized in that specific skill after making an interview with them.
-                        IT companies will view student's profiles to see their skills, previous projects if exists and approval doctor
-                        name. After that they will assign the student to a paid task with a limited time that suits the task and the skills required.
-                    </p>
+                    <img alt="Unvicersity of Jordan" src={juPic} height="" />
                 </div>
 
             </div>
             <div className="Landing-cards">
-                {/* <div className="Landing-card">
-                    <h4>General Objectives</h4>
-                <ul>
-                    <li>To make a connection between students and companies</li>
-                    <li></li>
-                </ul>
-                </div> */}
-                <div className="Landing-card">
-                    <h4>Student Objectives</h4>
-                    <ul>
-                        <li>Help diligent students to make a source of income in their major</li>
-                        <li>Increase the sense of competitive among students</li>
-                        <li>improve and expand Student's knowledge about real IT tasks</li>
-                    </ul>
+
+                <div class="container d-flex align-items-center justify-content-center position-relative flex-wrap">
+                    <div class="card d-flex position-relative flex-column">
+                        <div class='imgContainer'>
+                            <img src={juPic} />
+                        </div>
+                        <div class="content">
+                            <h2>Card Three</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                        </div>
+                    </div>
+                    <div class="card d-flex position-relative flex-column">
+                        <div class='imgContainer'>
+                            <img src={juPic} />
+
+                        </div>
+                        <div class="content">
+                            <h2>Card Three</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                        </div>
+                    </div>
+                    <div class="card d-flex position-relative flex-column">
+                        <div class='imgContainer'>
+                            <img src={juPic} />
+
+                        </div>
+                        <div class="content">
+                            <h2>Card Three</h2>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                        </div>
+                    </div>
                 </div>
-                <div className="Landing-card">
-                    <h4>Company Objectives</h4>
-                    <ul>
-                        <li>Help companies that in need to get a small tasks done without hiring a new employee</li>
-                        <li>Lower tasks costs relatively</li>
-                    </ul>
-                </div>
+                
             </div>
+            <div>
+                <Footer />
+            </div>
+
         </div>
     </>
 }

@@ -5,11 +5,25 @@ import Pic from "../../imgs/prog-bkg.jpg"
 import "./Signup.css"
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-
+import Select from 'react-select'
+import makeAnimated from 'react-select/animated';
 function Signupx() {
     const [user, setUser] = useState();
-    const [cookie,setCookie]=useCookies();
-    const navigate=useNavigate();
+    const [cookie, setCookie] = useCookies();
+    const options = [
+        { value: 'chocolate', label: 'Chocolate' },
+        { value: 'strawberry', label: 'Strawberry' },
+        { value: 'vanilla', label: 'Vanilla' },
+        { value: 'chocolat', label: 'Chocolat' },
+        { value: 'strawberr', label: 'Strawberr' },
+        { value: 'vanill', label: 'Vanill' },
+        { value: 'chocola', label: 'Chocola' },
+        { value: 'strawber', label: 'Strawber' },
+        { value: 'vanil', label: 'Vanil' }
+    ]
+    const animatedComponents = makeAnimated();
+
+    const navigate = useNavigate();
     function firstForm(e) {
         e.preventDefault();
 
@@ -83,6 +97,13 @@ function Signupx() {
                         <form className="signup-student" onSubmit={(e) => { studentSignup(e) }}>
                             <input type="text" id="name" name="name" placeholder="Full Name" required />
                             <input type="text" id="skill" name="skill" placeholder="Skill" required />
+                            <Select
+
+                                closeMenuOnSelect={false}
+                                components={animatedComponents}
+                                isMulti
+                                options={options}
+                            />
                             <input type="email" id="email" name="email" placeholder="Enter Your E-mail" required />
                             <input id="pswrd2" name="password" type="password" placeholder="Creat Password" required />
                             <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" required />

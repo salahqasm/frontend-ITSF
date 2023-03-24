@@ -10,6 +10,19 @@ import makeAnimated from 'react-select/animated';
 function Signupx() {
     const [user, setUser] = useState();
     const [cookie, setCookie] = useCookies();
+    const [selectedOption, setSelectedOption] = useState([]);
+    function handleSelectChange(selectedOption) {
+        if (selectedOption.length <= 5) {
+            setSelectedOption(selectedOption);
+            console.log(selectedOption);
+        }
+    }
+    const customStyles = {
+        control: (provided, state) => ({
+            ...provided,
+            width: 300,
+        }),
+    };
     const options = [
         { value: 'chocolate', label: 'Chocolate' },
         { value: 'strawberry', label: 'Strawberry' },
@@ -48,7 +61,6 @@ function Signupx() {
                 setCookie("user", res.data, { path: '/' });
                 navigate('/profilepicture');
             }
-            // console.log(e.target.fname.value);
 
         } catch (err) {
             console.log(err);
@@ -98,13 +110,19 @@ function Signupx() {
                             <input type="text" id="name" name="name" placeholder="Full Name" required />
                             <input type="text" id="skill" name="skill" placeholder="Skill" required />
                             <Select
-
+                                value={selectedOption}
+                                onChange={handleSelectChange}
                                 closeMenuOnSelect={false}
                                 components={animatedComponents}
                                 isMulti
                                 options={options}
+                                styles={customStyles}
+                                maxValueLength={5}
                             />
-                            <input type="email" id="email" name="email" placeholder="Enter Your E-mail" required />
+                            {
+                                selectedOption.length >= 5 && <p>you can select up to 5 skills.</p>
+                            }
+                            < input type="email" id="email" name="email" placeholder="Enter Your E-mail" required />
                             <input id="pswrd2" name="password" type="password" placeholder="Creat Password" required />
                             <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" required />
                             <button className="signup-submit-button" type="submit" value="Sign Up" >Signup</button>

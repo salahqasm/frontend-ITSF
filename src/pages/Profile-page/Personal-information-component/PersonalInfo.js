@@ -6,15 +6,14 @@ import Approvedby from "../Approvedby-component/Approvedby";
 function PersonalInfo() {
     const [cookie] = useCookies();
     const userInfo = cookie.user;
-
+    
     return <>
 
         {
             userInfo.userType === "student" ? <>
                 <table className="PersonalInfo-table">
                     <tbody><tr>
-                    {/* <th>Name: </th> */}
-                        {/* <h4><td>{userInfo.fname} {userInfo.sname} {userInfo.lname}</td></h4> */}
+                
                     </tr>
                         <tr>
                             <th>Email: </th>

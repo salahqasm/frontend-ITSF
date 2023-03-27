@@ -11,15 +11,15 @@ function Signupx() {
     const [user, setUser] = useState();
     const [cookie, setCookie] = useCookies();
     const [selectedOption, setSelectedOption] = useState([]);
-    const [options,setOptions]=useState([]);
-    const [skills, setSkills] = useState([]);
+    const [options, setOptions] = useState([]);
     const animatedComponents = makeAnimated();
+    const navigate = useNavigate();
     async function getSkills() {
         const res = await axios.get('http://localhost:3001/getskill');
         setOptions([]);
-        let temp=[];
+        let temp = [];
         res.data.map((elem) => {
-            temp.push({id:elem.id,value: elem.name, label: elem.name })
+            temp.push({ id: elem.id, value: elem.name, label: elem.name })
         })
         setOptions(temp);
     }
@@ -36,14 +36,14 @@ function Signupx() {
     const customStyles = {
         control: (provided, state) => ({
             ...provided,
-            width: 300,
+            width: 350,
+            borderRadius: 20
         }),
     };
 
-    
 
 
-    const navigate = useNavigate();
+
     function firstForm(e) {
         e.preventDefault();
 
@@ -57,15 +57,15 @@ function Signupx() {
         e.preventDefault();
         try {
             if (e.target.password.value === e.target.repassword.value) {
-                let skillsID=[];
-                selectedOption.map((elem)=>{
+                let skillsID = [];
+                selectedOption.map((elem) => {
                     skillsID.push(elem.id);
                 })
                 let student = {
                     name: e.target.name.value,
                     email: e.target.email.value,
                     password: e.target.password.value,
-                    skillsID:JSON.stringify(skillsID)
+                    skillsID: JSON.stringify(skillsID)
                 }
                 const res = await axios.post('http://localhost:3001/studentsignup', student)
                 setCookie("token", res.data.token, { path: '/' });
@@ -118,11 +118,16 @@ function Signupx() {
                     user === "student" ? <>
                         <h5>Student Signup</h5>
                         <form className="signup-student" onSubmit={(e) => { studentSignup(e) }}>
+
+                            <label>Full Name:</label>
                             <input type="text" id="name" name="name" placeholder="Full Name" required />
-                            
-                            < input type="email" id="email" name="email" placeholder="Enter Your E-mail" required />
+                            <label>Email:</label>
+                            <input type="email" id="email" name="email" placeholder="Enter Your E-mail" required />
+                            <label>Password:</label>
                             <input id="pswrd2" name="password" type="password" placeholder="Creat Password" required />
+                            <label>Re-enter password:</label>
                             <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" required />
+                            <label>Skills:</label>
                             <Select
                                 value={selectedOption}
                                 onChange={handleSelectChange}
@@ -137,20 +142,27 @@ function Signupx() {
                             {
                                 selectedOption.length >= 5 && <p>you can select up to 5 skills.</p>
                             }
+                            <p></p>
                             <button className="signup-submit-button" type="submit" value="Sign Up" >Signup</button>
                         </form>
                     </> : <>
                         <h5>Company Signup</h5>
                         <form className="signup-student" onSubmit={(e) => { companySignup(e) }}>
+                            <label>Compane Name:</label>
                             <input type="text" id="name" name="name" placeholder="Company Name" required />
+                            <label>Email:</label>
                             <input type="email" id="email" name="email" placeholder="Enter Your E-mail" required />
-                            <input type="text" id="specialization" name="specialization" placeholder="Specialization" required /><br></br>
+                            <label>Specialization:</label>
+                            <input type="text" id="specialization" name="specialization" placeholder="Specialization" required />
+                            <label>Country:</label>
                             <input type="text" id="country" name="country" placeholder="Country" required />
+                            <label>City:</label>
                             <input type="text" id="city" name="city" placeholder="City" required />
-                            <br></br>
+                            <label>Password:</label>
                             <input id="pswrd2" name="password" type="password" placeholder="Creat Password" required />
+                            <label>Re-enter password::</label>
                             <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" required />
-                            <br></br>
+                            <p></p>
                             <button className="signup-submit-button" type="submit" value="Sign Up" >Signup</button>
                         </form>
                     </>}

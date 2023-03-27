@@ -1,12 +1,12 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useCookies } from "react-cookie";
-
+import { useNavigate } from "react-router-dom";
 import "./PP.css";
 function PP() {
     let [base64code, setbase64code] = useState();
     let [cookie] = useCookies();
-    
+    const navigate = useNavigate();
     const onChange = e => {
         const files = e.target.files;
         const file = files[0];
@@ -37,8 +37,7 @@ function PP() {
             profilePicture: base64code
         }
         const res = await axios.post("http://localhost:3001/profilepicture", data, config)
-        console.log(res);
-
+        navigate('/home');
     }
     return <div className="PP-main">
         <h1 className="PP-header">ITS Freelance</h1>
@@ -53,6 +52,7 @@ function PP() {
                     <input className="PP-botton" type="file" name="PP" id="PP" accept="image/*" onChange={onChange} />
                 </label>
                 {base64code && <button className="PP-submitlabel" type="submit">Submit  </button>}
+                <button onClick={()=>navigate('/home')} className="PP-submitlabel">Skip</button>
             </form>
         </div>
     </div>

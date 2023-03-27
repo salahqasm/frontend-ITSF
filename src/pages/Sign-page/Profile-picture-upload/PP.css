@@ -1,7 +1,7 @@
 .PP-main{
 background-color: #393E46;
 text-align: center;
-/* height: 100vh; */
+height: 100vh;
 }
 .PP-header{
     color:#eee;
@@ -9,9 +9,7 @@ text-align: center;
     font-weight: bold;
     padding:20px;
 }
-.PP-container h5{
-    /* padding-bottom:20px; */
-}
+
 .PP-container{
     background-color: white;
     width: 50%;

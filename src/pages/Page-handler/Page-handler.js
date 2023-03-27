@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Navb from "../../Navbar/Navbar";
 
 import FeedbackForm from "../Feedback-component/Feedback-form";
+import Mytasks from "../mytasks-page/Mytasks";
 import Profile from "../Profile-page/Profile";
 
 
@@ -15,6 +16,8 @@ function PageHandler() {
             <Profile/>
             :page==="feedback"?
             <FeedbackForm/>
+            :page==="mtasks"?
+            <Mytasks/>
             :
             <></>
         }

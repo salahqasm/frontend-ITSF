@@ -1,0 +1,34 @@
+.Addtask-main {
+    margin: 1rem;
+}
+
+.Addtask-main h3 {
+    text-align: center;
+}
+
+.Addtask {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 1rem;
+}
+
+.Addtask textarea {
+    resize: none;
+
+}
+
+.Addtask-grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.Addtask-button {
+    text-align: right;
+}
+
+.Addtask-button button {
+    background-color: aqua;
+    width: 30%;
+    height:2.5rem;
+}

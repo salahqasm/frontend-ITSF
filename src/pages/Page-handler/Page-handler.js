@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import Navb from "../../Navbar/Navbar";
 
-import FeedbackForm from "../Feedback-component/Feedback-form";
-import Mytasks from "../mytasks-page/Mytasks";
+import FeedbackForm from "../../Components/Feedback-component/Feedback-form";
+import Mytasks from "../Mytasks-page/Mytasks";
 import Profile from "../Profile-page/Profile";
 
 

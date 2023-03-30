@@ -1,8 +1,0 @@
-.mytasks-main{
-    display:grid;
-    width:95%;
-    margin:auto;
-    height:100vh;
-    
-    grid-template-columns: 30% 70%;
-}

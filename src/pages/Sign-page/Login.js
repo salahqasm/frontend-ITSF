@@ -34,7 +34,7 @@ function Login() {
       }
       if (res.data.role === "admin" && cookies) { //should be developed .............................................
         navigate('/admin')
-      } else if (res.data.userType === "student" && cookies) {
+      } else if ((res.data.userType === "student"|| res.data.userType === "company") && cookies) {
         navigate('/home')
 
       } else if (res.data.userType === "doctor" && cookies) {

@@ -1,0 +1,101 @@
+.mytasks-main {
+    display: grid;
+    width: 95%;
+    margin: auto;
+    height: 100vh;
+    margin-top: 1rem;
+    grid-template-columns: 15% 70%;
+    grid-gap: 3rem;
+}
+
+.addtask-container {
+    border: 1px rgb(147, 147, 147) solid;
+    border-radius: 10px;
+    text-align: center;
+    padding: 10px;
+}
+
+.mytasks-right {
+    border: 1px rgb(147, 147, 147) solid;
+    border-radius: 10px;
+    
+    padding: 10px;
+}
+.mytasks-right h1{
+    text-align: center;
+    
+}
+
+.addtask-button {
+    width: 150px;
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    margin: 15px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.addtask-button:hover {
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}
+
+.mytasks-filter {
+    border: 1px rgb(147, 147, 147) solid;
+    border-radius: 10px;
+    padding: 10px;
+    
+}
+
+.mytasks-filter p {
+    text-align: center;
+
+}
+
+.mytasks-filter label {
+    padding-left: 40px;
+    padding-bottom: 20px;
+
+}
+/* 
+<div className="mytasks-task">
+                    <h3>Task Title</h3>
+                    <h6>Available</h6>
+                    <h6>Description: </h6>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        Tellus molestie nunc non blandit massa. Mi eget mauris pharetra et ultrices.
+                        Odio ut enim blandit volutpat maecenas. Purus viverra accumsan in nisl nisi scelerisque eu ultrices vitae.
+                        Non sodales neque sodales ut etiam sit. In hac habitasse platea dictumst quisque sagittis purus sit.
+                        Imperdiet massa tincidunt nunc pulvinar sapien et ligula. Amet mauris commodo quis imperdiet massa tincidunt nunc pulvinar.
+                        Tristique senectus et netus et malesuada fames ac turpis. Sagittis orci a scelerisque purus semper eget.
+                        Ac turpis egestas integer eget. Amet aliquam id diam maecenas ultricies mi.
+                    </p>
+                    <div className="required-skills">
+                        <span>Node.js</span>
+                        <span>React</span>
+                        <span>PSQL</span>
+
+                    </div>
+                </div> */
+
+.mytasks-task{
+    margin:1rem;
+    text-align: justify;   
+}
+.mytasks-task h5{
+    color:green;
+}
+.required-skills span{
+    opacity: 0.7;
+    background-color: #393E46;
+    color:#fff;
+    margin-right: 0.5rem;
+    padding:1px 10px;
+    border-radius: 20px;
+}

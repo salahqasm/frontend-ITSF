@@ -1,7 +1,7 @@
 import React from "react";
 import Pic from "../../imgs/college.png"
 import juPic from "../../imgs/ju.jpg"
-import Footer from "./Footer/Footer";
+import Footer from "../../Components/Footer-component/Footer";
 import "./Landing.css"
 import { useNavigate } from "react-router-dom";
 function Landing() {

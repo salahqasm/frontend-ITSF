@@ -2,7 +2,7 @@
     display: grid;
     width: 95%;
     margin: auto;
-    height: 100vh;
+    /* height: 100vh; */
     margin-top: 1rem;
     grid-template-columns: 15% 70%;
     grid-gap: 3rem;
@@ -45,23 +45,6 @@
     border-radius: 15px;
 }
 
-.mytasks-filter {
-    border: 1px rgb(147, 147, 147) solid;
-    border-radius: 10px;
-    padding: 10px;
-    
-}
-
-.mytasks-filter p {
-    text-align: center;
-
-}
-
-.mytasks-filter label {
-    padding-left: 40px;
-    padding-bottom: 20px;
-
-}
 /* 
 <div className="mytasks-task">
                     <h3>Task Title</h3>
@@ -84,18 +67,3 @@
                     </div>
                 </div> */
 
-.mytasks-task{
-    margin:1rem;
-    text-align: justify;   
-}
-.mytasks-task h5{
-    color:green;
-}
-.required-skills span{
-    opacity: 0.7;
-    background-color: #393E46;
-    color:#fff;
-    margin-right: 0.5rem;
-    padding:1px 10px;
-    border-radius: 20px;
-}

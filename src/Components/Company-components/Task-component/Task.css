@@ -1,0 +1,13 @@
+.mytasks-task{
+    margin:1rem;
+    text-align: justify;   
+}
+
+.required-skills span{
+    opacity: 0.7;
+    background-color: #393E46;
+    color:#fff;
+    margin-right: 0.5rem;
+    padding:1px 10px;
+    border-radius: 20px;
+}

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "./Addtask.css";
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
-function Addtask() {
+function Addtask({ id }) {
     const [selectedOption, setSelectedOption] = useState([]);
     const [options, setOptions] = useState([{ value: "test", label: "test" }, { value: "test1", label: "test1" }]);
     const animatedComponents = makeAnimated();
@@ -52,7 +52,7 @@ function Addtask() {
                 <button type="submit" >Publish</button>
             </div>
         </form >
-        
+
     </div >
 }
 

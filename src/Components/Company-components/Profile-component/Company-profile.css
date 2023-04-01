@@ -1,0 +1,59 @@
+.comProfile-main {
+    border: 1px gray solid;
+    border-radius: 20px;
+    width: 70%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.comProfile-header {
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: 3rem;
+}
+
+.comProfile-grid2 {
+    margin-top: 1rem;
+    grid-column: 2/5;
+}
+
+.comProfile-edit {
+    float: right;
+    width: 150px;
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    margin: 15px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.comProfile-edit:hover {
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}
+
+.comProfile-mid {
+    width: 90%;
+    margin: auto;
+
+}
+
+.comProfile-info>* {
+    padding: 1rem;
+}
+
+.comProfile-info label {
+    font-weight: 600;
+}
+
+.comProfile-info input {
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+}

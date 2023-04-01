@@ -34,7 +34,7 @@ function Navb({ changePage }) {
         </Navbar>
         : cookie.user.userType === "company" ?
           //////
-          <Navbar bg="dark" variant="dark">
+          <Navbar bg="light" variant="light">
             <Container>
               <Navbar.Brand href="#home" style={{ marginLeft: "-60px" }}>ITS Freelance</Navbar.Brand>
               <Nav className="me-auto">

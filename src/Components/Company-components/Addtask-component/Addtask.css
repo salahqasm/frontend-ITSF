@@ -28,24 +28,17 @@
 }
 
 .Addtask-button button {
-    background-color: aqua;
-    width: 30%;
-    height: 2.5rem;
-}
-
-.addtask-button {
     width: 150px;
     height: 40px;
     background-color: #222831;
     color: #EEEEEE;
     border: #EEEEEE solid 1px;
     border-radius: 10px;
-    margin: 15px;
     margin-left: 20px;
     font-weight: bold;
 }
 
-.addtask-button:hover {
+.Addtask-button button:hover {
     background-color: #393E46;
     color: #00ADB5;
     border: #EEEEEE solid 1px;

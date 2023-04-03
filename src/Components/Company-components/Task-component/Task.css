@@ -1,6 +1,8 @@
 .mytasks-task{
     margin:1rem;
     text-align: justify;   
+    border-left:#393E46 5px solid;
+    padding-left: 1rem;
 }
 
 .required-skills span{

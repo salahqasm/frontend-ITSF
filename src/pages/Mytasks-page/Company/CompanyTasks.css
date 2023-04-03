@@ -2,7 +2,6 @@
     display: grid;
     width: 95%;
     margin: auto;
-    /* height: 100vh; */
     margin-top: 1rem;
     grid-template-columns: 15% 70%;
     grid-gap: 3rem;
@@ -18,10 +17,30 @@
 .mytasks-right {
     border: 1px rgb(147, 147, 147) solid;
     border-radius: 10px;
-    
+
     padding: 10px;
 }
-.mytasks-right h1{
+
+.mytasks-right h1 {
     text-align: center;
-    
+
+}
+
+.addtask-button {
+    width: 150px;
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    margin: 15px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.addtask-button:hover {
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
 }

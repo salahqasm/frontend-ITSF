@@ -1,15 +1,17 @@
-import React from "react";
+import React, { useContext } from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import "./Addtask.css";
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
 import { useCookies } from "react-cookie";
+import Context from "../../../ContextApi/Context";
 function Addtask({ id, close }) {
     const [cookie] = useCookies();
     const [selectedOption, setSelectedOption] = useState([]);
     const [options, setOptions] = useState([]);
     const animatedComponents = makeAnimated();
+    const ctx = useContext(Context);
     const config = {
         headers: {
             'authorization': `Bearer ${cookie.token}`
@@ -59,6 +61,7 @@ function Addtask({ id, close }) {
             const res = await axios.post(`http://localhost:3001/addtask/${id}`, task, config)
             console.log(res.data);
             close(o => !o)
+            ctx.refresh();
         } catch (err) {
             console.log(err.message);
         }

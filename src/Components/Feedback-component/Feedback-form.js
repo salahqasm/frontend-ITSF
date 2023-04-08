@@ -47,7 +47,7 @@ function FeedbackForm() {
                     <label htmlFor="title">Title</label>
                     <input className="Feedback-inner-input" id="title" value={fb.title} onChange={e => handleChange(e)} name="title" type={"text"} placeholder="Feedback Title" maxLength="100" required />
                     <label htmlFor="msg">Message</label>
-                    <textarea id="msg" name="message" rows="10" maxlength="1000" value={fb.message} onChange={e => handleChange(e)} placeholder="Write your message here!" required />
+                    <textarea id="msg" name="message" rows="10" maxLength="1000" value={fb.message} onChange={e => handleChange(e)} placeholder="Write your message here!" required />
                     <input type="submit" className="Feedbacksubmit" value="Submit" />
                 </form>
             </div>

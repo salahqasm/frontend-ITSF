@@ -9,11 +9,12 @@ function Brief({ user }) {
     return <>
         <div className="Brief-main">
             <div className="Brief-left">
-                <ProfilePicture data={user.profilePicture} width={150} />
+                <ProfilePicture data={user?.profilePicture} width={150} />
                 <div className="Brief-inside">
                     <h4>{now.getHours() >= 12 ? "Good Evening" : "Good Morning"} {user.name}</h4>
                     <p>Today's Date is :  {day + " - "+month+" - "+year}</p>
-                    <p>You have published {user.tasks.length} Tasks</p>
+                    <p>You have published {user?.tasks?.length} Tasks</p>
+                    
                 </div>
             </div>
         </div>

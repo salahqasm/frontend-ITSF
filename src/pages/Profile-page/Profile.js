@@ -1,15 +1,15 @@
 import React from "react";
-import { useState, useEffect } from "react";
-import { useCookies } from "react-cookie";
+import { useState, useEffect, useContext } from "react";
 import "./Profile.css"
 import CompanyProfile from "../../Components/Company-components/Profile-component/Company-profile";
-function Profile({ user, changeUser }) {
-    const [cookie] = useCookies();
+import Context from "../../ContextApi/Context";
+function Profile() {
+    const ctx = useContext(Context);
 
     return <>
         {
-            user.userType === "company" ?
-                <CompanyProfile user={user} changeUser={changeUser} />
+            ctx.user.userType === "company" ?
+                <CompanyProfile />
                 : <></>
         }
 

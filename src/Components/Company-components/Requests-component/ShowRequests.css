@@ -1,0 +1,49 @@
+.showrequests {
+    margin: 20px;
+
+}
+
+.showrequests table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+}
+
+.showrequests td,
+th {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+.showrequests tr:nth-child(even) {
+    background-color: #f2f2f2
+}
+
+.showrequests tr:hover {
+    background-color: #ddd;
+}
+
+.showrequests th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    background-color: #222831;
+    color: white;
+
+}
+
+.showresult-button {
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+    padding: 0 10px 0 10px;
+}
+
+.showresult-button:hover {
+    background-color: #393E46;
+    color: #00ADB5;
+}

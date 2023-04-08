@@ -37,7 +37,7 @@ function PP() {
             profilePicture: base64code
         }
         const res = await axios.post("http://localhost:3001/profilepicture", data, config)
-        navigate('/home');
+        navigate('/');
     }
     return <div className="PP-main">
         <h1 className="PP-header">ITS Freelance</h1>

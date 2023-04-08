@@ -35,10 +35,10 @@ function Login() {
       if (res.data.role === "admin" && cookies) { //should be developed .............................................
         navigate('/admin')
       } else if ((res.data.userType === "student"|| res.data.userType === "company") && cookies) {
-        navigate('/home')
+        navigate('/')
 
       } else if (res.data.userType === "doctor" && cookies) {
-        navigate('/home')
+        navigate('/')
       }
 
     } catch (err) {

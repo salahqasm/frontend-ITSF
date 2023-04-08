@@ -1,11 +1,10 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import ProfilePicture from "../../../Components/Picture-Component/ProfilePicture-component";
 import "./Company-profile.css"
-import { useCookies } from "react-cookie";
-
-function CompanyProfile({ user }) {
-    const [cookie] = useCookies();
-
+import Context from "../../../ContextApi/Context";
+function CompanyProfile() {
+    const ctx = useContext(Context)
+    const [user, setUser] = useState(ctx.user);
     return <>
         <div className="comProfile-main">
             <div className="comProfile-header">
@@ -17,7 +16,7 @@ function CompanyProfile({ user }) {
                 <div className="comProfile-grid2">
                     <h2>{user.name} Company</h2>
                     <h6>{user.country}, {user.city}, {user.phoneNum && user.phoneNum}</h6>
-                    {user.purl ? <a href={user.purl} target="_blank">Visit website</a>:<p>Add your website</p>}
+                    {user.purl ? <a href={user.purl} target="_blank">Visit website</a> : <p>Add your website</p>}
                 </div>
 
                 <div>

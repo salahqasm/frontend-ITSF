@@ -1,8 +1,12 @@
 import React, { useContext, useState } from "react";
+import Popup from 'reactjs-popup';
 import ProfilePicture from "../../../Components/Picture-Component/ProfilePicture-component";
 import "./Company-profile.css"
 import Context from "../../../ContextApi/Context";
+import EditProfile from "../Edit-profile-component/EditProfile"
 function CompanyProfile() {
+    const [open, setOpen] = useState(false);
+    const closeModal = () => setOpen(false);
     const ctx = useContext(Context)
     const [user, setUser] = useState(ctx.user);
     return <>
@@ -20,7 +24,12 @@ function CompanyProfile() {
                 </div>
 
                 <div>
-                    <input type="button" className="comProfile-edit" value={"Edit Profile"} />
+                    <input type="button" className="comProfile-edit" onClick={() => setOpen(o => !o)} value={"Edit Profile"} />
+                    <Popup open={open} closeOnDocumentClick onClose={closeModal} closeOnEscape={false}>
+                        <div style={{ maxHeight: '90vh', overflowY: 'scroll' }}>
+                            <EditProfile close={setOpen} />
+                        </div>
+                    </Popup>
                 </div>
 
             </div>

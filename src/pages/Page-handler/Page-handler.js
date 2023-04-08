@@ -12,6 +12,7 @@ import {
     Route,
     Outlet
 } from "react-router-dom";
+import Footer from "../../Components/Footer-component/Footer";
 function PageHandler() {
     const [page, setPage] = useState("profile");
     const [user, setUser] = useState({});
@@ -52,6 +53,7 @@ function PageHandler() {
             <>
                 <Navb changePage={setPage} />
                 <Outlet />
+                <Footer/>
             </>
         </Context.Provider >
     </>

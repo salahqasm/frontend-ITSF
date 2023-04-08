@@ -1,0 +1,85 @@
+.Company-EditProfile {
+    margin: 2rem;
+
+}
+
+.Company-EditProfile input{
+    border-radius: 10px ;
+    border: 1px solid black;
+    /* padding:5px; */
+    height: 50px;
+}
+.Company-EditProfile textarea{
+    border-radius: 10px ;
+    border: 1px solid black;
+}
+.grid2{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 1rem;
+}
+.grid2 img{
+    border-radius: 50%;
+    border: 1px solid black;
+}
+.grid4 {
+
+    display: grid;
+    grid-template-columns: 12% 33% 12% 33%;
+    grid-gap: 3%;
+
+}
+
+.grid4 label,
+input {
+    margin-bottom: 1rem;
+}
+
+.grid1 {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.grid1 textarea {
+    resize: none;
+}
+
+.editprofile-button {
+    width: 150px;
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border-radius: 10px;
+    font-weight: bold;
+
+    margin: 1rem;
+}
+
+
+.editprofile-button:hover {
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}
+.edit-image-label{
+    height:70px;
+    cursor: pointer;
+    padding:20px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    margin: 15px;
+    
+    font-weight: bold;
+}
+.edit-image-label:hover{
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}
+.edit-image{
+    display: none;
+}

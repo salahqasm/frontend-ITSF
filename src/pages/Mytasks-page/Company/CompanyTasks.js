@@ -42,7 +42,6 @@ function CompanyTasks() {
             </div>
         </div>
         <br />
-        <Footer />
     </>
 }
 

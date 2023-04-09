@@ -73,7 +73,7 @@ function EditProfile({ close }) {
             <hr />
             <div className="grid4">
                 <label htmlFor="name">Name: </label>
-                <input type="text" id="Phone" name="name" value={user.name} onChange={e => handleChange(e)} />
+                <input type="text" id="name" name="name" value={user.name} onChange={e => handleChange(e)} />
 
                 <label htmlFor="phoneNum">Phone Number: </label>
                 <input type="text" id="phoneNum" name="phoneNum" value={user.phoneNum} placeholder="07*********" onChange={e => handleChange(e)} />

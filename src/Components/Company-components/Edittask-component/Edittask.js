@@ -34,18 +34,18 @@ function Edittask({ task }) {
             borderRadius: 20
         }),
     };
+    function handleSelectChange(selectedOption) {
+        if (selectedOption.length <= 5) {
+            setSelectedOption(selectedOption);
+            console.log(selectedOption);
+        }
+    }
     function handleChange(e) {
         const { name, value } = e.target;
         setTk(prevState => ({
             ...prevState,
             [name]: value
         }));
-    }
-    function handleSelectChange(selectedOption) {
-        if (selectedOption.length <= 5) {
-            setSelectedOption(selectedOption);
-            console.log(selectedOption);
-        }
     }
     const config = {
         headers: {

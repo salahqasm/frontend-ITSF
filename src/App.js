@@ -55,7 +55,13 @@ function App() {
                   </Route>
                 </Routes>
               </Router>
-              : <></>
+              : cookie.user.userType === 'admin' ?
+                <Router>
+                  <Routes>
+                    <Route path="/admin" exact element={<Admin />}>
+                    </Route>
+                  </Routes>
+                </Router> : <></>
 
       }
 

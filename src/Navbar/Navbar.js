@@ -18,14 +18,14 @@ function Navb({ changePage }) {
   return (
     <>
       {cookie.user.userType === "student" ?
-        <Navbar bg="dark" variant="dark">
+        <Navbar bg="light" variant="light">
           <Container>
             <Navbar.Brand href="#home" style={{ marginLeft: "-60px" }}>ITS Freelance</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link className='nvbar-margin' name="profile" onClick={(e) => { clickHandler(e) }}>Profile</Nav.Link>
-              <Nav.Link className='nvbar-margin' name="btasks" onClick={(e) => { clickHandler(e) }} >Browse Tasks</Nav.Link>
-              <Nav.Link className='nvbar-margin' name="mtasks" onClick={(e) => { clickHandler(e) }} >My Tasks</Nav.Link>
-              <Nav.Link className='nvbar-margin' name="feedback" onClick={(e) => { clickHandler(e) }} >Feedback</Nav.Link>
+              <Nav.Link className='nvbar-margin' name="profile" onClick={() => { navigate("/") }}>Profile</Nav.Link>
+              <Nav.Link className='nvbar-margin' name="btasks" onClick={() => { navigate("/browsetasks") }} >Browse Tasks</Nav.Link>
+              <Nav.Link className='nvbar-margin' name="mtasks" onClick={() => { navigate("/mytasks") }} >My Tasks</Nav.Link>
+              <Nav.Link className='nvbar-margin' name="feedback" onClick={() => { navigate("/feedback") }} >Feedback</Nav.Link>
             </Nav>
             <Nav className="me">
               <Nav.Link onClick={logoutHandler} style={{ marginRight: "-80px" }}>Logout</Nav.Link>
@@ -38,9 +38,9 @@ function Navb({ changePage }) {
             <Container>
               <Navbar.Brand href="#home" style={{ marginLeft: "-60px" }}>ITS Freelance</Navbar.Brand>
               <Nav className="me-auto">
-                <Nav.Link className='nvbar-margin' name="profile" onClick={(e) => { navigate("/") }}>Profile</Nav.Link>
-                <Nav.Link className='nvbar-margin' name="mtasks" onClick={(e) => { navigate("/mytasks") }} >My Tasks</Nav.Link>
-                <Nav.Link className='nvbar-margin' name="feedback" onClick={(e) => { navigate("/feedback") }} >Feedback</Nav.Link>
+                <Nav.Link className='nvbar-margin' name="profile" onClick={() => { navigate("/") }}>Profile</Nav.Link>
+                <Nav.Link className='nvbar-margin' name="mtasks" onClick={() => { navigate("/mytasks") }} >My Tasks</Nav.Link>
+                <Nav.Link className='nvbar-margin' name="feedback" onClick={() => { navigate("/feedback") }} >Feedback</Nav.Link>
               </Nav>
               <Nav className="me">
                 <Nav.Link onClick={logoutHandler} style={{ marginRight: "-80px" }}>Logout</Nav.Link>

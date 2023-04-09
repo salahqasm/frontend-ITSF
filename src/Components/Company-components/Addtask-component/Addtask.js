@@ -69,12 +69,12 @@ function Addtask({ id, close }) {
     return <div className="Addtask-main">
         <h3>Publish New Task</h3>
         <form className="Addtask" onSubmit={e => submitHandler(e)}>
-            <labe>Task Title:</labe>
+            <label>Task Title:</label>
             <input type={"text"} name="title" placeholder="Title" required />
-            <labe>Description:</labe>
+            <label>Description:</label>
             <textarea rows="10" name="description" placeholder="Task Description" required />
             <div className="Addtask-grid2">
-                <labe>Required Skills:</labe>
+                <label>Required Skills:</label>
                 <Select
                     value={selectedOption}
                     onChange={handleSelectChange}

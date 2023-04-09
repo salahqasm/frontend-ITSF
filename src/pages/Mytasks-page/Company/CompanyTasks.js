@@ -12,6 +12,7 @@ function CompanyTasks() {
     const closeModal = () => setOpen(false);
     const ctx = useContext(Context);
     const [user, setUser] = useState(ctx.user);
+    const [filter, setFilter] = useState("all");
     useEffect(() => {
         setUser(ctx.user)
         console.log("Company tasks UseEffect ***************************************** WARNING");
@@ -31,16 +32,26 @@ function CompanyTasks() {
                     </Popup>
                 </div>
                 <br />
-                <Filter />
+                <Filter filter={filter} setFilter={setFilter} />
             </div>
             <div className="mytasks-right">
                 <h1>View Your Tasks</h1>
                 <hr />
-                {user?.tasks?.slice().reverse().map(elem =>
+                {filter === "all" ? user?.tasks?.slice().reverse().map(elem =>
                     <div key={elem.id}><Task task={elem} /></div>
-                )}
+                ) : filter === "done" ? user?.tasks?.slice().reverse().map(elem =>
+                    elem.status === "done" && <div key={elem.id}><Task task={elem} /></div>
+
+                ) : filter === "inprocess" ? user?.tasks?.slice().reverse().map(elem =>
+                    elem.status === "inprocess" && <div key={elem.id}><Task task={elem} /></div>
+
+                ) : filter === "available" ? user?.tasks?.slice().reverse().map(elem =>
+                    elem.status === "available" && <div key={elem.id}><Task task={elem} /></div>
+
+                ) : <></>}
+
             </div>
-        </div>
+        </div >
         <br />
     </>
 }

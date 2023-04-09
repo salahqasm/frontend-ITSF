@@ -13,3 +13,49 @@
     background-color: #393E46;
     color: #00ADB5;
 }
+.Edittask-main {
+    margin: 1rem;
+}
+
+.Edittask-main h3 {
+    text-align: center;
+}
+
+.Edittask {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 10px;
+}
+
+.Edittask textarea {
+    resize: none;
+
+}
+
+.Edittask-grid2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+}
+
+.Edittask-button {
+    text-align: right;
+}
+
+
+.Edittask-button button {
+    width: 150px;
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.Edittask-button button:hover {
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}

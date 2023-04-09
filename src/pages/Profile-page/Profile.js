@@ -3,6 +3,7 @@ import { useState, useEffect, useContext } from "react";
 import "./Profile.css"
 import CompanyProfile from "../../Components/Company-components/Profile-component/Company-profile";
 import Context from "../../ContextApi/Context";
+import StudentProfile from "../../Components/Student-components/Profile-component/StudentProfile";
 function Profile() {
     const ctx = useContext(Context);
 
@@ -10,9 +11,10 @@ function Profile() {
         {
             ctx.user.userType === "company" ?
                 <CompanyProfile />
-                : <></>
+                : ctx.user.userType === "student" ? <StudentProfile /> : <></>
         }
-
+        <br />
+        <br />
     </>
 }
 

@@ -6,7 +6,6 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Navb from "./Navbar/Navbar"
 import Admin from "./pages/Admin-page/Admin"
 import Landing from "./pages/Landing-page/Landing.js";
 import Signup from "./pages/Sign-page/Signup"
@@ -17,6 +16,7 @@ import { useCookies } from "react-cookie";
 import FeedbackForm from "./Components/Feedback-component/Feedback-form";
 import Mytasks from "./pages/Mytasks-page/Mytasks";
 import Profile from "./pages/Profile-page/Profile";
+import StudentBrowse from "./Components/Student-components/Browsetasks-component/StudentBrowse";
 function App() {
   const [cookie] = useCookies();
   return (
@@ -28,21 +28,34 @@ function App() {
               <Route path="/" exact element={<Landing />} />
               <Route path="/Login" exact element={<Login />} />
               <Route path="/signup" exact element={<Signup />} />
-              <Route path="/profilepicture" exact element={<PP />} />
+              {/* <Route path="/profilepicture" exact element={<PP />} /> */}
               <Route path="*" exact element={<Landing />} />
             </Routes>
           </Router>
-          :
-          <Router>
-            <Routes>
-              <Route path="/" exact element={<PageHandler />}>
-                <Route path="" element={<Profile />} />
-                <Route path="feedback" element={<FeedbackForm />} />
-                <Route path="mytasks" element={<Mytasks />} />
-              </Route>
-            </Routes>
-          </Router>
-
+          : cookie.user.userType === 'company' ?
+            <Router>
+              <Routes>
+                <Route path="/" exact element={<PageHandler />}>
+                  <Route path="" element={<Profile />} />
+                  <Route path="/profilepicture" exact element={<PP />} />
+                  <Route path="feedback" element={<FeedbackForm />} />
+                  <Route path="mytasks" element={<Mytasks />} />
+                </Route>
+              </Routes>
+            </Router>
+            : cookie.user.userType === 'student' ?
+              <Router>
+                <Routes>
+                  <Route path="/" exact element={<PageHandler />}>
+                    <Route path="" element={<Profile />} />
+                    <Route path="/profilepicture" exact element={<PP />} />
+                    <Route path="feedback" element={<FeedbackForm />} />
+                    <Route path="mytasks" element={<Mytasks />} />
+                    <Route path="browsetasks" element={<StudentBrowse />} />
+                  </Route>
+                </Routes>
+              </Router>
+              : <></>
 
       }
 

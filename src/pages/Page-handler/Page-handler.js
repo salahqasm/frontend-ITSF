@@ -35,6 +35,9 @@ function PageHandler() {
         if (userType === "company") {
             const res = await axios.get(`http://localhost:3001/company/${id}`, config, []);
             setUser(res.data);
+        } else if (userType === 'student') {
+            const res = await axios.get(`http://localhost:3001/student/${id}`, config, []);
+            setUser(res.data);
         }
     }
 
@@ -53,7 +56,7 @@ function PageHandler() {
             <>
                 <Navb changePage={setPage} />
                 <Outlet />
-                <Footer/>
+                <Footer />
             </>
         </Context.Provider >
     </>

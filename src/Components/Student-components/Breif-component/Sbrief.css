@@ -1,0 +1,22 @@
+.SBrief-main {
+    border: 1px solid rgb(147, 147, 147);
+    /* margin-left: 2.4rem; */
+    margin: auto;
+    margin-top: 2rem;
+    border-radius: 10px;
+    width: 84%;
+
+    padding: 1rem;
+    padding-left: 5%;
+}
+
+.SBrief-left {
+    display: flex;
+}
+
+.SBrief-inside {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: 2rem;
+
+}

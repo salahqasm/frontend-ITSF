@@ -1,0 +1,25 @@
+.filterTasks {
+    text-align: center;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+}
+
+
+.SBtask-search {
+    width:60%;
+    margin:auto;
+    height: 40px;
+    background-color: #0a4277;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    font-weight: bold;
+
+}
+
+.SBtask-search:hover {
+    background-color: #0f60ac;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}

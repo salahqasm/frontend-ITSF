@@ -1,0 +1,31 @@
+.SBtask-task {
+    margin: 1rem;
+    text-align: justify;
+    border-left: #393E46 5px solid;
+    padding-left: 1rem;
+}
+
+.SBtask-required-skills span {
+    opacity: 0.7;
+    background-color: #393E46;
+    color: #fff;
+    margin-right: 0.5rem;
+    padding: 1px 10px;
+    border-radius: 20px;
+}
+
+.SBtask-send {
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    font-weight: bold;
+
+}
+
+.SBtask-send:hover {
+    background-color: #393E46;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}

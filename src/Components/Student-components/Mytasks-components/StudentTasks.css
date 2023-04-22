@@ -1,21 +1,35 @@
-.SMytasks-header{
+.SMytasks-header {
     display: grid;
-    grid-template-columns: 20% 20% 60%;
-    width:80%;
-    grid-gap: 1rem;
+    grid-template-columns: 20% 19% 59%;
+    width: 80%;
+    grid-gap: 1%;
     margin: auto;
-    margin-top:1rem;
-    margin-bottom:1rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 
 }
 
-.grid3{
+.grid3 {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
 }
-.SMytasks-card{
-    padding:1rem;
-    border:1px rgb(147, 147, 147) solid;
+
+.SMytasks-card {
+    padding: 1rem;
+    border: 1px rgb(147, 147, 147) solid;
     border-radius: 10px;
     text-align: center;
+}
+
+.SMytasks-tasks {
+    width: 80%;
+    margin: auto;
+    border: 1px rgb(147, 147, 147) solid;
+    border-radius: 10px;
+}
+
+.SMytasks-nav {
+    background-color: #393E46;
+    color: white;
+    padding: 10px;
 }

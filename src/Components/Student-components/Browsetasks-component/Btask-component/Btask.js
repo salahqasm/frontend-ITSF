@@ -17,30 +17,31 @@ function Btask({ task }) {
                 taskID: task.id
             }
             let res = await axios.post('http://localhost:3001/taskRequest', obj, config)
-            if(res.data==="success"){
+            if (res.data === "success") {
                 window.alert("Request Sent Successfully")
             }
         } catch (err) {
 
         }
     }
-    return <><div className="SBtask-task" >
-        <div style={{ float: "right" }}>
-            <input type="button" className="SBtask-send" onClick={sendRequest} value={"Send Request"} />
+    return <div className="SBtask-task-main">
+        <div className="SBtask-task" >
+            <div style={{ float: "right" }}>
+                <input type="button" className="SBtask-send" onClick={sendRequest} value={"Send Request"} />
+            </div>
+            <h2>{task.title}</h2>
+            <span><span>{task.status}</span> - <span> Cost: {task.credit} JD </span> - <span> Due Date: {task.date}</span> </span>
+            <p>
+                {task.description}
+            </p>
+            <div className="SBtask-required-skills">
+                {task.skills.map((elem) => {
+                    return <span>{elem.name}</span>
+                })}
+            </div>
         </div>
-        <h2>{task.title}</h2>
-        <span><span>{task.status}</span> - <span> Cost: {task.credit} JD </span> - <span> Due Date: {task.date}</span> </span>
-        <p>
-            {task.description}
-        </p>
-        <div className="SBtask-required-skills">
-            {task.skills.map((elem) => {
-                return <span>{elem.name}</span>
-            })}
-        </div>
+        {/* <hr /> */}
     </div>
-        <hr />
-    </>
 }
 
 export default Btask;

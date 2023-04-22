@@ -44,13 +44,11 @@ function StudentBrowse() {
         <Sbrief user={ctx.user} wdth="100px" />
         <div className="SBtask-main">
             <FilterTasks setFilter={setFilter} />
-
             {
                 filteredTasks?.map(e => <Btask task={e} />)
             }
         </div>
         <br />
-        {console.log(skills)}
     </>
 }
 

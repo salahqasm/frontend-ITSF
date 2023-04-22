@@ -1,0 +1,21 @@
+.SMytasks-header{
+    display: grid;
+    grid-template-columns: 20% 20% 60%;
+    width:80%;
+    grid-gap: 1rem;
+    margin: auto;
+    margin-top:1rem;
+    margin-bottom:1rem;
+
+}
+
+.grid3{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.SMytasks-card{
+    padding:1rem;
+    border:1px rgb(147, 147, 147) solid;
+    border-radius: 10px;
+    text-align: center;
+}

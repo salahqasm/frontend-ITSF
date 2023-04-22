@@ -1,7 +1,10 @@
-.SBtask-main{
-    width:84%;
-    border:1px solid rgb(147, 147, 147);
+.SBtask-main {
+    width: 84%;
+    border: 1px solid rgb(147, 147, 147);
     margin: auto;
-border-radius: 10px;
-margin-top:1rem;
+    border-radius: 10px;
+    margin-top: 1rem;
+}
+.SBtask-main .SBtask-task-main:nth-of-type(even) {
+    background: #eee;
 }

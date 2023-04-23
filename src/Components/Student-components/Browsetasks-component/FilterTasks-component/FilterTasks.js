@@ -6,6 +6,7 @@ import "./FilterTasks.css"
 function FilterTasks({ setFilter }) {
     const [selectedOption, setSelectedOption] = useState([]);
     const [options, setOptions] = useState([]);
+    const [warning, setWarning] = useState("");
     const animatedComponents = makeAnimated();
 
     async function getSkills() {
@@ -37,7 +38,6 @@ function FilterTasks({ setFilter }) {
             borderRadius: 20
         }),
     };
-    const [warning, setWarning] = useState("");
     function searchHandler() {
         if (selectedOption.length) {
             console.log(selectedOption[0].value);

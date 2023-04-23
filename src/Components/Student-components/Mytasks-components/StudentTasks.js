@@ -3,9 +3,11 @@ import { useCookies } from "react-cookie";
 import "./StudentTasks.css"
 import Context from "../../../ContextApi/Context";
 import ProfilePicture from "../../Picture-Component/ProfilePicture-component";
+import MTask from "./MTask-component/MTask";
 
 function StudentTasks() {
     const ctx = useContext(Context);
+    const [reqTask, setReq] = useState([])
     const [inprocess, setInprocess] = useState(0);
     const [completed, setCompleted] = useState(0);
     const [navHead, setNav] = useState("Request");
@@ -14,6 +16,8 @@ function StudentTasks() {
             setInprocess(ctx?.user?.tasks?.filter(obj => obj.status === "inprocess"));
             setCompleted(ctx?.user?.tasks?.filter(obj => obj.status === "done"));
         }
+        setReq(ctx?.user?.request)
+
     }, [ctx])
 
     function navHandler(str) {
@@ -66,7 +70,9 @@ function StudentTasks() {
                     onClick={() => navHandler("Completed")}
                 >Completed</h5>
             </div>
-
+            {navHead === "Request" &&
+                reqTask?.map((e) => <MTask task={e} type={navHead} />)
+            }
 
 
         </div>

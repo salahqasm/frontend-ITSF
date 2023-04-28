@@ -1,9 +1,11 @@
 import React from "react";
 import "./Footer.css"
+import favicon from "../../imgs/favicon.png"
 function Footer() {
     return <>
         <div className="Footer-main">
             <div className="Footer-logo">
+                {/* <img src={favicon} width={120}  /> */}
                 <h2>ITS Freelance</h2>
             </div>
             <div className="Footer-mid">

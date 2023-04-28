@@ -1,21 +1,72 @@
-.MBtask-task-main {
-    
+.Mtask-task-main {
+
     border-left: #393E46 5px solid;
-    margin-bottom:4rem;
-    
+    margin-bottom: 4rem;
+
 }
 
-.MBtask-task {
+.Mtask-task-main:hover {
+    background-color: #d9d8d8 !important;
+}
+
+.Mtask-task {
     padding: 1rem;
     text-align: justify;
     padding-left: 1rem;
 }
 
-.MBtask-required-skills span {
+.Mtask-required-skills span {
     opacity: 0.7;
     background-color: #393E46;
     color: #fff;
     margin-right: 0.5rem;
     padding: 1px 10px;
     border-radius: 20px;
+}
+
+.delete-req {
+    height: 40px;
+    background-color: #b00202;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+
+.delete-req:hover {
+    /* background-color: #520000; */
+    color: #cef7f9;
+
+}
+
+.Stask-submittion {
+    margin-top: 1rem;
+}
+
+.Stask-submittion form>* {
+    margin-left: 1.5rem;
+}
+
+.submission-input {
+    height: 2.5rem;
+    border: 2px gray solid;
+    width: 60%;
+    border-radius: 25px;
+}
+
+.submission-button {
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+
+.submission-button:hover {
+    background-color: #393E46;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
 }

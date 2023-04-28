@@ -70,10 +70,19 @@ function StudentTasks() {
                     onClick={() => navHandler("Completed")}
                 >Completed</h5>
             </div>
-            {navHead === "Request" &&
-                reqTask?.map((e) => <MTask task={e} type={navHead} />)
-            }
 
+            <div className="SMytasks-tasks-container">
+
+                {navHead === "Request" &&
+                    reqTask?.map((e) => <MTask task={e} type={navHead} />)
+                }
+                {navHead === "InProcess" &&
+                    inprocess?.map((e) => <MTask task={e} type={navHead} />)
+                }
+                {navHead === "Completed" &&
+                    completed?.map((e) => <MTask task={e} type={navHead} />)
+                }
+            </div>
 
         </div>
     </div >

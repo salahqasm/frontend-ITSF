@@ -1,15 +1,8 @@
-.Mtask-task-main {
-
-    border-left: #393E46 5px solid;
-    margin-bottom: 4rem;
-
-}
-
-.Mtask-task-main:hover {
-    background-color: #d9d8d8 !important;
-}
-
 .Mtask-task {
+    border-left: #393E46 5px solid;
+    line-height: 2;
+    margin-bottom: 4rem;
+    background-color: #eee;
     padding: 1rem;
     text-align: justify;
     padding-left: 1rem;

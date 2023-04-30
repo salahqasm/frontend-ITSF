@@ -1,7 +1,7 @@
 .Signup-main {
     height: 100vh;
     width: 100vw;
-    background-color: #008ecf;
+    background-color: #f8f6f6;
     display: flex;
 
 }
@@ -19,6 +19,7 @@
 .Signup-form-container {
     margin: auto;
     background-color: #EEEEEE;
+    border:1px black solid;
     border-radius: 50px;
     padding: 10px 60px 40px 60px;
     text-align: center;

@@ -34,7 +34,7 @@ function Login() {
       }
       if (res.data.role === "admin" && cookies) { //should be developed .............................................
         navigate('/admin')
-      } else if ((res.data.userType === "student"|| res.data.userType === "company") && cookies) {
+      } else if ((res.data.userType === "student" || res.data.userType === "company") && cookies) {
         navigate('/')
 
       } else if (res.data.userType === "doctor" && cookies) {
@@ -47,17 +47,20 @@ function Login() {
   }
 
   return <>
-    <div className="Login-main" style={{ backgroundImage: `url(${Pic})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+    <div className="Login-main" style={{ backgroundImage:`url(${Pic})` ,backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
       <div className="form-container sign-in-container">
         <form onSubmit={(e) => { submitHandler(e) }}>
           <h1>ITS Freelance</h1>
-          <label>
-            <input type="email" placeholder="Email" name="email" />
-          </label>
-          <label>
-            <input type="password" placeholder="Password" name="password" />
-          </label>
-          {/* <a href="#">Forgot your password?</a> */}
+          <div className="login-grid2">
+
+            <label>Email:</label>
+              <input type="email" placeholder="Email" name="email" />
+            <label>
+              Password:
+            </label>
+              <input type="password" placeholder="Password" name="password" />
+            {/* <a href="#">Forgot your password?</a> */}
+          </div>
           <button type="submit">Login</button>
           <p>Dont have an account yet?! <a className="Login-form-signup" href="/signup">Sign up</a>.</p>
         </form>

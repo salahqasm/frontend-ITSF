@@ -1,15 +1,16 @@
 .Login-main {
     height: 100vh;
     width: 100vw;
-    background-color: #008ecf;
+    background-color: #eee;
     display: flex;
 }
 
 .form-container {
     margin: auto;
-    background-color: #EEEEEE;
+    background-color: #fff;
     border-radius: 50px;
     opacity: 0.9;
+    border:3px solid black;
 }
 
 .sign-in-container {
@@ -17,14 +18,20 @@
 }
 
 .form-container form {
-    background-color: #EEEEEE;
+    background-color: #fff;
     display: flex;
     flex-direction: column;
-    padding: 0 50px;
     height: 100%;
-    justify-content: center;
     align-items: center;
-    text-align: center;
+}
+.login-grid2{
+    width:30rem;
+    display: grid;
+    grid-template-columns: 20% 80%;
+}
+.form-container label{
+    margin-top: 1rem;
+    
 }
 
 .form-container input {
@@ -32,8 +39,7 @@
     border: 1px black solid;
     border-radius: 50px;
     padding: 12px 15px;
-    margin: 8px 0;
-    width: 100%;
+    /* width: 100%; */
 }
 
 

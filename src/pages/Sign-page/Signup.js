@@ -7,6 +7,7 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
+import StudentSignup from "./Student/StudentSignup";
 function Signupx() {
     const [user, setUser] = useState();
     const [cookie, setCookie] = useCookies();
@@ -115,8 +116,8 @@ function Signupx() {
                     <input className="signup-first-form" type={"button"} onClick={(e) => { firstForm(e) }} name="company" value="Company" />
 
                 </> :
-                    user === "student" ? <>
-                        <h5>Student Signup</h5>
+                    user === "student" ? <><StudentSignup/>
+                        {/* <h5>Student Signup</h5>
                         <form className="signup-student" onSubmit={(e) => { studentSignup(e) }}>
 
                             <label>Full Name:</label>
@@ -144,7 +145,7 @@ function Signupx() {
                             }
                             <p></p>
                             <button className="signup-submit-button" type="submit" value="Sign Up" >Signup</button>
-                        </form>
+                        </form> */}
                     </> : <>
                         <h5>Company Signup</h5>
                         <form className="signup-student" onSubmit={(e) => { companySignup(e) }}>

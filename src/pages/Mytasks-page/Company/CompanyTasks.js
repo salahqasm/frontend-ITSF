@@ -21,6 +21,7 @@ function CompanyTasks() {
 
         <Brief user={user} />
         <div className="mytasks-main">
+            <br/>
             <div className="mytasks-left">
                 <div className="addtask-container">
                     <p>Want to Publish a New Task?</p>

@@ -3,8 +3,9 @@
     width: 95%;
     margin: auto;
     margin-top: 1rem;
-    grid-template-columns: 15% 70%;
-    grid-gap: 3rem;
+    grid-template-columns:  4% 17% 69%;
+    grid-gap: 2%;
+    /* margin-left:7.7rem; */
 }
 
 .addtask-container {

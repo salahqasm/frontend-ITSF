@@ -5,45 +5,12 @@ import Pic from "../../imgs/prog-bkg.jpg"
 import "./Signup.css"
 import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
-import Select from 'react-select'
-import makeAnimated from 'react-select/animated';
 import StudentSignup from "./Student/StudentSignup";
+import CompanySignup from "./Company/CompanySignup";
 function Signupx() {
     const [user, setUser] = useState();
     const [cookie, setCookie] = useCookies();
-    const [selectedOption, setSelectedOption] = useState([]);
-    const [options, setOptions] = useState([]);
-    const animatedComponents = makeAnimated();
     const navigate = useNavigate();
-    async function getSkills() {
-        const res = await axios.get('http://localhost:3001/getskill');
-        setOptions([]);
-        let temp = [];
-        res.data.map((elem) => {
-            temp.push({ id: elem.id, value: elem.name, label: elem.name })
-        })
-        setOptions(temp);
-    }
-    useEffect(() => {
-        getSkills();
-    }, []);
-    function handleSelectChange(selectedOption) {
-        if (selectedOption.length <= 5) {
-            setSelectedOption(selectedOption);
-            console.log(selectedOption);
-        }
-    }
-
-    const customStyles = {
-        control: (provided, state) => ({
-            ...provided,
-            width: 350,
-            borderRadius: 20
-        }),
-    };
-
-
-
 
     function firstForm(e) {
         e.preventDefault();
@@ -54,31 +21,7 @@ function Signupx() {
             setUser("company")
         }
     }
-    async function studentSignup(e) {
-        e.preventDefault();
-        try {
-            if (e.target.password.value === e.target.repassword.value) {
-                let skillsID = [];
-                selectedOption.map((elem) => {
-                    skillsID.push(elem.id);
-                })
-                let student = {
-                    name: e.target.name.value,
-                    email: e.target.email.value,
-                    password: e.target.password.value,
-                    skillsID: JSON.stringify(skillsID)
-                }
-                const res = await axios.post('http://localhost:3001/studentsignup', student)
-                setCookie("token", res.data.token, { path: '/' });
-                setCookie("user", res.data, { path: '/' });
-                navigate('/profilepicture');
-            }
-
-        } catch (err) {
-            console.log(err);
-            window.alert("Email already exists please try another email")
-        }
-    }
+    
     async function companySignup(e) {
         e.preventDefault();
         try {
@@ -97,7 +40,6 @@ function Signupx() {
                 setCookie("user", res.data, { path: '/' });
                 navigate('/profilepicture');
             }
-            // console.log(e.target.fname.value);
 
         } catch (err) {
             console.log(err);
@@ -117,37 +59,8 @@ function Signupx() {
 
                 </> :
                     user === "student" ? <><StudentSignup/>
-                        {/* <h5>Student Signup</h5>
-                        <form className="signup-student" onSubmit={(e) => { studentSignup(e) }}>
-
-                            <label>Full Name:</label>
-                            <input type="text" id="name" name="name" placeholder="Full Name" required />
-                            <label>Email:</label>
-                            <input type="email" id="email" name="email" placeholder="Enter Your E-mail" required />
-                            <label>Password:</label>
-                            <input id="pswrd2" name="password" type="password" placeholder="Creat Password" required />
-                            <label>Re-enter password:</label>
-                            <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" required />
-                            <label>Skills:</label>
-                            <Select
-                                value={selectedOption}
-                                onChange={handleSelectChange}
-                                closeMenuOnSelect={false}
-                                components={animatedComponents}
-                                placeholder="Choose your Skills (up to 5 skills)"
-                                isMulti
-                                options={options}
-                                styles={customStyles}
-                                maxValueLength={5}
-                            />
-                            {
-                                selectedOption.length >= 5 && <p>you can select up to 5 skills.</p>
-                            }
-                            <p></p>
-                            <button className="signup-submit-button" type="submit" value="Sign Up" >Signup</button>
-                        </form> */}
-                    </> : <>
-                        <h5>Company Signup</h5>
+                    </> : <><CompanySignup/>
+                        {/* <h5>Company Signup</h5>
                         <form className="signup-student" onSubmit={(e) => { companySignup(e) }}>
                             <label>Compane Name:</label>
                             <input type="text" id="name" name="name" placeholder="Company Name" required />
@@ -165,7 +78,7 @@ function Signupx() {
                             <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" required />
                             <p></p>
                             <button className="signup-submit-button" type="submit" value="Sign Up" >Signup</button>
-                        </form>
+                        </form> */}
                     </>}
             </div>
         </div>

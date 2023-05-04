@@ -5,7 +5,8 @@ import ProfilePicture from "../../../Components/Picture-Component/ProfilePicture
 import "./StudentProfile.css"
 import { FaLinkedin, FaGithub } from 'react-icons/fa';
 import EditProfile from "../Edit-Profile-component/EditProfile";
-
+import star from "../../../imgs/star.png"
+import context from "react-bootstrap/esm/AccordionContext";
 function StudentProfile() {
     const [open, setOpen] = useState(false);
     const closeModal = () => setOpen(false);
@@ -56,13 +57,13 @@ function StudentProfile() {
             </div>
             <hr />
             <div className="stuProfile-mid">
-                <h5>This is Account is Approved by:</h5>
-                <h6>Dr.{user?.doctor?.name}</h6>
+               <img style={{display:"inline"}} src={star} width={"30px"} />
+                <span><strong> Approved by: Dr.{user?.doctor.name} </strong></span>
             </div>
-
+<br></br>
         </div >
 
-
+        
     </>
 }
 

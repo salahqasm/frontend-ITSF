@@ -14,6 +14,31 @@ function StudentSignup({ config }) {
     const [selectedOption, setSelectedOption] = useState([]);
     const [options, setOptions] = useState([]);
     const [info, setInfo] = useState({});
+
+    // image process **************************************************************** IMAGE ******************
+    const [base64code, setbase64code] = useState();
+    const onChange = e => {
+        const files = e.target.files;
+        const file = files[0];
+        getBase64(file);
+    };
+    const onLoad = fileString => {
+
+        setbase64code(fileString);
+        setInfo(prevState => ({
+            ...prevState,
+            ["profilePicture"]: fileString
+        }));
+        
+    };
+    const getBase64 = file => {
+        let reader = new FileReader();
+        reader.readAsDataURL(file);
+        reader.onload = () => {
+            onLoad(reader.result);
+        };
+    };
+
     function handleChange(e) {
         const { name, value } = e.target;
         setInfo(prevState => ({
@@ -46,14 +71,13 @@ function StudentSignup({ config }) {
 
         try {
             if (info.password === info.repassword) {
+                console.log(info);      
 
-                console.log(info);
-
-                // const res = await axios.post('http://localhost:3001/studentsignup', info)
-                // console.log(res);
-                // setCookie("token", res.data.token, { path: '/' });
-                // setCookie("user", res.data, { path: '/' });
-                // navigate('/ ');
+                const res = await axios.post('http://localhost:3001/studentsignup', info)
+                console.log(res.data);
+                setCookie("token", res.data.token, { path: '/' });
+                setCookie("user", res.data, { path: '/' });
+                navigate('/ ');
             }
 
         } catch (err) {
@@ -86,6 +110,7 @@ function StudentSignup({ config }) {
                 <input id="pswrd2" name="password" type="password" placeholder="Creat Password" value={info.password} onChange={e => handleChange(e)} required />
                 <label>Re-enter password:</label>
                 <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" value={info.repassword} onChange={e => handleChange(e)} required />
+                <br/>
                 <button type="button" className="signup-submit-button" onClick={() => setStage(stage + 1)} >Next</button>
             </>}
             {stage === 2 && <>
@@ -108,11 +133,19 @@ function StudentSignup({ config }) {
                 {
                     selectedOption.length >= 5 && <p>you can select up to 5 skills.</p>
                 }
-                <button type="button" className="signup-submit-button" onClick={() => setStage(stage - 1)} >Back</button>
+                <label>Bio:</label>
+                <textarea name="about" placeholder="A brief about yourself (optional)" 
+                style={{resize:"none",borderRadius:"15px",padding:"0.5rem"}} rows={4} value={info.about} onChange={e => handleChange(e)}>
 
+                </textarea>
+                <button type="button" className="signup-submit-button" onClick={() => setStage(stage - 1)} >Back</button>
                 <button type="button" className="signup-submit-button" onClick={() => { setStage(stage + 1); handleSkills() }} >Next</button>
             </>}
             {stage === 3 && <>
+                <img src={`data:image;base64${base64code}`} alt="Profile Picture" width={"150px"} />
+                <label className="edit-image-label" > Choose Your Image
+                <input className="edit-image" type="file" name="PP" id="PP" accept="image/*" onChange={onChange} />
+                </label>
                 <label>Portfolio:</label>
                 <input type="text" placeholder="Portfolio or previous projects URL" name="purl" value={info.purl} onChange={e => handleChange(e)} />
                 <label>Linkedin:</label>

@@ -1,0 +1,25 @@
+.Home-main {
+    
+    padding: 5rem;
+    height: 70vh;
+}
+
+.Home-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 4%;
+    margin-top: 4rem;
+}
+
+.Home-card {
+    color: #eee;
+    padding:1rem;
+    border-radius: 10px;
+    text-align: center;
+    background-color: #393E46;
+    cursor: pointer;
+}
+.Home-card:hover{
+    transform: scale(105%);
+    color:#9ceaee;
+}

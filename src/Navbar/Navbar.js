@@ -20,9 +20,9 @@ function Navb({ changePage }) {
       {cookie.user.userType === "student" ?
         <Navbar bg="light" variant="light">
           <Container>
-            <Navbar.Brand href="#home" style={{ marginLeft: "-60px" }}>ITS Freelance</Navbar.Brand>
+            <Navbar.Brand href="/" style={{ marginLeft: "-60px" }}>ITS Freelance</Navbar.Brand>
             <Nav className="me-auto">
-              <Nav.Link className='nvbar-margin' name="profile" onClick={() => { navigate("/") }}>Profile</Nav.Link>
+              <Nav.Link className='nvbar-margin' name="profile" onClick={() => { navigate("/profile") }}>Profile</Nav.Link>
               <Nav.Link className='nvbar-margin' name="btasks" onClick={() => { navigate("/browsetasks") }} >Browse Tasks</Nav.Link>
               <Nav.Link className='nvbar-margin' name="mtasks" onClick={() => { navigate("/mytasks") }} >My Tasks</Nav.Link>
               <Nav.Link className='nvbar-margin' name="feedback" onClick={() => { navigate("/feedback") }} >Feedback</Nav.Link>
@@ -36,9 +36,9 @@ function Navb({ changePage }) {
           //////
           <Navbar bg="light" variant="light">
             <Container>
-              <Navbar.Brand href="#home" style={{ marginLeft: "-60px" }}>ITS Freelance</Navbar.Brand>
+              <Navbar.Brand href="/" style={{ marginLeft: "-60px" }}>ITS Freelance</Navbar.Brand>
               <Nav className="me-auto">
-                <Nav.Link className='nvbar-margin' name="profile" onClick={() => { navigate("/") }}>Profile</Nav.Link>
+                <Nav.Link className='nvbar-margin' name="profile" onClick={() => { navigate("/profile") }}>Profile</Nav.Link>
                 <Nav.Link className='nvbar-margin' name="mtasks" onClick={() => { navigate("/mytasks") }} >My Tasks</Nav.Link>
                 <Nav.Link className='nvbar-margin' name="feedback" onClick={() => { navigate("/feedback") }} >Feedback</Nav.Link>
               </Nav>

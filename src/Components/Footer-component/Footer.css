@@ -6,11 +6,13 @@
   background-color: #222831;
   color: #fff;
   padding: 2rem;
+  font-size: small;
 }
 
 .Footer-main h2 {
   font-family: 'Lobster', cursive;
   font-size: 3rem;
+  
 }
 
 .Footer-logo {

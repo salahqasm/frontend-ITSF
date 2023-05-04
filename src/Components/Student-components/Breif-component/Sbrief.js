@@ -6,6 +6,7 @@ function Sbrief({ user,wdth }) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     const dateString = now.toLocaleDateString('en-US', options).replaceAll(',', '');
     const [month, day, year] = dateString.split(' ');
+    
     return <>
         <div className="SBrief-main">
             <div className="SBrief-left">

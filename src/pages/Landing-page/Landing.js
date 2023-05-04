@@ -1,6 +1,9 @@
 import React from "react";
 import Pic from "../../imgs/college.png"
 import juPic from "../../imgs/ju.jpg"
+import handShake from "../../imgs/handshake.jpg"
+import students from "../../imgs/students.jpg"
+import university from "../../imgs/university.jpg"
 import Footer from "../../Components/Footer-component/Footer";
 import "./Landing.css"
 import { useNavigate } from "react-router-dom";
@@ -50,33 +53,48 @@ function Landing() {
             <div className="Landing-cards">
 
                 <div class="container d-flex align-items-center justify-content-center position-relative flex-wrap">
-                    <div class="card d-flex position-relative flex-column">
+                <div class="card d-flex position-relative flex-column">
                         <div class='imgContainer'>
-                            <img src={juPic} />
+                            <img src={university} />
+
                         </div>
                         <div class="content">
-                            <h2>Card Three</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                            <h4>University Objectives</h4>
+                            <ul>
+                                <li>Gain extra good reputation.</li>
+                                <li>Improve students qualifications.</li>
+                                <li>Increase after graduation employment rate.</li>
+
+                            </ul>
                         </div>
                     </div>
                     <div class="card d-flex position-relative flex-column">
                         <div class='imgContainer'>
-                            <img src={juPic} />
-
+                            <img src={handShake} />
                         </div>
                         <div class="content">
-                            <h2>Card Three</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                            <h4>Company Objectives</h4>
+                            <ul>
+                                <li>Will get their tasks done with relatively lower costs.</li>
+                                <li>Spread the name of startups.</li>
+                                <li>Might find a part-time employees.</li>
+                                <li>Social contibution point.</li>
+
+                            </ul>
                         </div>
                     </div>
+                    
                     <div class="card d-flex position-relative flex-column">
                         <div class='imgContainer'>
-                            <img src={juPic} />
-
+                            <img src={students} />
                         </div>
                         <div class="content">
-                            <h2>Card Three</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse eget velit tristique, sollicitudin leo viverra, suscipit neque. Aliquam ut facilisis urna, in pretium nibh.  Morbi in leo in eros commodo volutpat ac sed dolor.</p>
+                            <h4>Students Objectives</h4>
+                            <ul>
+                                <li>Improve your skills by solving real tasks.</li>
+                                <li>Make your own source of income.</li>
+                                <li>Enter a challenging environment with your colleagues.</li>
+                            </ul>
                         </div>
                     </div>
                 </div>

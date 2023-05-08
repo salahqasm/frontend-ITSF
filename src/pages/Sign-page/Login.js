@@ -4,6 +4,8 @@ import { useCookies } from 'react-cookie';
 import Pic from "../../imgs/prog-bkg.jpg"
 import { useNavigate } from "react-router-dom";
 import "./Login.css"
+import bg from "../../imgs/regbg.png"
+import Logo from "../../imgs/favicon.png"
 function Login() {
   let navigate = useNavigate();
   const [cookies, setCookie, removeCookie] = useCookies();
@@ -47,18 +49,20 @@ function Login() {
   }
 
   return <>
-    <div className="Login-main" style={{ backgroundImage:`url(${Pic})` ,backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
+    <img src={Logo} className="suka2" />
+    <img src={bg} className="suka" />
+    <div className="Login-main" >
       <div className="form-container sign-in-container">
         <form onSubmit={(e) => { submitHandler(e) }}>
-          <h1>ITS Freelance</h1>
+          <h1>Login</h1>
           <div className="login-grid2">
 
             <label>Email:</label>
-              <input type="email" placeholder="Email" name="email" />
+            <input type="email" placeholder="Email" name="email" />
             <label>
               Password:
             </label>
-              <input type="password" placeholder="Password" name="password" />
+            <input type="password" placeholder="Password" name="password" />
             {/* <a href="#">Forgot your password?</a> */}
           </div>
           <button type="submit">Login</button>

@@ -24,11 +24,11 @@ function StudentProfile() {
                     <h2>{user.name}</h2>
                     <h6> {user.email}{user.phoneNum && ", " + user.phoneNum}</h6>
                     <div>
-                        {user?.linkedin && < a style={{ textDecoration: "none" }} target="_blank" href={user?.linkedin}> <FaLinkedin size={25} />Linkedin</a>}
+                        {user?.linkedin && < a style={{ textDecoration: "none" }} target="_blank" href={user?.linkedin}> <FaLinkedin size={25} /> Linkedin</a>}
                         &nbsp;
                         &nbsp;
                         &nbsp;
-                        {user?.github && <a style={{ textDecoration: "none" }} target="_blank" href={user?.github}><FaGithub size={25} />Github</a>}
+                        {user?.github && <a style={{ textDecoration: "none" }} target="_blank" href={user?.github}><FaGithub size={25} /> Github</a>}
                     </div>
                 </div>
 

@@ -7,6 +7,8 @@ import { useCookies } from "react-cookie";
 import { useNavigate } from "react-router-dom";
 import StudentSignup from "./Student/StudentSignup";
 import CompanySignup from "./Company/CompanySignup";
+import bg from "../../imgs/regbg.png"
+import Logo from "../../imgs/favicon.png"
 function Signupx() {
     const [user, setUser] = useState();
     const [cookie, setCookie] = useCookies();
@@ -21,7 +23,7 @@ function Signupx() {
             setUser("company")
         }
     }
-    
+
     async function companySignup(e) {
         e.preventDefault();
         try {
@@ -47,10 +49,10 @@ function Signupx() {
         }
     }
     return <>
-        <div className="Signup-main" style={{ backgroundImage: `url(${Pic})`, backgroundRepeat: "no-repeat", backgroundSize: "cover" }}>
-            <h1 id="header">ITS Freelance Signup</h1>
+        <img src={Logo} className="suka2" />
+        <img src={bg} className="suka" />
+        <div className="Signup-main" >
             <div className="Signup-form-container">
-
                 {user == null ? <>
                     <h6>Sign up as:</h6>
 
@@ -58,27 +60,8 @@ function Signupx() {
                     <input className="signup-first-form" type={"button"} onClick={(e) => { firstForm(e) }} name="company" value="Company" />
 
                 </> :
-                    user === "student" ? <><StudentSignup/>
-                    </> : <><CompanySignup/>
-                        {/* <h5>Company Signup</h5>
-                        <form className="signup-student" onSubmit={(e) => { companySignup(e) }}>
-                            <label>Compane Name:</label>
-                            <input type="text" id="name" name="name" placeholder="Company Name" required />
-                            <label>Email:</label>
-                            <input type="email" id="email" name="email" placeholder="Enter Your E-mail" required />
-                            <label>Specialization:</label>
-                            <input type="text" id="specialization" name="specialization" placeholder="Specialization" required />
-                            <label>Country:</label>
-                            <input type="text" id="country" name="country" placeholder="Country" required />
-                            <label>City:</label>
-                            <input type="text" id="city" name="city" placeholder="City" required />
-                            <label>Password:</label>
-                            <input id="pswrd2" name="password" type="password" placeholder="Creat Password" required />
-                            <label>Re-enter password::</label>
-                            <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" required />
-                            <p></p>
-                            <button className="signup-submit-button" type="submit" value="Sign Up" >Signup</button>
-                        </form> */}
+                    user === "student" ? <><StudentSignup />
+                    </> : <><CompanySignup />
                     </>}
             </div>
         </div>

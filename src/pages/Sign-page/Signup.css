@@ -1,9 +1,20 @@
+.suka{
+    position: absolute;
+    opacity: 0.8;
+    z-index: -2;
+    height: 100%;;
+    width:100%;
+}
+.suka2{
+    position: absolute;
+    z-index: -1;
+    left:20px;
+    width:15%;
+}
 .Signup-main {
     height: 100vh;
     width: 100vw;
-    background-color: #f8f6f6;
     display: flex;
-
 }
 
 .Signup-main #header {
@@ -18,17 +29,16 @@
 
 .Signup-form-container {
     margin: auto;
-    background-color: #EEEEEE;
+    background-color: #fff;
     border:1px black solid;
     border-radius: 50px;
     padding: 10px 60px 40px 60px;
     text-align: center;
-    opacity: 0.9;
+    
 }
 
 .Signup-form-container form {
-
-    background-color: #EEEEEE;
+    background-color: #FFF;
     display: grid;
     grid-template-columns: 40% 80%;
     grid-gap:1rem;
@@ -44,11 +54,12 @@
 }
 .signup-first-form {
     width: 100%;
-    height: 40px;
+    height: 50px;
     background-color: #222831;
     color: #EEEEEE;
     border: #EEEEEE solid 1px;
     margin-top:20px;
+    font-size: large;
     font-weight: bold;
 }
 

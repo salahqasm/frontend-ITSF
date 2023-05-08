@@ -11,9 +11,9 @@ function Landing() {
     let navigate = useNavigate();
     function handleClick(e) {
         let t = e.target.value;
-        if (t === 'login') {
+        if (t === 'Login') {
             navigate("/login")
-        } else if (t === 'signup') {
+        } else if (t === 'Signup') {
             navigate("/signup")
         }
     }
@@ -29,9 +29,9 @@ function Landing() {
                     <div className="Landing-buttons">
                         <br></br>
                         <h5>Join us now !</h5>
-                        <input type="button" value={"login"} onClick={(e) => handleClick(e)} />
+                        <input type="button" value={"Login"} onClick={(e) => handleClick(e)} />
 
-                        <input type="button" value={"signup"} onClick={(e) => handleClick(e)} />
+                        <input type="button" value={"Signup"} onClick={(e) => handleClick(e)} />
                     </div>
                 </div>
             </div>

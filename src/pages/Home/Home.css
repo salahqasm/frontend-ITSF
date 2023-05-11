@@ -18,8 +18,11 @@
     text-align: center;
     background-color: #393E46;
     cursor: pointer;
+    transition:0.3s;
+
 }
 .Home-card:hover{
     transform: scale(105%);
     color:#9ceaee;
+    transition:0.3s;
 }

@@ -18,6 +18,7 @@ import Mytasks from "./pages/Mytasks-page/Mytasks";
 import Profile from "./pages/Profile-page/Profile";
 import StudentBrowse from "./Components/Student-components/Browsetasks-component/StudentBrowse";
 import Home from "./pages/Home/Home";
+import ViewStudent from "./Components/View-components/ViewStudent";
 function App() {
   const [cookie] = useCookies();
   return (
@@ -29,7 +30,6 @@ function App() {
               <Route path="/" exact element={<Landing />} />
               <Route path="/Login" exact element={<Login />} />
               <Route path="/signup" exact element={<Signup />} />
-              {/* <Route path="/profilepicture" exact element={<PP />} /> */}
               <Route path="*" exact element={<Landing />} />
             </Routes>
           </Router>
@@ -41,6 +41,8 @@ function App() {
                   <Route path="/profile" element={<Profile />} />
                   <Route path="feedback" element={<FeedbackForm />} />
                   <Route path="mytasks" element={<Mytasks />} />
+                  <Route path="student/:id" element={<ViewStudent />} />
+                  
                 </Route>
               </Routes>
             </Router>

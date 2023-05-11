@@ -33,7 +33,7 @@ function Task({ task }) {
                     }
                 };
                 const res=await axios.post(`http://localhost:3001/paytask/${task.id}`,{},config)
-                console.log(res);
+                ctx.refresh();
             } catch (err) {
                 console.log(err);
             }
@@ -44,7 +44,7 @@ function Task({ task }) {
         <div className="mytasks-task" >
             <div style={{ float: "right" }}>
 
-                {task.status === "available" && task.request.length ? <ShowRequests requests={task.request} /> : <></>}
+                {task.status === "available" && task.request.length ? <ShowRequests task={task} /> : <></>}
                 {task.status === "available" && <Edittask task={task} />}
                 {task.status === "available" && <input type="button" className="deleteTask" onClick={() => deleteHandler(task.id)} value={"delete"} />}
             </div>

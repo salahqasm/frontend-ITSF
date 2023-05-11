@@ -47,3 +47,16 @@ th {
     background-color: #393E46;
     color: #00ADB5;
 }
+.deny-button{
+    height: 40px;
+    background-color: #c30000;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    margin-left: 10px;
+    font-weight: bold;
+}
+.deny-button:hover{
+    background-color: #980303;
+    color: #d7f3f4;
+}

@@ -11,7 +11,6 @@ function StudentProfile() {
     const [open, setOpen] = useState(false);
     const closeModal = () => setOpen(false);
     const { user } = useContext(Context)
-    // const [user, setUser] = useState(ctx?.user);
     return <>
         <div className="stuProfile-main">
             <div className="stuProfile-header">

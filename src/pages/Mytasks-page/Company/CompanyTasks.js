@@ -21,7 +21,7 @@ function CompanyTasks() {
 
         <Brief user={user} />
         <div className="mytasks-main">
-            <br/>
+            <br />
             <div className="mytasks-left">
                 <div className="addtask-container">
                     <p>Want to Publish a New Task?</p>
@@ -29,7 +29,9 @@ function CompanyTasks() {
                         Add Task
                     </button>
                     <Popup open={open} closeOnDocumentClick onClose={closeModal}>
-                        <Addtask id={user.id} close={setOpen} />
+                        <div style={{ maxHeight: '90vh', overflowY: 'scroll' }}>
+                            <Addtask id={user.id} close={setOpen} />
+                        </div>
                     </Popup>
                 </div>
                 <br />

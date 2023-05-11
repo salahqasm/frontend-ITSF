@@ -7,7 +7,7 @@ function Filter({ filter, setFilter }) {
     return <>
         <div className="mytasks-filter">
             <form>
-                <p>Filter My Tasks:</p>
+                <p><strong>Filter My Tasks:</strong></p>
                 <label><input type={"radio"} name="mytasksfilter"
                     value="all"
                     checked={filter === 'all'}

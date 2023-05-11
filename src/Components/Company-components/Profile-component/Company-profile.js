@@ -31,19 +31,25 @@ function CompanyProfile() {
                         </div>
                     </Popup>
                 </div>
-
             </div>
             <hr />
             <div className="comProfile-mid">
                 <h5>{user.name}, Specialized in: {user.specialization}</h5>
-                <p>{user.about}</p>
-            </div>
+                <p style={{ whiteSpace: "pre-wrap" }}>{user.about}</p>
+                </div>
             <hr />
             <div className="comProfile-mid comProfile-info">
+                <span><strong>Phone Number:</strong> {user?.phoneNum}</span>&emsp;&emsp;
+                <span><strong>Country:</strong> {user?.country}</span>&emsp;&emsp;
+                <span><strong>City:</strong> {user?.city}</span>
+                <br/>
+                <br/>
+            </div>
+            {/* <div className="comProfile-mid comProfile-info">
                 <label>Phone Number: <input type="text" value={user.phoneNum} disabled /></label>
                 <label>Country: <input type="text" value={user.country} disabled /></label>
                 <label>City: <input type="text" value={user.city} disabled /></label>
-            </div>
+            </div> */}
         </div>
 
 

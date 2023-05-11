@@ -6,8 +6,8 @@
 .Company-EditProfile input{
     border-radius: 10px ;
     border: 1px solid black;
-    /* padding:5px; */
-    height: 50px;
+    padding:10px;
+    
 }
 .Company-EditProfile textarea{
     border-radius: 10px ;

@@ -16,7 +16,9 @@
 .Edittask-main {
     margin: 1rem;
 }
-
+.Edittask-main input,textarea{
+    border-radius: 10px;;
+    padding:0.3rem;}
 .Edittask-main h3 {
     text-align: center;
 }

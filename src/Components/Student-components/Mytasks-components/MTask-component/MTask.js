@@ -24,6 +24,18 @@ function MTask({ type, task }) {
             console.log(err);
         }
     }
+    async function submissionHandler(e){
+        e.preventDefault();
+        try {
+            let req={
+                submission:submission
+            }
+            const res=await axios.put(`http://localhost:3001/submittask/${task?.id}`,req);
+            alert("Submittied");
+        } catch (err) {
+            console.log(err);
+        }
+    }
     return <div className="Mtask-task" >
 
         <div style={{ float: "right" }}>
@@ -47,15 +59,19 @@ function MTask({ type, task }) {
 
         {type === "InProcess" &&
             <div className="Stask-submittion">
-                <form >
+                <form onSubmit={(e)=>submissionHandler(e)}>
                     <label htmlFor="submission"><strong>Submission:</strong></label>
-                    <input id="submission" type="text" placeholder="Submittion URL" className="submission-input"
+                    <input id="submission" type="text" placeholder="Submission URL" className="submission-input"
                         value={submission && submission} onChange={(e) => setSubmission(e.target.value)} />
                     <input type="submit" className="submission-button"
                         value={task.submission === "" ? "Submit" : "Edit Submission"} />
                 </form>
             </div>
         }
+        {type=="Completed" &&<>
+        <span><strong>Submission: </strong></span>
+        <span>{task.submission}</span>
+        </>}
     </div>
 
 }

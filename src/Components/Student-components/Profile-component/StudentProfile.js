@@ -45,12 +45,12 @@ function StudentProfile() {
             <hr />
             <div className="stuProfile-mid">
                 <h5>About {user.name}:</h5>
-                {user.about && <p>{user.about}</p>}
+                {user.about && <p style={{ whiteSpace: "pre-wrap" }}>{user.about}</p>}
                 {user.purl && <p>Check Out my work: <a target="_blank" href={user.purl}>View page</a></p>}
             </div>
             <hr />
             <div className="stuProfile-mid">
-                <h5>Skills</h5>
+                <span><strong>Skills: </strong></span>
                 {user?.skills?.map((elem) => {
                     return <span className="stuProfile-skill">{elem.name}</span>
                 })}

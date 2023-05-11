@@ -32,6 +32,11 @@
     background-color: #393E46;
     color: white;
     padding: 10px;
+    cursor: pointer;
+}
+.SMytasks-nav:hover{
+    transform: scale(103%);
+    background-color: #4f535a;
 }
 /* 
 .SMytasks-tasks-container .Mtask-task-main:nth-of-type(even) {

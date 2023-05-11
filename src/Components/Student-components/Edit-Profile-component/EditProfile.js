@@ -140,7 +140,7 @@ function EditProfile({ close }) {
             <br />
             <div className="grid1">
                 <label htmlFor="about">About: </label>
-                <textarea name="about" id="about" rows="6" maxLength={1000} value={user.about || "Write a brief about yourself"} onChange={e => handleChange(e)}></textarea>
+                <textarea name="about" id="about" rows="6" maxLength={1000} value={user.about} placeholder="Write a brief about yourself" onChange={e => handleChange(e)}></textarea>
             </div>
             <div style={{ float: "right" }}>
                 <button type="submit" className="editprofile-button">Save Changes</button>

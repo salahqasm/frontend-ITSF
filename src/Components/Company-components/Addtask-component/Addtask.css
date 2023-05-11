@@ -11,7 +11,10 @@
     grid-template-columns: 1fr;
     grid-gap: 1rem;
 }
-
+.Addtask input ,textarea{
+    padding:0.3rem;
+    border-radius: 10px;
+}
 .Addtask textarea {
     resize: none;
 

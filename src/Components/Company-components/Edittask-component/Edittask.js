@@ -82,7 +82,7 @@ function Edittask({ task }) {
         <Popup open={open} closeOnDocumentClick onClose={closeModal} closeOnEscape={false}>
             <div className="Edittask-main" style={{ maxHeight: '90vh', overflowY: 'scroll' }}>
 
-                <h3>Edit ({task.title.trim()}) Task</h3>
+                <h3>Edit "{task.title.trim()}" Task</h3>
                 <hr />
                 <form className="Edittask" onSubmit={e => submitHandler(e)}>
                     <label>New Title:</label>

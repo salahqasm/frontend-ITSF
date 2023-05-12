@@ -19,6 +19,7 @@ import Profile from "./pages/Profile-page/Profile";
 import StudentBrowse from "./Components/Student-components/Browsetasks-component/StudentBrowse";
 import Home from "./pages/Home/Home";
 import ViewStudent from "./Components/View-components/ViewStudent";
+import BrowseStudents from "./Components/Doctor-components/BrowseStudents-component/BrowseStudents";
 function App() {
   const [cookie] = useCookies();
   return (
@@ -42,7 +43,7 @@ function App() {
                   <Route path="feedback" element={<FeedbackForm />} />
                   <Route path="mytasks" element={<Mytasks />} />
                   <Route path="student/:id" element={<ViewStudent />} />
-                  
+
                 </Route>
               </Routes>
             </Router>
@@ -64,7 +65,20 @@ function App() {
                     <Route path="/admin" exact element={<Admin />}>
                     </Route>
                   </Routes>
-                </Router> : <></>
+                </Router>
+                : cookie.user.userType === 'doctor' ?
+                  <Router>
+                    <Routes>
+                      <Route path="/" exact element={<PageHandler />}>
+                        <Route path="/" element={<Home />} />
+                        <Route path="/profile" element={<Profile />} />
+                        <Route path="/BrowseStudents" element={<BrowseStudents />} />
+                        <Route path="student/:id" element={<ViewStudent />} />
+
+                      </Route>
+                    </Routes>
+                  </Router>
+                  : <></>
 
       }
 

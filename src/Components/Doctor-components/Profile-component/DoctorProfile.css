@@ -1,0 +1,68 @@
+.DoctorProfile-main {
+    border: 1px gray solid;
+    border-radius: 20px;
+    width: 70%;
+    margin: auto;
+    margin-top: 2rem;
+}
+
+.DoctorProfile-header {
+    display: grid;
+    margin: auto;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    margin: 3rem;
+}
+
+.DoctorProfile-grid2 {
+    margin-top: 1rem;
+    grid-column: 2/5;
+}
+
+.DoctorProfile-edit {
+    float: right;
+    width: 150px;
+    height: 40px;
+    background-color: #222831;
+    color: #EEEEEE;
+    border: #EEEEEE solid 1px;
+    border-radius: 10px;
+    margin: 15px;
+    margin-left: 20px;
+    font-weight: bold;
+}
+
+.DoctorProfile-edit:hover {
+    background-color: #393E46;
+    color: #00ADB5;
+    border: #EEEEEE solid 1px;
+    border-radius: 15px;
+}
+
+.DoctorProfile-mid {
+    width: 90%;
+    margin: auto;
+    padding:1rem 0 1rem 0;
+}
+
+.DoctorProfile-info>* {
+    padding: 1rem;
+}
+
+.DoctorProfile-info label {
+    font-weight: 600;
+}
+
+.DoctorProfile-info input {
+    color: black;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.stuProfile-skill {
+    opacity: 0.7;
+    background-color: #393E46;
+    color: #fff;
+    margin-right: 0.5rem;
+    padding: 1px 10px;
+    border-radius: 20px;
+}

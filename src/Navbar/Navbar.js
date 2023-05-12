@@ -48,15 +48,15 @@ function Navb({ changePage }) {
             </Container>
           </Navbar>
           : cookie.user.userType === "doctor" ?
-            <Navbar bg="dark" variant="dark">
+            <Navbar bg="light" variant="light">
               <Container>
-                <Navbar.Brand onClick={logoutHandler} style={{ marginLeft: "-60px" }}>ITS Freelance</Navbar.Brand>
+                <Navbar.Brand href="/" style={{ marginLeft: "-60px" }}>ITS Freelance</Navbar.Brand>
                 <Nav className="me-auto">
-                  <Nav.Link className='nvbar-margin' name="profile" onClick={(e) => { clickHandler(e) }}>Profile</Nav.Link>
-                  <Nav.Link className='nvbar-margin' name="btasks" onClick={(e) => { clickHandler(e) }} >Browse Tasks</Nav.Link>
-                  <Nav.Link className='nvbar-margin' name="companies" onClick={(e) => { clickHandler(e) }}>Companies</Nav.Link>
-                  <Nav.Link className='nvbar-margin' name="students" onClick={(e) => { clickHandler(e) }}>Students</Nav.Link>
-                  <Nav.Link className='nvbar-margin' name="feedback" onClick={(e) => { clickHandler(e) }} >Feedback</Nav.Link>
+                  <Nav.Link className='nvbar-margin' name="profile" onClick={() => { navigate("/profile") }}>Profile</Nav.Link>
+                  <Nav.Link className='nvbar-margin' name="students" onClick={() => { navigate("/BrowseStudents") }}>Students</Nav.Link>
+                  <Nav.Link className='nvbar-margin' name="companies" onClick={() => { navigate("/profile") }}>Companies</Nav.Link>
+                  <Nav.Link className='nvbar-margin' name="btasks" onClick={() => { navigate("/profile") }} >Browse Tasks</Nav.Link>
+                  <Nav.Link className='nvbar-margin' name="feedback" onClick={() => { navigate("/profile") }} >Feedback</Nav.Link>
                 </Nav>
                 <Nav className="me">
                   <Nav.Link onClick={logoutHandler} style={{ marginRight: "-80px" }}>Logout</Nav.Link>

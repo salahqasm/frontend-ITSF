@@ -1,19 +1,16 @@
 import React, { useContext, useEffect, useState } from "react";
 import { useCookies } from 'react-cookie';
 import Context from "../../../ContextApi/Context";
-import "./EditProfile.css"
+import "./EditDoctor.css"
 import axios from "axios";
 import Select from 'react-select'
 import makeAnimated from 'react-select/animated';
-
-function EditProfile({ close }) {
+import defaultProfile from "../../../imgs/profileImg.png"
+function EditDoctor({ close }) {
     const ctx = useContext(Context);
     const [cookie] = useCookies();
     const [user, setUser] = useState(ctx.user);
     const [base64code, setbase64code] = useState(user.profilePicture);
-    const [selectedOption, setSelectedOption] = useState([]);
-    const [options, setOptions] = useState([]);
-    const animatedComponents = makeAnimated();
     const onChange = e => {
         const files = e.target.files;
         const file = files[0];
@@ -37,77 +34,43 @@ function EditProfile({ close }) {
             [name]: value
         }));
     }
-
-    async function getSkills() {
-        const res = await axios.get('http://localhost:3001/getskill');
-        setOptions([]);
-        let temp = [];
-        res.data.map((elem) => {
-            temp.push({ id: elem.id, value: elem.name, label: elem.name })
-        })
-        setOptions(temp);
-    }
-    useEffect(() => {
-        getSkills();
-    }, []);
-    const customStyles = {
-        control: (provided, state) => ({
-            ...provided,
-            // width: 550,
-            borderRadius: 10
-        }),
-    };
-    function handleSelectChange(selectedOption) {
-        if (selectedOption.length <= 5) {
-            setSelectedOption(selectedOption);
-            console.log(selectedOption);
-        }
-    }
-    const config = {
-        headers: {
-            'authorization': `Bearer ${cookie.token}`
-        }
-    };
     async function submitHandler(e) {
         e.preventDefault();
-
+        const config = {
+            headers: {
+                'authorization': `Bearer ${cookie.token}`
+            }
+        };
         try {
-            let skillsID = [];
-            selectedOption.map((elem) => {
-                skillsID.push(elem.id);
-            })
             const req = {
                 name: user.name,
                 phoneNum: user.phoneNum,
-                linkedin: user.linkedin,
+                purl: user.purl,
                 github: user.github,
                 purl: user.purl,
                 about: user.about,
-                picture: base64code,
-                skills: skillsID
+                picture: base64code
             };
-            let res = await axios.put(`http://localhost:3001/student/${user.id}`, req, config)
+            let res = await axios.put(`http://localhost:3001/doctor/${user.id}`, req, config)
             console.log(res);
             close(false);
-            // ctx.refresh() **********************************************************
-            window.location.reload()
+            ctx.refresh();
         } catch (err) {
             console.log(err);
         }
     }
-    return <div className="Company-EditProfile">
+    return <div className="EditDoctor">
         <h2 style={{ textAlign: "center" }}>Edit Your Profile</h2>
         <hr />
         <form onSubmit={submitHandler}>
             <div className="grid2">
-                <img src={`data:image;base64${base64code}`} alt="Profile Picture" width={"150px"} />
+                <img src={base64code ? `data:image;base64${base64code}` : defaultProfile} alt="Profile Picture" width={"150px"} />
                 <label className="edit-image-label" > Choose Your Image
                     <input className="edit-image" type="file" name="PP" id="PP" accept="image/*" onChange={onChange} />
                 </label>
             </div>
             <i>Note: Best results will be with 1:1 ratio images.</i>
             <hr />
-            {/* //name purl linkedin github about phoneNum credit profilePicture */}
             <div className="grid4">
                 <label htmlFor="name">Name: </label>
                 <input type="text" id="name" name="name" value={user.name} onChange={e => handleChange(e)} />
@@ -116,27 +79,11 @@ function EditProfile({ close }) {
                 <input type="text" id="phoneNum" name="phoneNum" value={user.phoneNum} maxLength={10} placeholder="07*********" onChange={e => handleChange(e)} />
             </div>
             <div className="grid1">
-                <label>Skills:
-                    <Select
-                        value={selectedOption}
-                        onChange={handleSelectChange}
-                        closeMenuOnSelect={false}
-                        components={animatedComponents}
-                        placeholder="Choose your Skills (up to 5 skills)"
-                        isMulti
-                        options={options}
-                        styles={customStyles}
-                        maxValueLength={5}
-                    />
-                </label>
                 <label htmlFor="linkedin">Linkedin Account: </label>
-                <input type="text" id="linkedin" name="linkedin" value={user.linkedin} onChange={e => handleChange(e)} />
+                <input type="text" id="linkedin" name="purl" value={user.purl} onChange={e => handleChange(e)} />
 
-                <label htmlFor="github">Github Account: </label>
-                <input type="text" id="github" name="github" value={user.github} onChange={e => handleChange(e)} />
-
-                <label htmlFor="purl">Previous Project: </label>
-                <input type="text" id="purl" name="purl" value={user.purl} onChange={e => handleChange(e)} />
+                <label htmlFor="github">Specialization: </label>
+                <input type="text" id="github" name="github" value={user.specialization} onChange={e => handleChange(e)} />
             </div>
             <br />
             <div className="grid1">
@@ -149,4 +96,4 @@ function EditProfile({ close }) {
         </form>
     </div>
 }
-export default EditProfile;
+export default EditDoctor;

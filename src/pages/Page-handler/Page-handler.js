@@ -38,6 +38,9 @@ function PageHandler() {
         } else if (userType === 'student') {
             const res = await axios.get(`http://localhost:3001/student/${id}`, config, []);
             setUser(res.data);
+        } else if (userType === 'doctor') {
+            const res = await axios.get(`http://localhost:3001/doctor/${id}`, config, []);
+            setUser(res.data);
         }
     }
 

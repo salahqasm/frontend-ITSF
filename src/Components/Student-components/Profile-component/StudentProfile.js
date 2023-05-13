@@ -57,7 +57,7 @@ function StudentProfile() {
             <hr />
             <div className="stuProfile-mid">
                <img style={{display:"inline"}} src={star} width={"30px"} />
-                <span><strong> Approved by: Dr.{user?.doctor.name} </strong></span>
+                <span><strong> Approved by: Dr.{user?.doctor?.name} </strong></span>
             </div>
 <br></br>
         </div >

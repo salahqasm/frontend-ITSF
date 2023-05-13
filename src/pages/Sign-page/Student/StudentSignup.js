@@ -29,7 +29,7 @@ function StudentSignup({ config }) {
             ...prevState,
             ["profilePicture"]: fileString
         }));
-        
+
     };
     const getBase64 = file => {
         let reader = new FileReader();
@@ -68,21 +68,29 @@ function StudentSignup({ config }) {
     }
     async function studentSignup(e) {
         e.preventDefault();
-
-        try {
-            if (info.password === info.repassword) {
-                console.log(info);      
-
+        if (stage === 1) {
+            if (info.password != info.repassword) {
+                window.alert("Password Should be identical");
+            } else {
+                setStage(stage + 1);
+            }
+        } else if (stage === 2) {
+            handleSkills();
+            setStage(stage + 1);
+        } else if (stage === 3) {
+            try {
+                console.log(info);
                 const res = await axios.post('http://localhost:3001/studentsignup', info)
                 console.log(res.data);
                 setCookie("token", res.data.token, { path: '/' });
                 setCookie("user", res.data, { path: '/' });
                 navigate('/ ');
-            }
 
-        } catch (err) {
-            console.log(err);
-            window.alert("Email already exists please try another email")
+
+            } catch (err) {
+                console.log(err);
+                window.alert("Email already exists please try another email")
+            }
         }
     }
     function handleSelectChange(selectedOption) {
@@ -102,18 +110,21 @@ function StudentSignup({ config }) {
 
     return <>
         <h5>Student Signup</h5>
-        <form className="signup-student" onSubmit={(e) => { studentSignup(e) }}>
-            {stage === 1 && <>
+        {stage === 1 && <>
+            <form className="signup-student" onSubmit={(e) => { studentSignup(e) }}>
                 <label>Email:</label>
                 <input type="email" id="email" name="email" placeholder="Enter Your E-mail" value={info.email} onChange={e => handleChange(e)} required />
                 <label>Password:</label>
                 <input id="pswrd2" name="password" type="password" placeholder="Creat Password" value={info.password} onChange={e => handleChange(e)} required />
                 <label>Re-enter password:</label>
                 <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" value={info.repassword} onChange={e => handleChange(e)} required />
-                <br/>
-                <button type="button" className="signup-submit-button" onClick={() => setStage(stage + 1)} >Next</button>
-            </>}
-            {stage === 2 && <>
+                <br />
+                <input type="submit" className="signup-submit-button" value="Next" />
+                {/* <button type="submit" className="signup-submit-button" onClick={() => setStage(stage + 1)} >Next</button> */}
+            </form>
+        </>}
+        {stage === 2 && <>
+            <form className="signup-student" onSubmit={(e) => { studentSignup(e) }}>
                 <label>Full Name:</label>
                 <input type="text" id="name" name="name" placeholder="Full Name" value={info.name} onChange={e => handleChange(e)} required />
                 <label>Phone Number:</label>
@@ -134,29 +145,32 @@ function StudentSignup({ config }) {
                     selectedOption.length >= 5 && <p>you can select up to 5 skills.</p>
                 }
                 <label>Bio:</label>
-                <textarea name="about" placeholder="A brief about yourself (optional)" 
-                style={{resize:"none",borderRadius:"15px",padding:"0.5rem"}} rows={4} value={info.about} onChange={e => handleChange(e)}>
+                <textarea name="about" placeholder="A brief about yourself (optional)"
+                    style={{ resize: "none", borderRadius: "15px", padding: "0.5rem" }} rows={4} value={info.about} onChange={e => handleChange(e)} required>
 
                 </textarea>
                 <button type="button" className="signup-submit-button" onClick={() => setStage(stage - 1)} >Back</button>
-                <button type="button" className="signup-submit-button" onClick={() => { setStage(stage + 1); handleSkills() }} >Next</button>
-            </>}
-            {stage === 3 && <>
+                <input type="submit" className="signup-submit-button" value="Next" />
+            </form>
+        </>}
+        {stage === 3 && <>
+            <form className="signup-student" onSubmit={(e) => { studentSignup(e) }}>
+
                 <img src={`data:image;base64${base64code}`} alt="Profile Picture" width={"150px"} />
                 <label className="edit-image-label" > Choose Your Image
-                <input className="edit-image" type="file" name="PP" id="PP" accept="image/*" onChange={onChange} />
+                    <input className="edit-image" type="file" name="PP" id="PP" accept="image/*" onChange={onChange} />
                 </label>
                 <label>Portfolio:</label>
                 <input type="text" placeholder="Portfolio or previous projects URL" name="purl" value={info.purl} onChange={e => handleChange(e)} />
                 <label>Linkedin:</label>
-                <input type="text" placeholder="Linkedin Account URL" name="linkedin" value={info.linkedin} onChange={e => handleChange(e)} />
+                <input type="text" placeholder="Linkedin Account URL" name="linkedin" value={info.linkedin} onChange={e => handleChange(e)} required />
                 <label>Github:</label>
                 <input type="text" placeholder="Github Account URL" name="github" value={info.github} onChange={e => handleChange(e)} />
                 <button type="button" className="signup-submit-button" onClick={() => setStage(stage - 1)} >Back</button>
-                <button className="signup-submit-button" type="submit" value="Sign Up" >Signup</button>
-            </>}
-            <p></p>
-        </form>
+                <input type="submit" className="signup-submit-button" value="Signup" />
+            </form>
+        </>}
+        <p></p>
     </>
 }
 export default StudentSignup;

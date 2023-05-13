@@ -75,7 +75,7 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/profile" element={<Profile />} />
                         <Route path="/BrowseStudents" element={<BrowseStudents />} />
-                        <Route path="/BrowseCompnaies" element={<BrowseCompanies />} />
+                        <Route path="/BrowseCompanies" element={<BrowseCompanies />} />
                         <Route path="feedback" element={<FeedbackForm />} />
                         <Route path="student/:id" element={<ViewStudent />} />
                         <Route path="company/:id" element={<ViewCompany />} />

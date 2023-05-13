@@ -54,7 +54,7 @@ function Navb({ changePage }) {
                 <Nav className="me-auto">
                   <Nav.Link className='nvbar-margin' name="profile" onClick={() => { navigate("/profile") }}>Profile</Nav.Link>
                   <Nav.Link className='nvbar-margin' name="students" onClick={() => { navigate("/BrowseStudents") }}>Students</Nav.Link>
-                  <Nav.Link className='nvbar-margin' name="companies" onClick={() => { navigate("/BrowseCompnaies") }}>Companies</Nav.Link>
+                  <Nav.Link className='nvbar-margin' name="companies" onClick={() => { navigate("/BrowseCompanies") }}>Companies</Nav.Link>
                   <Nav.Link className='nvbar-margin' name="feedback" onClick={() => { navigate("/profile") }} >Feedback</Nav.Link>
                 </Nav>
                 <Nav className="me">

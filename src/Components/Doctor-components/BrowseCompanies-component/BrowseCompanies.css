@@ -1,0 +1,47 @@
+.BrowseCompanies-main {
+    /* display: grid;
+    grid-template-columns: 1fr; */
+    width: 70%;
+    place-items: center;
+    margin: auto;
+    margin-top: 3rem;
+    min-height: 100vh;
+}
+.BrowseCompanies-main input{
+    width:100%;
+    padding:0.5rem;
+    border-radius: 0 10px 10px 0;
+}
+.BrowseCompanies-card {
+    width: 100%;
+    display: flex;
+    border-top: 1px solid rgb(189, 189, 189);
+    border-bottom: 1px solid rgb(189, 189, 189);
+    margin-bottom: 3rem;
+    box-shadow: 0px 15px 40px rgba(0, 0, 0, 0.31);
+    cursor: pointer;
+    transition: 0.2s;
+
+}
+
+.BrowseCompanies-card:hover {
+    transform: scale(103%);
+    transition: 0.3s;
+}
+
+.BrowseCompanies-card:active {
+    transform: scale(98%);
+    transition: 0.3s;
+}
+
+.BrowseCompanies-card img {
+    /* border-radius: 50%; */
+    height: 100%;
+    aspect-ratio: 1/1;
+    margin-right: 1rem;
+}
+
+.BrowseCompanies-card-info {
+    padding: 10px;
+    line-height: 2rem;
+}

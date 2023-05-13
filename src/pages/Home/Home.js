@@ -48,7 +48,11 @@ function Home() {
                         <h3>Browse Students</h3>
                         <p>View, Search and Approve Student's Account</p>
                     </div>
-                    <div className="Home-card" onClick={() => { navigate("/feedback") }}>
+                    <div className="Home-card" onClick={() => { navigate("/BrowseCompanies") }}>
+                        <h3>Browse Companies</h3>
+                        <p>View Companies and their Available tasks</p>
+                    </div>
+                    <div className="Home-card" style={{ gridColumn: "2/2" }} onClick={() => { navigate("/feedback") }}>
                         <h3>Feedback</h3>
                         <p>Send us your feedback</p>
                     </div>

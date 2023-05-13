@@ -20,6 +20,8 @@ import StudentBrowse from "./Components/Student-components/Browsetasks-component
 import Home from "./pages/Home/Home";
 import ViewStudent from "./Components/View-components/ViewStudent";
 import BrowseStudents from "./Components/Doctor-components/BrowseStudents-component/BrowseStudents";
+import BrowseCompanies from "./Components/Doctor-components/BrowseCompanies-component/BrowseCompanies";
+import ViewCompany from "./Components/View-components/ViewCompany";
 function App() {
   const [cookie] = useCookies();
   return (
@@ -73,8 +75,10 @@ function App() {
                         <Route path="/" element={<Home />} />
                         <Route path="/profile" element={<Profile />} />
                         <Route path="/BrowseStudents" element={<BrowseStudents />} />
+                        <Route path="/BrowseCompnaies" element={<BrowseCompanies />} />
+                        <Route path="feedback" element={<FeedbackForm />} />
                         <Route path="student/:id" element={<ViewStudent />} />
-
+                        <Route path="company/:id" element={<ViewCompany />} />
                       </Route>
                     </Routes>
                   </Router>

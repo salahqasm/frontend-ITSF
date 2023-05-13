@@ -21,14 +21,16 @@ function ApproveByEmail() {
                 email: email
             }, config)
             setUser(res.data);
+            if (user.name) {
+                setMsg("success");
+            } else {
+                setMsg("Failed");
+            }
 
         } catch (err) {
+
             console.log(err);
-        }
-        if (user.name) {
-            setMsg("success");
-        } else {
-            setMsg("Failed");
+
         }
     }
     async function approve() {
@@ -57,12 +59,12 @@ function ApproveByEmail() {
                     <span className="stuProfile-skill">{elem.name}</span>
                 )}<br /><br />
                 {!user?.doctor && <input type="button" onClick={approve} className="ApproveByEmail" value={"Approve Student"} />}
-                {user.doctor && <><br /><p><i><strong>Student Already Approved.</strong></i></p></>}
+                {user.doctor && <><br /><p><i><strong>Student is Already <span style={{color:"#00aa00"}}> Approved.</span></strong></i></p></>}
             </div>
         }
 
         {(msg === "" || msg === "Failed") &&
-            <div style={{ width: "100%" }}>
+            <div style={{ width: "100%" ,textAlign:"center"}}>
                 <label>Email: </label>&nbsp;
                 <input className="searchByEmail" type="email" onChange={(e) => setEmail(e.target.value)} />
                 <br />

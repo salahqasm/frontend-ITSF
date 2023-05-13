@@ -1,13 +1,13 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useParams } from 'react-router-dom';
-import "./ViewStudent.css"
-import axios from "axios";
-import { FaLinkedin, FaGithub } from 'react-icons/fa';
-import star from "../../imgs/star.png"
-import { useCookies } from "react-cookie";
+
+import "./ViewCompany.css";
 import ProfilePicture from "../Picture-Component/ProfilePicture-component";
 import Context from "../../ContextApi/Context";
-function ViewStudent() {
+import axios from "axios";
+import { useParams } from "react-router-dom";
+import { useCookies } from "react-cookie";
+
+function ViewCompany() {
     let { id } = useParams();
     const [cookie] = useCookies();
     const [user, setUser] = useState();
@@ -19,7 +19,7 @@ function ViewStudent() {
                     'authorization': `Bearer ${cookie.token}`
                 }
             };
-            const res = await axios.get(`http://localhost:3001/viewStudent/${id}`, config)
+            const res = await axios.get(`http://localhost:3001/company/${id}`, config)
             setUser(res.data);
             console.log(res.data);
         } catch (err) {
@@ -30,22 +30,6 @@ function ViewStudent() {
         getUser();
     }, []);
 
-    async function approve() {
-        try {
-            const config = {
-                headers: {
-                    'authorization': `Bearer ${cookie.token}`
-                }
-            };
-            const res = await axios.put('http://localhost:3001/approveStudent', {
-                studentId: user.id,
-                doctorId: ctx.user.id
-            }, config)
-            window.location.reload();
-        } catch (err) {
-            console.log(err);
-        }
-    }
     return <>
         {user && <>
             <div className="stuProfile-main">
@@ -57,20 +41,11 @@ function ViewStudent() {
                     </div>
                     <div className="stuProfile-grid2">
                         <h2>{user?.name}</h2>
-                        <h6> {user.email}{user.phoneNum && ", " + user.phoneNum}</h6>
+                        <h6>{user?.country}, {user?.city}</h6>
                         <div>
-                            {user?.linkedin && < a style={{ textDecoration: "none" }} target="_blank" href={user?.linkedin}> <FaLinkedin size={25} /> Linkedin</a>}
-                            &nbsp;
-                            &nbsp;
-                            &nbsp;
-                            {user?.github && <a style={{ textDecoration: "none" }} target="_blank" href={user?.github}><FaGithub size={25} /> Github</a>}
+                            {user?.purl && <a href={user.purl} target="_blank">Visit Website</a>}
                         </div>
                     </div>
-
-                    {!user?.doctor && <div>
-                        <input type="button" onClick={approve} className="ApproveButton" value={"Approve Account"} />
-
-                    </div>}
                 </div>
                 <hr />
                 <div className="stuProfile-mid">
@@ -79,29 +54,24 @@ function ViewStudent() {
                 </div>
                 <hr />
                 <div className="stuProfile-mid">
-                    <span><strong>Skills: </strong></span>
-                    {user?.skills?.map((elem) => {
-                        return <span className="stuProfile-skill">{elem.name}</span>
-                    })}
+                    <span><strong>Specialization: </strong></span>
+                    <span>{user?.specialization}</span>
                 </div>
                 <hr />
-                {user?.doctor?.name && <div className="stuProfile-mid">
-
-                    <img style={{ display: "inline" }} src={star} width={"30px"} />
-                    <span><strong> Approved by: Dr.{user?.doctor?.name} </strong></span>
-                </div>}
-                <br></br>
+                <div className="DoctorProfile-mid grid2">
+                    <h6>Email: {user?.email}</h6>
+                    <h6>{user?.phoneNum && "Phone Number: " + user?.phoneNum}</h6>
+                </div>
             </div >
-            <br />
             {
                 ctx?.user.userType === 'doctor' &&
                 <div className="stuProfile-main" >
                     <br />
-                    <h3 style={{ textAlign: "center" }}>In Process Tasks</h3>
+                    <h3 style={{ textAlign: "center" }}>Available Published Tasks</h3>
                     <hr />
-                    {user?.tasks.length == 0 && <p style={{ textAlign: "center" }}><i><strong>No Available Published Tasks</strong></i></p>}
+                    {user?.tasks.length ==0 && <p style={{ textAlign: "center" }}><i><strong>No Available Published Tasks</strong></i></p>}
                     {user?.tasks.map((elem) => {
-                        if (elem.status === 'inprocess')
+                        if (elem.status === 'available')
                             return <div className="SBtask-task-main" style={{ backgroundColor: "#f5f5f5" }}>
                                 <div className="SBtask-task" >
                                     <h2>{elem?.title}</h2>
@@ -116,16 +86,14 @@ function ViewStudent() {
                                             <span>{elem.name}</span>
                                         )}
                                     </div>
-                                    <br/>
-                                <span><strong>Submission: </strong></span><span>{elem.submission}</span>
                                 </div>
+                                {/* <hr /> */}
                             </div>
                     })}
                 </div>
             }
         </>}
-
     </>
 }
 
-export default ViewStudent;
+export default ViewCompany;

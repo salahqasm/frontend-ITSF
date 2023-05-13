@@ -43,16 +43,16 @@ function Home() {
                         <p>Send us your feedback</p>
                     </div>
                 </>}
-                {/* {ctx?.user.userType == "doctor" && <>
-                    <div className="Home-card" onClick={() => { navigate("/mytasks") }}>
-                        <h3>My tasks</h3>
-                        <p>View and edit your published tasks</p>
+                {ctx?.user.userType == "doctor" && <>
+                    <div className="Home-card" onClick={() => { navigate("/BrowseStudents") }}>
+                        <h3>Browse Students</h3>
+                        <p>View, Search and Approve Student's Account</p>
                     </div>
                     <div className="Home-card" onClick={() => { navigate("/feedback") }}>
                         <h3>Feedback</h3>
                         <p>Send us your feedback</p>
                     </div>
-                </>} */}
+                </>}
 
             </div>
         </div>

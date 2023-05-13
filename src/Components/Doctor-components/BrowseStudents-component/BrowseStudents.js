@@ -13,7 +13,7 @@ function BrowseStudents() {
     const closeModal = () => setOpen(false);
     const [students, setStudents] = useState();
     const [filteredStudents, setFilteredStudents] = useState(students);
-
+    const [category, setCateg] = useState('all');
     async function getStudents() {
         try {
             const config = {
@@ -30,10 +30,15 @@ function BrowseStudents() {
     }
     useEffect(() => {
         getStudents();
-    }, [])
-    function handleActivity(e) {
-        let filter = e.target.value;
-        switch (filter) {
+    }, []);
+    useEffect(() => {
+        handleActivity();
+    }, [category]);
+    function handleCat(e) {
+        setCateg(e.target.value);
+    }
+    function handleActivity() {
+        switch (category) {
             case "all":
                 setFilteredStudents(students);
                 break;
@@ -52,16 +57,16 @@ function BrowseStudents() {
     function hangleName(e) {
         let search = e.target.value;
         if (search) {
-            setFilteredStudents(students.filter((elem) => elem.name.toLowerCase().includes(search.toLowerCase())));
+            setFilteredStudents(filteredStudents.filter((elem) => elem.name.toLowerCase().includes(search.toLowerCase())));
         } else {
-            setFilteredStudents(students);
+            handleActivity();
         }
     }
     return <div className="doctorBrowseStudent">
         <hr />
         <div className="doctorGrid3">
             <label>Filter by Account Activity:&nbsp;
-                <select name="activity" className="FilterSelect" onChange={(e) => handleActivity(e)}>
+                <select name="activity" className="FilterSelect" onChange={(e) => handleCat(e)}>
                     <option value="all">All</option>
                     <option value="approved">Approved</option>
                     <option value="notapproved">Not Approved</option>
@@ -74,7 +79,7 @@ function BrowseStudents() {
             </label>
             <input className="ApproveByEmail" type="button" value="Approve By Email" onClick={() => setOpen(o => !o)} />
             <Popup open={open} closeOnDocumentClick onClose={closeModal} closeOnEscape={false}>
-                <div style={{ maxHeight: '90vh', overflowY: 'scroll' }}>
+                <div style={{ maxHeight: '90vh' }}>
                     <ApproveByEmail />
                 </div>
             </Popup>

@@ -35,7 +35,7 @@ function Login() {
         setCookie("user", res.data, { path: '/' });
       }
       if (res.data.role === "admin" && cookies) { //should be developed .............................................
-        navigate('/admin')
+        navigate('/')
       } else if ((res.data.userType === "student" || res.data.userType === "company") && cookies) {
         navigate('/')
 

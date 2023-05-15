@@ -37,29 +37,32 @@ function AddDoctor({ commitChange }) {
 
     }
     return <>
-  <div>
-      <button type="button" className="AdminAddDoctor-button" onClick={() => setOpen(o => !o)}>
-        Add Doctor
-      </button>
-      <Popup open={open} closeOnDocumentClick onClose={closeModal}>
-      <form className="AdminAddDoctor" onSubmit={(e) => { submitHandler(e); }}>
-                <h1>Add New Doctor</h1>
-                <input type="text" id="name" name="name" placeholder="Full Name" required />
-                <input type="email" id="email" name="email" placeholder="Email" required />
-                <input type="text" id="specialization" name="specialization" placeholder="Specialization" required />
-                <input type="text" id="department" name="department" placeholder="Department" required />
-                <input id="pswrd2" name="password" type="password" placeholder="Creat Password" required />
-                <br></br>
-                <label>Role:</label>
-                <select name="role" id="role" title="Role" required>
-                    <option value="doctor">doctor</option>
-                    <option value="admin" >admin</option>
-                </select>
-                <br></br>
-                <button className="AdminAddDoctor-button" type="submit" value="Sign Up" >Submit</button>
-            </form>
-      </Popup>
-    </div>
+        <div>
+            <button type="button" className="AdminAddDoctor-button" onClick={() => setOpen(o => !o)}>
+                Add Doctor
+            </button>
+            <Popup open={open} closeOnDocumentClick onClose={closeModal} closeOnEscape={false}>
+                <h1 style={{textAlign:"center",marginTop:"1rem"}}>Add New Doctor</h1>
+                <form className="AdminAddDoctor" onSubmit={(e) => { submitHandler(e); }}>
+                    <label>Name: </label>
+                    <input type="text" id="name" name="name" placeholder="Full Name" required />
+                    <label>Email: </label>
+                    <input type="email" id="email" name="email" placeholder="Email" required />
+                    <label>Specialization: </label>
+                    <input type="text" id="specialization" name="specialization" placeholder="Specialization" required />
+                    <label>Department: </label>
+                    <input type="text" id="department" name="department" placeholder="Department" required />
+                    <label>Password: </label>
+                    <input id="pswrd2" name="password" type="password" placeholder="Creat Password" required />
+                    <label>Role:</label>
+                    <select name="role" id="role" title="Role" required>
+                        <option value="doctor">doctor</option>
+                        <option value="admin" >admin</option>
+                    </select>
+                    <button className="AdminAddDoctor-button" type="submit" value="Sign Up" >Submit</button>
+                </form>
+            </Popup>
+        </div>
 
     </>
 }

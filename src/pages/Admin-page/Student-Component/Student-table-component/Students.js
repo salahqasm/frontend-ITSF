@@ -20,7 +20,7 @@ function Students() {
     }, [])
     async function deleteHandler(elem) {
         try {
-            const res=await axios.delete(`http://localhost:3001/deletestudent/${elem.id}`, config, []);
+            const res = await axios.delete(`http://localhost:3001/deletestudent/${elem.id}`, config, []);
             setStudents(res?.data);
         } catch (err) {
             console.log(err);
@@ -33,10 +33,9 @@ function Students() {
                     <th>ID</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Skill</th>
                     <th>Approved by</th>
-                    <th>Status</th>
-                    <th>Actions</th>
+                    <th>Visit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -48,10 +47,9 @@ function Students() {
                             <td>{elem.id}</td>
                             <td>{elem.name}</td>
                             <td>{elem.email}</td>
-                            <td>{elem.skill}</td>
                             <td>{elem.approvedby}</td>
-                            <td>{elem.role}</td>
-                            <td><span title="delete" onClick={() => deleteHandler(elem)}>❌</span> <span title="edit">✏</span></td>
+                            <td><a href={`http://localhost:3000/student/${elem.id}`} target="_blank">Visit</a></td>
+                            <td><span title="delete" onClick={() => deleteHandler(elem)} className="clicky-icon">❌</span></td>
                         </tr>
                     })
                 }
@@ -63,3 +61,4 @@ function Students() {
 }
 
 export default Students;
+// onClick={() => { setOpen(o => !o); setUpdate(elem) }} 

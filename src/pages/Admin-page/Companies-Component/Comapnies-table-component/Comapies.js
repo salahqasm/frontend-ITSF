@@ -26,6 +26,14 @@ function Companies() {
             console.log(err);
         }
     }
+    async function active(id) {
+        try {
+            const res = await axios.put(`http://localhost:3001/activeCompany/${id}`, {}, config);
+            setCompanies(res.data);
+        } catch (err) {
+            console.log(err);
+        }
+    }
     return <>
         <div className="companies-table-div">
             <table className="companies-table">
@@ -38,7 +46,9 @@ function Companies() {
                         <th>Country</th>
                         <th>City</th>
                         <th>Status</th>
-                        <th>Actions</th>
+                        <th>Visit</th>
+                        <th>Active</th>
+                        <th>Delete</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,7 +62,11 @@ function Companies() {
                                 <td>{elem.country}</td>
                                 <td>{elem.city}</td>
                                 <td>{elem.role}</td>
-                                <td><span title="delete" onClick={() => deleteHandler(elem)}>❌</span> <span title="edit">✏</span></td>
+                                <td><a href={`http://localhost:3000/company/${elem.id}`} target="_blank">Visit</a></td>
+                                <td>{elem.role === 'unactive' && <input
+
+                                    className="AdminAddDoctor-button active-comp" onClick={() => active(elem.id)} type="button" value="Active" />}</td>
+                                <td><span title="delete" onClick={() => deleteHandler(elem)} className="clicky-icon">❌</span></td>
                             </tr>
                         })
                     }

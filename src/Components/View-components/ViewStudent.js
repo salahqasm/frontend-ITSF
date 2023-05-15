@@ -99,7 +99,7 @@ function ViewStudent() {
                     <br />
                     <h3 style={{ textAlign: "center" }}>In Process Tasks</h3>
                     <hr />
-                    {user?.tasks.length == 0 && <p style={{ textAlign: "center" }}><i><strong>No Available Published Tasks</strong></i></p>}
+                    {user?.tasks.length == 0 && <p style={{ textAlign: "center" }}><i><strong>No Assigned Tasks</strong></i></p>}
                     {user?.tasks.map((elem) => {
                         if (elem.status === 'inprocess')
                             return <div className="SBtask-task-main" style={{ backgroundColor: "#f5f5f5" }}>

@@ -22,6 +22,10 @@ import ViewStudent from "./Components/View-components/ViewStudent";
 import BrowseStudents from "./Components/Doctor-components/BrowseStudents-component/BrowseStudents";
 import BrowseCompanies from "./Components/Doctor-components/BrowseCompanies-component/BrowseCompanies";
 import ViewCompany from "./Components/View-components/ViewCompany";
+import ViewDoctor from "./Components/View-components/ViewDoctor";
+import Companies from "./pages/Admin-page/Companies-Component/Comapnies-table-component/Comapies";
+import Doctors from "./pages/Admin-page/Doctors-Component/Doctors-table-component/Doctors";
+import Students from "./pages/Admin-page/Student-Component/Student-table-component/Students";
 function App() {
   const [cookie] = useCookies();
   return (
@@ -64,7 +68,10 @@ function App() {
               : cookie.user.userType === 'admin' ?
                 <Router>
                   <Routes>
-                    <Route path="/admin" exact element={<Admin />}>
+                    <Route path="/" exact element={<PageHandler />}>
+                      <Route path="doctor/:id" element={<ViewDoctor />} />
+                      <Route path="student/:id" element={<ViewStudent />} />
+                      <Route path="company/:id" element={<ViewCompany />} />
                     </Route>
                   </Routes>
                 </Router>

@@ -11,6 +11,10 @@ text-align: center;
     padding: 10px;
 
 }
+.clicky-icon{
+    cursor: pointer;
+    transition: 0.2s;
+}
 
 .doctors-table tr {
     border-bottom: 1px solid #9399a3;

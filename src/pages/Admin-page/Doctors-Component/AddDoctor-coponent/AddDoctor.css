@@ -32,18 +32,23 @@
     height: 40px;
     font-weight: bold;
     margin-bottom: 5px;
-    margin-left:5px;
+    margin-left: 5px;
 
 }
 
 .AdminAddDoctor {
-
+    display: grid;
+    grid-template-columns: 1fr 3fr;
     padding: 40px;
     text-align: center;
     height: 100%;
 
 }
 
+.AdminAddDoctor label,
+input {
+    margin-bottom: 2rem;
+}
 
 .AdminAddDoctor input {
     background: #ffffff;
@@ -55,8 +60,7 @@
 }
 
 .AdminAddDoctor button {
-
-    width: 30%;
+    grid-column: 2/3;
     height: 40px;
     background-color: #00ADB5;
     color: #EEEEEE;

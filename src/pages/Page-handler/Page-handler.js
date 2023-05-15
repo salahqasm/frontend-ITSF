@@ -13,6 +13,7 @@ import {
     Outlet
 } from "react-router-dom";
 import Footer from "../../Components/Footer-component/Footer";
+import Admin from "../Admin-page/Admin";
 function PageHandler() {
     const [page, setPage] = useState("profile");
     const [user, setUser] = useState({});
@@ -38,7 +39,7 @@ function PageHandler() {
         } else if (userType === 'student') {
             const res = await axios.get(`http://localhost:3001/student/${id}`, config, []);
             setUser(res.data);
-        } else if (userType === 'doctor') {
+        } else if (userType === 'doctor' || userType === 'admin') {
             const res = await axios.get(`http://localhost:3001/doctor/${id}`, config, []);
             setUser(res.data);
         }
@@ -57,9 +58,15 @@ function PageHandler() {
             }
         }>
             <>
-                <Navb changePage={setPage} />
-                <Outlet />
-                <Footer />
+
+                {userType === 'admin' ? <Admin />
+                    :
+                    <>
+                        <Navb changePage={setPage} />
+                        <Outlet />
+                        <Footer />
+                    </>
+                }
             </>
         </Context.Provider >
     </>

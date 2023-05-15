@@ -1,13 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-
-import "./ViewCompany.css";
+import "./ViewDoctor.css";
 import ProfilePicture from "../Picture-Component/ProfilePicture-component";
 import Context from "../../ContextApi/Context";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useCookies } from "react-cookie";
 
-function ViewCompany() {
+function ViewDoctor() {
     let { id } = useParams();
     const [cookie] = useCookies();
     const [user, setUser] = useState();
@@ -19,7 +18,7 @@ function ViewCompany() {
                     'authorization': `Bearer ${cookie.token}`
                 }
             };
-            const res = await axios.get(`http://localhost:3001/company/${id}`, config)
+            const res = await axios.get(`http://localhost:3001/doctor/${id}`, config)
             setUser(res.data);
             console.log(res.data);
         } catch (err) {
@@ -41,16 +40,10 @@ function ViewCompany() {
                     </div>
                     <div className="stuProfile-grid2">
                         <h2>{user?.name}</h2>
-                        <h6>{user?.country}, {user?.city}</h6>
                         <div>
                             {user?.purl && <a href={user.purl} target="_blank">Visit Website</a>}
                         </div>
                     </div>
-                    
-                    {cookie.user.userType==='admin' && <div>
-                        <input type="button"  className="ApproveButton" value={"Active Account"} />
-
-                    </div>}
                 </div>
                 <hr />
                 <div className="stuProfile-mid">
@@ -68,37 +61,9 @@ function ViewCompany() {
                     <h6>{user?.phoneNum && "Phone Number: " + user?.phoneNum}</h6>
                 </div>
             </div >
-            {
-                ctx?.user.userType === 'doctor' &&
-                <div className="stuProfile-main" >
-                    <br />
-                    <h3 style={{ textAlign: "center" }}>Available Published Tasks</h3>
-                    <hr />
-                    {user?.tasks.length ==0 && <p style={{ textAlign: "center" }}><i><strong>No Available Published Tasks</strong></i></p>}
-                    {user?.tasks.map((elem) => {
-                        if (elem.status === 'available')
-                            return <div className="SBtask-task-main" style={{ backgroundColor: "#f5f5f5" }}>
-                                <div className="SBtask-task" >
-                                    <h2>{elem?.title}</h2>
-                                    <span><span><strong>Budget: </strong>{elem?.credit} JD </span> - <span><strong>Due Date:</strong> {elem?.date}</span> </span>
-                                    <p style={{ whiteSpace: "pre-wrap" }}>
-                                        <strong>Description:</strong>
-                                        <br />{elem?.description}
-                                    </p>
-                                    <div className="Mtask-required-skills">
-                                        <strong>Required Skills: </strong>
-                                        {elem?.skills?.map(elem =>
-                                            <span>{elem.name}</span>
-                                        )}
-                                    </div>
-                                </div>
-                                {/* <hr /> */}
-                            </div>
-                    })}
-                </div>
-            }
+
         </>}
     </>
 }
 
-export default ViewCompany;
+export default ViewDoctor;

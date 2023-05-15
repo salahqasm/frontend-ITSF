@@ -58,8 +58,10 @@ function Doctors() {
                     <th>Email</th>
                     <th>Specialization</th>
                     <th>Department</th>
-                    <th>Status</th>
-                    <th>Actions</th>
+                    <th>Role</th>
+                    <th>Visit</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
                 </tr>
             </thead>
             <tbody>
@@ -74,34 +76,28 @@ function Doctors() {
                             <td>{elem.specialization}</td>
                             <td>{elem.department}</td>
                             <td>{elem.role}</td>
-                            <td><span title="delete" onClick={() => deleteHandler(elem)}>❌</span>
-                                <span onClick={() => { setOpen(o => !o); setUpdate(elem) }} title="edit">✏</span>
-
-                            </td>
+                            <td><a href={`http://localhost:3000/doctor/${elem.id}`} target="_blank">Visit</a></td>
+                            <td><span onClick={() => { setOpen(o => !o); setUpdate(elem) }} title="edit" className="clicky-icon">✏</span></td>
+                            <td><span title="delete" onClick={() => deleteHandler(elem)} className="clicky-icon">❌</span></td>
                         </tr>
                     })
                 }
-                <Popup open={open} closeOnDocumentClick onClose={closeModal}>
+                <Popup open={open} closeOnDocumentClick onClose={closeModal} closeOnEscape={false}>
+                    <h1 style={{ textAlign: "center", marginTop: "1rem" }}>Edit Doctor Account</h1>
                     <form className="AdminAddDoctor" onSubmit={(e) => { submitHandler(e); }}>
-                        <h1>Edit Doctor Account</h1>
                         <label htmlFor="name">Full Name: </label>
                         <input type="text" id="name" name="name" placeholder="Full Name" value={update.name} onChange={e => handleChange(e)} required />
-                        <br></br>
                         <label htmlFor="email">Email: </label>
                         <input type="email" id="email" name="email" placeholder="Email" value={update.email} onChange={e => handleChange(e)} required />
                         <label htmlFor="specialization">Specialization: </label>
                         <input type="text" id="specialization" name="specialization" placeholder="Specialization" value={update.specialization} onChange={e => handleChange(e)} required />
-                        <br></br>
                         <label htmlFor="department">Department:</label>
                         <input type="text" id="department" name="department" placeholder="Department" value={update.department} onChange={e => handleChange(e)} required />
-                        {/* <input id="pswrd2" name="password" type="password" placeholder="Creat Password" value={elem.department}required /> */}
-                        <br></br>
                         <label>Role:</label>
                         <select name="role" id="role" title="Role" required>
                             <option value="doctor">doctor</option>
                             <option value="admin" >admin</option>
                         </select>
-                        <br></br>
                         <button className="AdminAddDoctor-button" type="submit" value="Sign Up" >Submit</button>
                     </form>
                 </Popup>

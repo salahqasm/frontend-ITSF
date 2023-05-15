@@ -7,6 +7,7 @@ import Doctors from "./Doctors-Component/Doctors-table-component/Doctors.js";
 import Students from "./Student-Component/Student-table-component/Students.js";
 import Feedback from "./Feedback-component/Feedback-table";
 import { Outlet } from "react-router-dom";
+import Tasks from "./Tasks-component/Tasks";
 function Admin() {
     const [page, setPage] = useState("Admin Dashboard");
     const path = window.location.pathname;
@@ -26,7 +27,7 @@ function Admin() {
                                 page === "Doctors" ? <><Doctors /></> :
                                     page === "Students" ? <Students /> :
                                         page === "Feedback" ? <Feedback /> :
-                                            <h1>Welcome to Admin Dashboard</h1>
+                                            page==="Tasks"? <Tasks/>:<h1>Welcome to dashboard</h1>
                         }
                     </div>
                 </div>

@@ -29,7 +29,19 @@ function ViewCompany() {
     useEffect(() => {
         getUser();
     }, []);
-
+    async function active() {
+        const config = {
+            headers: {
+                'authorization': `Bearer ${cookie.token}`
+            }
+        };
+        try {
+            const res = await axios.put(`http://localhost:3001/activeCompany/${user?.id}`, {}, config);
+            window.location.reload();
+        } catch (err) {
+            console.log(err);
+        }
+    }
     return <>
         {user && <>
             <div className="stuProfile-main">
@@ -46,10 +58,9 @@ function ViewCompany() {
                             {user?.purl && <a href={user.purl} target="_blank">Visit Website</a>}
                         </div>
                     </div>
-                    
-                    {cookie.user.userType==='admin' && <div>
-                        <input type="button"  className="ApproveButton" value={"Active Account"} />
 
+                    {cookie.user.userType === 'admin' && user?.role === 'unactive' && < div >
+                        <input type="button" className="ApproveButton" onClick={active} value={"Active Account"} />
                     </div>}
                 </div>
                 <hr />
@@ -69,12 +80,12 @@ function ViewCompany() {
                 </div>
             </div >
             {
-                ctx?.user.userType === 'doctor' &&
+                ctx?.user.userType === 'doctor' && user?.role === 'active' &&
                 <div className="stuProfile-main" >
                     <br />
                     <h3 style={{ textAlign: "center" }}>Available Published Tasks</h3>
                     <hr />
-                    {user?.tasks.length ==0 && <p style={{ textAlign: "center" }}><i><strong>No Available Published Tasks</strong></i></p>}
+                    {user?.tasks.length == 0 && <p style={{ textAlign: "center" }}><i><strong>No Available Published Tasks</strong></i></p>}
                     {user?.tasks.map((elem) => {
                         if (elem.status === 'available')
                             return <div className="SBtask-task-main" style={{ backgroundColor: "#f5f5f5" }}>
@@ -97,7 +108,8 @@ function ViewCompany() {
                     })}
                 </div>
             }
-        </>}
+        </>
+        }
     </>
 }
 

@@ -94,7 +94,7 @@ function ViewStudent() {
             </div >
             <br />
             {
-                ctx?.user.userType === 'doctor' &&
+                ctx?.user.userType === 'doctor' && user?.role === 'active' &&
                 <div className="stuProfile-main" >
                     <br />
                     <h3 style={{ textAlign: "center" }}>In Process Tasks</h3>
@@ -116,8 +116,8 @@ function ViewStudent() {
                                             <span>{elem.name}</span>
                                         )}
                                     </div>
-                                    <br/>
-                                <span><strong>Submission: </strong></span><span>{elem.submission}</span>
+                                    <br />
+                                    <span><strong>Submission: </strong></span><span>{elem.submission}</span>
                                 </div>
                             </div>
                     })}

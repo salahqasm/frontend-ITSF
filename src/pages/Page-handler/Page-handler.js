@@ -14,6 +14,7 @@ import {
 } from "react-router-dom";
 import Footer from "../../Components/Footer-component/Footer";
 import Admin from "../Admin-page/Admin";
+import Unactive from "../Unactive-page/Unactive";
 function PageHandler() {
     const [page, setPage] = useState("profile");
     const [user, setUser] = useState({});
@@ -60,12 +61,14 @@ function PageHandler() {
             <>
 
                 {userType === 'admin' ? <Admin />
-                    :
-                    <>
-                        <Navb changePage={setPage} />
-                        <Outlet />
-                        <Footer />
-                    </>
+                    : user?.role === 'active' ?
+                        <>
+                            <Navb changePage={setPage} />
+                            <Outlet />
+                            <Footer />
+                        </>
+                        : <Unactive />
+
                 }
             </>
         </Context.Provider >

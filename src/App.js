@@ -6,11 +6,9 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Admin from "./pages/Admin-page/Admin"
 import Landing from "./pages/Landing-page/Landing.js";
 import Signup from "./pages/Sign-page/Signup"
 import Login from "./pages/Sign-page/Login.js"
-import PP from "./pages/Sign-page/Profile-picture-upload/PP";
 import PageHandler from "./pages/Page-handler/Page-handler";
 import { useCookies } from "react-cookie";
 import FeedbackForm from "./Components/Feedback-component/Feedback-form";
@@ -23,9 +21,8 @@ import BrowseStudents from "./Components/Doctor-components/BrowseStudents-compon
 import BrowseCompanies from "./Components/Doctor-components/BrowseCompanies-component/BrowseCompanies";
 import ViewCompany from "./Components/View-components/ViewCompany";
 import ViewDoctor from "./Components/View-components/ViewDoctor";
-import Companies from "./pages/Admin-page/Companies-Component/Comapnies-table-component/Comapies";
-import Doctors from "./pages/Admin-page/Doctors-Component/Doctors-table-component/Doctors";
-import Students from "./pages/Admin-page/Student-Component/Student-table-component/Students";
+
+import Unactive from "./pages/Unactive-page/Unactive";
 function App() {
   const [cookie] = useCookies();
   return (
@@ -40,7 +37,7 @@ function App() {
               <Route path="*" exact element={<Landing />} />
             </Routes>
           </Router>
-          : cookie.user.userType === 'company' ?
+          : cookie.user.userType === 'company' && cookie.user.role === 'active' ?
             <Router>
               <Routes>
                 <Route path="/" exact element={<PageHandler />}>
@@ -53,7 +50,7 @@ function App() {
                 </Route>
               </Routes>
             </Router>
-            : cookie.user.userType === 'student' ?
+            : cookie.user.userType === 'student' && cookie.user.role === 'active' ?
               <Router>
                 <Routes>
                   <Route path="/" exact element={<PageHandler />}>
@@ -89,7 +86,14 @@ function App() {
                       </Route>
                     </Routes>
                   </Router>
-                  : <></>
+                  : <>
+                    <Router>
+                      <Routes>
+                        <Route path="/" exact element={<PageHandler />}>
+                        </Route>
+                      </Routes>
+                    </Router>
+                  </>
 
       }
 

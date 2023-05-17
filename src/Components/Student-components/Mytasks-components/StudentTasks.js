@@ -8,8 +8,8 @@ import MTask from "./MTask-component/MTask";
 function StudentTasks() {
     const ctx = useContext(Context);
     const [reqTask, setReq] = useState([])
-    const [inprocess, setInprocess] = useState(0);
-    const [completed, setCompleted] = useState(0);
+    const [inprocess, setInprocess] = useState([]);
+    const [completed, setCompleted] = useState([]);
     const [navHead, setNav] = useState("Request");
     useEffect(() => {
         if (ctx?.user?.tasks?.length) {

@@ -41,6 +41,10 @@ function FeedbackForm() {
         }
     }
     return <>
+        <div className="Feedback-header">
+            <h1>Hey, {cookie.user.name}</h1>
+            <h2>Don't Hesitate to Send your Feedback</h2>
+        </div>
         <div className="Feedback-main">
             <div className="Feedback-inner">
                 <form onSubmit={(e) => { submitHandler(e) }}>
@@ -48,7 +52,11 @@ function FeedbackForm() {
                     <input className="Feedback-inner-input" id="title" value={fb.title} onChange={e => handleChange(e)} name="title" type={"text"} placeholder="Feedback Title" maxLength="100" required />
                     <label htmlFor="msg">Message</label>
                     <textarea id="msg" name="message" rows="10" maxLength="1000" value={fb.message} onChange={e => handleChange(e)} placeholder="Write your message here!" required />
+                    <br />
+                    <br />
                     <input type="submit" className="Feedbacksubmit" value="Submit" />
+                    <br />
+
                 </form>
             </div>
         </div>

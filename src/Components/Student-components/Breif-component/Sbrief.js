@@ -12,7 +12,7 @@ function Sbrief({ user,wdth }) {
             <div className="SBrief-left">
                 <ProfilePicture data={user?.profilePicture} width={wdth} />
                 <div className="SBrief-inside">
-                    <h4>{now.getHours() >= 12 ? "Good Evening" : "Good Morning"} {user?.name.split(" ")[0]}</h4>
+                    <h4>{now.getHours() >= 12 ? "Good Evening" : "Good Morning"} {user?.name?.split(" ")[0]}</h4>
                     <p>Today's Date is :  {day + " - "+month+" - "+year}</p>
                 </div>
             </div>

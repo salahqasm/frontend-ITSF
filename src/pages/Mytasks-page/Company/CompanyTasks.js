@@ -28,7 +28,7 @@ function CompanyTasks() {
                     <button type="button" className="addtask-button" onClick={() => setOpen(o => !o)}>
                         Add Task
                     </button>
-                    <Popup open={open} closeOnDocumentClick onClose={closeModal}>
+                    <Popup open={open} closeOnDocumentClick onClose={closeModal} closeOnEscape={false}>
                         <div style={{ maxHeight: '90vh', overflowY: 'scroll' }}>
                             <Addtask id={user.id} close={setOpen} />
                         </div>

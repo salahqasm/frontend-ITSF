@@ -63,9 +63,9 @@ function Companies() {
                                 <td>{elem.city}</td>
                                 <td>{elem.role}</td>
                                 <td><a href={`http://localhost:3000/company/${elem.id}`} target="_blank">Visit</a></td>
-                                <td>{elem.role === 'unactive' && <input
+                                <td>{elem.role === 'unactive' ? <input
 
-                                    className="AdminAddDoctor-button active-comp" onClick={() => active(elem.id)} type="button" value="Active" />}</td>
+                                    className="AdminAddDoctor-button active-comp" onClick={() => active(elem.id)} type="button" value="Active" /> : "Activated"}</td>
                                 <td><span title="delete" onClick={() => deleteHandler(elem)} className="clicky-icon">❌</span></td>
                             </tr>
                         })

@@ -49,8 +49,8 @@ function Login() {
   }
 
   return <>
-    <img src={Logo} className="suka2" />
-    <img src={bg} className="suka" />
+    <img src={Logo} className="login-logo" />
+    <img src={bg} className="login-bg-img" />
     <div className="Login-main" >
       <div className="form-container sign-in-container">
         <form onSubmit={(e) => { submitHandler(e) }}>

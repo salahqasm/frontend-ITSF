@@ -1,0 +1,8 @@
+.taskview-admin{
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+}
+.centerText{
+    text-align: center;
+}
+

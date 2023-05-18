@@ -61,13 +61,14 @@ function PageHandler() {
             <>
 
                 {userType === 'admin' ? <Admin />
-                    : user?.role === 'active' ?
+                    : user?.role === 'active' || user?.userType === 'doctor' ?
                         <>
                             <Navb changePage={setPage} />
                             <Outlet />
                             <Footer />
                         </>
-                        : <Unactive />
+                        : user?.role === 'unactive' ? < Unactive /> 
+                        : <></>
 
                 }
             </>

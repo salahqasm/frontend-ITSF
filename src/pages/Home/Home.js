@@ -30,7 +30,7 @@ function Home() {
                     </div>
                     <div className="Home-card" onClick={() => { navigate("/mytasks") }}>
                         <h3>My tasks</h3>
-                        <p>View your Requested, In process and Completed Tasks</p>
+                        <p>View your Requested, Assigned and Completed Tasks</p>
                     </div>
                 </>}
                 {ctx?.user.userType == "company" && <>

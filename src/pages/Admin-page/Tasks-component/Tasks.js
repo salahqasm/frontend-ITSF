@@ -9,6 +9,11 @@ function Tasks() {
     const closeModal = () => setOpen(false);
     const [cookie] = useCookies();
     const [tasks, setTasks] = useState([]);
+    const [view, setView] = useState();
+    function handleView(elem) {
+        setView(elem);
+        setOpen(o => !o);
+    }
     const config = {
         headers: {
             'authorization': `Bearer ${cookie.token}`
@@ -54,15 +59,14 @@ function Tasks() {
                             <td>{elem?.title}</td>
                             <td>{elem?.company.email}</td>
                             <td>{elem?.status}</td>
-                            <td><input type="button" className="AdminAddDoctor-button active-comp" onClick={() => setOpen(o => !o)} value="View" /></td>
+                            <td><input type="button" className="AdminAddDoctor-button active-comp" onClick={() => handleView(elem)} value="View" /></td>
                             <td><span title="delete" className="clicky-icon" onClick={() => deleteHandler(elem?.id)}>❌</span></td>
-                            <Popup open={open} closeOnDocumentClick onClose={closeModal} closeOnEscape={false}>
-                                <ViewTask task={elem} />
-                            </Popup>
                         </tr>
                     })
                 }
-
+                <Popup open={open} closeOnDocumentClick onClose={closeModal} closeOnEscape={false}>
+                    <ViewTask task={view} />
+                </Popup>
             </tbody>
         </table>
     </>

@@ -1,7 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
 import Popup from 'reactjs-popup';
 import Addtask from "../../../Components/Company-components/Addtask-component/Addtask";
-import Footer from "../../../Components/Footer-component/Footer";
 import Filter from "../../../Components/Company-components/Filter-component/Filter"
 import Task from "../../../Components/Company-components/Task-component/Task";
 import "./CompanyTasks.css"

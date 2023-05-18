@@ -4,6 +4,7 @@
     margin: auto;
     border-radius: 10px;
     margin-top: 1rem;
+    min-height: 45vh;
 }
 /* :nth-of-type(even) */
 .SBtask-main .SBtask-task-main {

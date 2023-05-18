@@ -44,8 +44,9 @@ function StudentBrowse() {
         <Sbrief user={ctx.user} wdth="100px" />
         <div className="SBtask-main">
             <FilterTasks setFilter={setFilter} />
-            {
-                filteredTasks?.map(e => <Btask task={e} />)
+            {filteredTasks?.length ?
+                filteredTasks?.map(e => <Btask task={e} />) :
+                <><h4 style={{textAlign:"center"}}>No Published Tasks</h4></>
             }
         </div>
         <br />

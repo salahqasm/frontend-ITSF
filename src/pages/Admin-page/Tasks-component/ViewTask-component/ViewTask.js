@@ -1,7 +1,9 @@
 import React from "react";
 import "./ViewTask.css"
 function ViewTask({ task }) {
+    console.log(task);
     return <>
+
         <div className="Edittask-main" style={{ maxHeight: '90vh', overflowY: 'scroll' }}>
             <hr />
             <h4 className="centerText">Title: {task.title}</h4>

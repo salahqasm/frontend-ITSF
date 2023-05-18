@@ -22,7 +22,7 @@ function Filter({ filter, setFilter }) {
                     value="inprocess"
                     checked={filter === 'inprocess'}
                     onChange={handleOptionChange}
-                /> In Process</label>
+                /> In Progress</label>
                 <br />
                 <label><input type={"radio"} name="mytasksfilter"
                     value="done"

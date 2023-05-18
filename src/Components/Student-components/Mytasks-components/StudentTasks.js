@@ -43,7 +43,7 @@ function StudentTasks() {
                 </div>
                 <div>
                     <br />
-                    <h5>In process Tasks</h5>
+                    <h5>Assigned Tasks</h5>
                     <h4>{inprocess?.length || 0}</h4>
                 </div>
                 <div>
@@ -63,7 +63,7 @@ function StudentTasks() {
                 <h5 className="SMytasks-nav"
                     style={{ backgroundColor: navHead === "InProcess" ? "#222831" : "" }}
                     onClick={() => navHandler("InProcess")}
-                >InProcess</h5>
+                >Assigned</h5>
 
                 <h5 className="SMytasks-nav"
                     style={{ borderRadius: "0 10px 0 0 ", backgroundColor: navHead === "Completed" ? "#222831" : "" }}
@@ -73,18 +73,26 @@ function StudentTasks() {
 
             <div className="SMytasks-tasks-container">
 
-                {navHead === "Request" &&
+                {navHead === "Request" && reqTask?.length > 0 ?
                     reqTask?.map((e) => <MTask task={e} type={navHead} />)
+                    : navHead === "Request" && <><br /><h4 style={{ textAlign: "center" }}>No Requested Tasks</h4></>
+
                 }
-                {navHead === "InProcess" &&
+                {navHead === "InProcess" && inprocess?.length > 0 ?
                     inprocess?.map((e) => <MTask task={e} type={navHead} />)
+                    : navHead === "InProcess" && <><br /><h4 style={{ textAlign: "center" }}>No Assigned Tasks</h4></>
+
                 }
-                {navHead === "Completed" &&
+                {navHead === "Completed" && completed?.length > 0 ?
                     completed?.map((e) => <MTask task={e} type={navHead} />)
+                    : navHead === "Completed" && <><br /><h4 style={{ textAlign: "center" }}>No Completed Tasks</h4></>
+
                 }
             </div>
+            <br />
 
         </div>
+        <br />
     </div >
 }
 

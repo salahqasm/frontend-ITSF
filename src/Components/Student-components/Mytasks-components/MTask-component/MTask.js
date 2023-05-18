@@ -37,6 +37,7 @@ function MTask({ type, task }) {
             };
             const res = await axios.put(`http://localhost:3001/submittask/${task?.id}`, req, config);
             alert("Submittied");
+            
         } catch (err) {
             console.log(err);
         }
@@ -69,7 +70,7 @@ function MTask({ type, task }) {
                     <input id="submission" type="text" placeholder="Submission URL" className="submission-input"
                         value={submission && submission} onChange={(e) => setSubmission(e.target.value)} />
                     <input type="submit" className="submission-button"
-                        value={task.submission === "" ? "Submit" : "Edit Submission"} />
+                        value={task.submission == null ? "Submit" : "Edit Submission"} />
                 </form>
             </div>
         }

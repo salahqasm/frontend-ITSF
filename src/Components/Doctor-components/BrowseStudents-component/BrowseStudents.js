@@ -90,7 +90,7 @@ function BrowseStudents() {
             {filteredStudents?.map((elem) => <>
                 <div className="StudentCard-doctor" onClick={() => window.open(`/student/${elem.id}`, "_blank")}>
                     <div className="StudentImg-doctor">
-                        <img src={elem.profilePicture ? `data:image;base64${elem.profilePicture}` : `${Pic}`} width="170" />
+                        <img src={elem.profilePicture ? `data:image;base64${elem.profilePicture}` : `${Pic}`} width="170" height={"170"} />
                     </div>
                     <p>{elem.name}</p>
                     {elem.doctor ? <p style={{ color: "#00ff00" }}>Approved</p> : <p style={{ color: "#ff0000" }}>Not Approved</p>}

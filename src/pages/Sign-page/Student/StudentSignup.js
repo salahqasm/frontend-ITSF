@@ -120,7 +120,6 @@ function StudentSignup({ config }) {
                 <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" value={info.repassword} onChange={e => handleChange(e)} required />
                 <br />
                 <input type="submit" className="signup-submit-button" value="Next" />
-                {/* <button type="submit" className="signup-submit-button" onClick={() => setStage(stage + 1)} >Next</button> */}
             </form>
         </>}
         {stage === 2 && <>
@@ -141,9 +140,6 @@ function StudentSignup({ config }) {
                     styles={customStyles}
                     maxValueLength={5}
                 />
-                {
-                    selectedOption.length >= 5 && <p>you can select up to 5 skills.</p>
-                }
                 <label>Bio:</label>
                 <textarea name="about" placeholder="A brief about yourself (optional)"
                     style={{ resize: "none", borderRadius: "15px", padding: "0.5rem" }} rows={4} value={info.about} onChange={e => handleChange(e)} required>

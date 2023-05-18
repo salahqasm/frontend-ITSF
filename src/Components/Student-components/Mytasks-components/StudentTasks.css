@@ -38,7 +38,6 @@
     transform: scale(103%);
     background-color: #4f535a;
 }
-/* 
-.SMytasks-tasks-container .Mtask-task-main:nth-of-type(even) {
-    background: #eee;
-} */
+.SMytasks-tasks-container{
+    min-height: 40vh;
+}

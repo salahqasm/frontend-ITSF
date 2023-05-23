@@ -97,7 +97,7 @@ function ViewStudent() {
                 ctx?.user.userType === 'doctor' && user?.role === 'active' &&
                 <div className="stuProfile-main" >
                     <br />
-                    <h3 style={{ textAlign: "center" }}>In Process Tasks</h3>
+                    <h3 style={{ textAlign: "center" }}>Assigned Tasks</h3>
                     <hr />
                     {user?.tasks.length == 0 && <p style={{ textAlign: "center" }}><i><strong>No Assigned Tasks</strong></i></p>}
                     {user?.tasks.map((elem) => {
@@ -123,6 +123,7 @@ function ViewStudent() {
                     })}
                 </div>
             }
+            <br />
         </>}
 
     </>

@@ -67,6 +67,14 @@
     margin-top: 20px;
     font-size: large;
     font-weight: bold;
+    transition: 0.2s;
+    border-radius: 10px;
+}
+
+.signup-first-form:hover {
+    transform: scale(104%);
+    transition: 0.2s;
+    border-radius: 0;
 }
 
 .signup-student input {

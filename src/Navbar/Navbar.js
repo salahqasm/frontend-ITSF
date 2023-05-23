@@ -55,7 +55,7 @@ function Navb({ changePage }) {
                   <Nav.Link className='nvbar-margin' name="profile" onClick={() => { navigate("/profile") }}>Profile</Nav.Link>
                   <Nav.Link className='nvbar-margin' name="students" onClick={() => { navigate("/BrowseStudents") }}>Students</Nav.Link>
                   <Nav.Link className='nvbar-margin' name="companies" onClick={() => { navigate("/BrowseCompanies") }}>Companies</Nav.Link>
-                  <Nav.Link className='nvbar-margin' name="feedback" onClick={() => { navigate("/profile") }} >Feedback</Nav.Link>
+                  <Nav.Link className='nvbar-margin' name="feedback" onClick={() => { navigate("/feedback") }} >Feedback</Nav.Link>
                 </Nav>
                 <Nav className="me">
                   <Nav.Link onClick={logoutHandler} style={{ marginRight: "-80px" }}>Logout</Nav.Link>

@@ -22,7 +22,6 @@ import BrowseCompanies from "./Components/Doctor-components/BrowseCompanies-comp
 import ViewCompany from "./Components/View-components/ViewCompany";
 import ViewDoctor from "./Components/View-components/ViewDoctor";
 
-import Unactive from "./pages/Unactive-page/Unactive";
 function App() {
   const [cookie] = useCookies();
   return (
@@ -46,6 +45,7 @@ function App() {
                   <Route path="feedback" element={<FeedbackForm />} />
                   <Route path="mytasks" element={<Mytasks />} />
                   <Route path="student/:id" element={<ViewStudent />} />
+                  <Route path="doctor/:id" element={<ViewDoctor />} />
 
                 </Route>
               </Routes>
@@ -59,6 +59,8 @@ function App() {
                     <Route path="feedback" element={<FeedbackForm />} />
                     <Route path="mytasks" element={<Mytasks />} />
                     <Route path="browsetasks" element={<StudentBrowse />} />
+                    <Route path="company/:id" element={<ViewCompany />} />
+
                   </Route>
                 </Routes>
               </Router>

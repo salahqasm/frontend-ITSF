@@ -61,7 +61,8 @@ function ViewDoctor() {
                     <h6>{user?.phoneNum && "Phone Number: " + user?.phoneNum}</h6>
                 </div>
             </div >
-
+            <br />
+            <br />
         </>}
     </>
 }

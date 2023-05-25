@@ -6,6 +6,7 @@ import { useCookies } from "react-cookie";
 function MTask({ type, task }) {
     const [cookie] = useCookies();
     const [submission, setSubmission] = useState(task.submission);
+    console.log(task);
     async function deleteReq() {
         try {
             const req = {
@@ -51,6 +52,7 @@ function MTask({ type, task }) {
         </div>
 
         <h2>{task?.title}</h2>
+        <span><strong>Publisher: </strong> <a href={`/company/${task?.company?.id}`} target="_blank">{task?.company?.name}</a> - </span>
         <span><span><strong>Budget: </strong>{task?.credit} JD </span> - <span><strong>Due Date:</strong> {task?.date}</span> </span>
         <p style={{ whiteSpace: "pre-wrap" }}>
             <strong>Description:</strong>

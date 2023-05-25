@@ -115,9 +115,9 @@ function StudentSignup({ config }) {
                 <label>Email:</label>
                 <input type="email" id="email" name="email" placeholder="Enter Your E-mail" value={info.email} onChange={e => handleChange(e)} required />
                 <label>Password:</label>
-                <input id="pswrd2" name="password" type="password" placeholder="Creat Password" value={info.password} onChange={e => handleChange(e)} required />
+                <input id="pswrd2" name="password" type="password" placeholder="Creat Password" pattern="^.{8,}$" value={info.password} onChange={e => handleChange(e)} required />
                 <label>Re-enter password:</label>
-                <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" value={info.repassword} onChange={e => handleChange(e)} required />
+                <input id="pswrd" name="repassword" type="password" placeholder="Re-Enter Password" pattern="^.{8,}$" value={info.repassword} onChange={e => handleChange(e)} required />
                 <br />
                 <input type="submit" className="signup-submit-button" value="Next" />
             </form>

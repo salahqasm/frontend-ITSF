@@ -1,29 +1,33 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import "./MTask.css"
 import axios from "axios";
 import { useCookies } from "react-cookie";
+import Context from "../../../../ContextApi/Context";
 
 function MTask({ type, task }) {
     const [cookie] = useCookies();
+    const ctx = useContext(Context);
     const [submission, setSubmission] = useState(task.submission);
-    console.log(task);
     async function deleteReq() {
-        try {
-            const req = {
-                taskID: task.id,
-                studentEmail: cookie.user.email
-            }
-
-            const config = {
-                headers: {
-                    'authorization': `Bearer ${cookie.token}`
+        let flag = window.confirm(`Confirm Delete Request on task "${task.title}" ?`)
+        if (flag)
+            try {
+                const req = {
+                    taskID: task.id,
+                    studentEmail: cookie.user.email
                 }
-            };
-            const res = await axios.post('http://localhost:3001/deleteRequest', req, config)
-            window.location.reload();
-        } catch (err) {
-            console.log(err);
-        }
+
+                const config = {
+                    headers: {
+                        'authorization': `Bearer ${cookie.token}`
+                    }
+                };
+                const res = await axios.post('http://localhost:3001/deleteRequest', req, config)
+                // window.location.reload();
+                ctx.refresh();
+            } catch (err) {
+                console.log(err);
+            }
     }
     async function submissionHandler(e) {
         e.preventDefault();
@@ -38,7 +42,7 @@ function MTask({ type, task }) {
             };
             const res = await axios.put(`http://localhost:3001/submittask/${task?.id}`, req, config);
             alert("Submittied");
-            
+            ctx.refresh();
         } catch (err) {
             console.log(err);
         }
@@ -72,7 +76,7 @@ function MTask({ type, task }) {
                     <input id="submission" type="text" placeholder="Submission URL" className="submission-input"
                         value={submission && submission} onChange={(e) => setSubmission(e.target.value)} />
                     <input type="submit" className="submission-button"
-                        value={task.submission == null ? "Submit" : "Edit Submission"} />
+                        value={task.submission == '' ? "Submit" : "Edit Submission"} />
                 </form>
             </div>
         }

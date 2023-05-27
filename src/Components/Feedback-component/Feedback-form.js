@@ -39,6 +39,8 @@ function FeedbackForm() {
         } catch (err) {
             console.log(err);
         }
+        
+        window.alert("Your Feedback has been submitted, Thank you!");
     }
     return <>
         <div className="Feedback-header">

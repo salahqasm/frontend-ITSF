@@ -24,12 +24,14 @@ function Doctors() {
         getDoctors();
     }, [])
     async function deleteHandler(elem) {
-        try {
-            const res = await axios.delete(`http://localhost:3001/deletedoctor/${elem.id}`, config, []);
-            setDoctors(res?.data);
-        } catch (err) {
-            console.log(err);
-        }
+        let flag = window.confirm(`Confirm Deleting Doctor: ${elem.name} , ${elem.email} ?`);
+        if (flag)
+            try {
+                const res = await axios.delete(`http://localhost:3001/deletedoctor/${elem.id}`, config, []);
+                setDoctors(res?.data);
+            } catch (err) {
+                console.log(err);
+            }
     }
     function handleChange(e) {
         const { name, value } = e.target;

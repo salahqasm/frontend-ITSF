@@ -26,12 +26,14 @@ function Feedback() {
         getFeedback();
     }, [])
     async function deleteHandler(elem) {
-        try {
-            const res = await axios.delete(`http://localhost:3001/deletefeedback/${elem.id}`, config, []);
-            setFeedback(res?.data);
-        } catch (err) {
-            console.log(err);
-        }
+        let flag = window.confirm(`Confirm Deleting Feedback => id: ${elem.id} , sent by: ${elem.email} ?`);
+        if (flag)
+            try {
+                const res = await axios.delete(`http://localhost:3001/deletefeedback/${elem.id}`, config, []);
+                setFeedback(res?.data);
+            } catch (err) {
+                console.log(err);
+            }
     }
     return <>
         <table className="feedback-table">
@@ -58,7 +60,7 @@ function Feedback() {
                                 <span title="delete" className="Feedback-popup-Read" onClick={() => { setOpen(o => !o); setRead(elem) }}>READ</span>
                             </td>
                             <td>
-                                <span title="delete" onClick={() => deleteHandler(elem)}>❌</span>
+                                <span title="delete" onClick={() => deleteHandler(elem)} className="clicky-icon">❌</span>
                             </td>
                         </tr>
                     })

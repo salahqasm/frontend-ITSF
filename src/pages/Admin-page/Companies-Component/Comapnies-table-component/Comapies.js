@@ -19,20 +19,24 @@ function Companies() {
         getCompanies();
     }, [])
     async function deleteHandler(elem) {
-        try {
-            const res = await axios.delete(`http://localhost:3001/deletecompany/${elem.id}`, config, []);
-            setCompanies(res?.data);
-        } catch (err) {
-            console.log(err);
-        }
+        let flag = window.confirm(`Confirm Deleting Company: ${elem.name} , ${elem.email} ?`);
+        if (flag)
+            try {
+                const res = await axios.delete(`http://localhost:3001/deletecompany/${elem.id}`, config, []);
+                setCompanies(res?.data);
+            } catch (err) {
+                console.log(err);
+            }
     }
-    async function active(id) {
-        try {
-            const res = await axios.put(`http://localhost:3001/activeCompany/${id}`, {}, config);
-            setCompanies(res.data);
-        } catch (err) {
-            console.log(err);
-        }
+    async function active(elem) {
+        let flag = window.confirm(`Confirm Activating Company: ${elem.name} , ${elem.email} ?`);
+        if (flag)
+            try {
+                const res = await axios.put(`http://localhost:3001/activeCompany/${elem.id}`, {}, config);
+                setCompanies(res.data);
+            } catch (err) {
+                console.log(err);
+            }
     }
     return <>
         <div className="companies-table-div">
@@ -65,7 +69,7 @@ function Companies() {
                                 <td><a href={`http://localhost:3000/company/${elem.id}`} target="_blank">Visit</a></td>
                                 <td>{elem.role === 'unactive' ? <input
 
-                                    className="AdminAddDoctor-button active-comp" onClick={() => active(elem.id)} type="button" value="Active" /> : "Activated"}</td>
+                                    className="AdminAddDoctor-button active-comp" onClick={() => active(elem)} type="button" value="Active" /> : "Activated"}</td>
                                 <td><span title="delete" onClick={() => deleteHandler(elem)} className="clicky-icon">❌</span></td>
                             </tr>
                         })

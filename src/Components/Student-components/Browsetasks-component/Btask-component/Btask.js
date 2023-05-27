@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useCookies } from "react-cookie";
 import "./Btask.css"
 import axios from "axios";
+import Context from "../../../../ContextApi/Context";
 function Btask({ task }) {
     const [cookie] = useCookies();
-
+    const ctx = useContext(Context);
     const config = {
         headers: {
             'authorization': `Bearer ${cookie.token}`
@@ -20,8 +21,9 @@ function Btask({ task }) {
             if (res.data === "success") {
                 window.alert("Request Sent Successfully")
             }
+            ctx.refresh();
         } catch (err) {
-
+            console.log(err);
         }
     }
     return <div className="SBtask-task-main">
@@ -32,7 +34,7 @@ function Btask({ task }) {
             <h2>{task?.title}</h2>
             <span><strong>Publisher: </strong> <a href={`/company/${task?.company?.id}`} target="_blank">{task?.company?.name}</a> - </span>
             <span><span><strong>Budget: </strong>{task?.credit} JD </span> - <span><strong>Due Date:</strong> {task?.date}</span> </span>
-            
+
 
             <p style={{ whiteSpace: "pre-wrap" }}>
                 <strong>Description:</strong>

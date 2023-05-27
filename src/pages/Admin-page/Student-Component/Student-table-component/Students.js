@@ -19,12 +19,14 @@ function Students() {
         getStudents();
     }, [])
     async function deleteHandler(elem) {
-        try {
-            const res = await axios.delete(`http://localhost:3001/deletestudent/${elem.id}`, config, []);
-            setStudents(res?.data);
-        } catch (err) {
-            console.log(err);
-        }
+        let flag = window.confirm(`Confirm Deleting Student: ${elem.name} , ${elem.email} ?`);
+        if (flag)
+            try {
+                const res = await axios.delete(`http://localhost:3001/deletestudent/${elem.id}`, config, []);
+                setStudents(res?.data);
+            } catch (err) {
+                console.log(err);
+            }
     }
     return <>
         <table className="students-table">

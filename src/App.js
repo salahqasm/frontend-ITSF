@@ -85,6 +85,7 @@ function App() {
                         <Route path="feedback" element={<FeedbackForm />} />
                         <Route path="student/:id" element={<ViewStudent />} />
                         <Route path="company/:id" element={<ViewCompany />} />
+                        <Route path="doctor/:id" element={<ViewDoctor />} />
                       </Route>
                     </Routes>
                   </Router>

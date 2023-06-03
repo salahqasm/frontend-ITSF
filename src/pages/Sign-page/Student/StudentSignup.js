@@ -103,9 +103,13 @@ function StudentSignup({ config }) {
     const customStyles = {
         control: (provided, state) => ({
             ...provided,
-            width: 350,
-            borderRadius: 20
+            // width: 350,
+            borderRadius: 20,
         }),
+        // menu: (provided, state) => ({
+        //     ...provided,
+        //     width:350
+        //   })
     };
 
     return <>
@@ -130,6 +134,7 @@ function StudentSignup({ config }) {
                 <input type="text" name="phoneNum" placeholder="07--------" value={info.phoneNum} onChange={e => handleChange(e)} required />
                 <label>Skills:</label>
                 <Select
+                    maxMenuHeight={200}
                     value={selectedOption}
                     onChange={handleSelectChange}
                     closeMenuOnSelect={false}

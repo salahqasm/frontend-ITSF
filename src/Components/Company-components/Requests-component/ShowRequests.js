@@ -54,7 +54,9 @@ function ShowRequests({ task }) {
             Show Requests
         </button>
         <Popup open={open} closeOnDocumentClick onClose={closeModal}>
-            <div className="showrequests">
+            <div className="showrequests" style={{maxHeight:'400px',overflowY:'scroll'}}>
+                <h3 style={{textAlign:'center'}}>Requests on {task.title}</h3>
+                <hr/>
                 <table>
                     <tr>
                         <th>Name</th>
@@ -68,8 +70,8 @@ function ShowRequests({ task }) {
                             <td>{elem.name}</td>
                             <td>{elem.email}</td>
                             <td><a href={`/student/${elem.id}`} target="_blank">View Page</a></td>
-                            <td><input className="showresult-button" type="button" onClick={() => acceptHandler(elem)} value={"Accept"} /></td>
-                            <td><input className="deny-button" type="button" onClick={() => denyHandler(elem)} value={"Deny"} /></td>
+                            <td><input className="showresult-button" style={{margin:'auto'}} type="button" onClick={() => acceptHandler(elem)} value={"Accept"} /></td>
+                            <td><input className="deny-button" type="button" style={{margin:'auto'}} onClick={() => denyHandler(elem)} value={"Deny"} /></td>
 
                         </tr>
 

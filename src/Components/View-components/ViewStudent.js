@@ -29,7 +29,7 @@ function ViewStudent() {
     useEffect(() => {
         getUser();
     }, []);
-
+    
     async function approve() {
         try {
             const config = {

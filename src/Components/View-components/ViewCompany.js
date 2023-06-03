@@ -85,7 +85,7 @@ function ViewCompany() {
                     <br />
                     <h3 style={{ textAlign: "center" }}>Available Published Tasks</h3>
                     <hr />
-                    {user?.tasks.length == 0 && <p style={{ textAlign: "center" }}><i><strong>No Available Published Tasks</strong></i></p>}
+                    {user?.tasks.filter(e=>e.status==='available') == 0 && <p style={{ textAlign: "center" }}><i><strong>No Available Published Tasks</strong></i></p>}
                     {user?.tasks.map((elem) => {
                         if (elem.status === 'available')
                             return <div className="SBtask-task-main" style={{ backgroundColor: "#f5f5f5" }}>

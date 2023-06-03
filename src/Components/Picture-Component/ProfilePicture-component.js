@@ -4,7 +4,7 @@ import "./ProfilePicture-component.css"
 
 function ProfilePicture({ data, width }) {
     return <>
-        <img className="profilePictureStyle" src={data ? `data:image;base64${data}` : `${Pic}`} width={width} />
+        <img className="profilePictureStyle" src={data ? `data:image;base64${data}` : `${Pic}`} width={width} style={{aspectRatio:"1/1"}}/>
     </>
 }
 

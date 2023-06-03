@@ -54,7 +54,8 @@ function EditProfile({ close }) {
         control: (provided, state) => ({
             ...provided,
             // width: 550,
-            borderRadius: 10
+            borderRadius: 10,
+            height: 50
         }),
     };
     function handleSelectChange(selectedOption) {
@@ -118,6 +119,7 @@ function EditProfile({ close }) {
             <div className="grid1">
                 <label>Skills:
                     <Select
+                        maxMenuHeight={200}
                         value={selectedOption}
                         onChange={handleSelectChange}
                         closeMenuOnSelect={false}
@@ -129,6 +131,7 @@ function EditProfile({ close }) {
                         maxValueLength={5}
                     />
                 </label>
+                <br />
                 <label htmlFor="linkedin">Linkedin Account: </label>
                 <input type="text" id="linkedin" name="linkedin" value={user.linkedin} onChange={e => handleChange(e)} />
 
@@ -138,7 +141,7 @@ function EditProfile({ close }) {
                 <label htmlFor="purl">Previous Project: </label>
                 <input type="text" id="purl" name="purl" value={user.purl} onChange={e => handleChange(e)} />
             </div>
-            <br />
+
             <div className="grid1">
                 <label htmlFor="about">About: </label>
                 <textarea name="about" id="about" rows="6" maxLength={1000} value={user.about} placeholder="Write a brief about yourself" onChange={e => handleChange(e)}></textarea>

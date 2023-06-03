@@ -11,12 +11,13 @@ function Footer() {
             <div className="Footer-mid">
                 <h4>Contact</h4>
                 <p>- University of Jordan, King Abdullah II School of Information Technology</p>
-                <p>- 050000000</p>
+                <p>- kasit@ju.edu.jo</p>
             </div>
             <div className="Footer-last">
                 <h4>Help</h4>
-                <p>- User manual</p>
                 <p>- Email: ITSFreelance@outlook.com</p>
+                
+                <p>- Phone Number: +962 6 5355 000</p>
             </div>
         </div>
     </>

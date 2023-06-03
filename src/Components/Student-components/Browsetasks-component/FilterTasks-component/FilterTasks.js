@@ -51,6 +51,7 @@ function FilterTasks({ setFilter }) {
         <div className="filterTasks">
             <h6 style={{ marginTop: "auto" }}>Filter Tasks by Skill:</h6>
             <Select
+                maxMenuHeight={200}
                 value={selectedOption}
                 onChange={handleSelectChange}
                 closeMenuOnSelect={false}

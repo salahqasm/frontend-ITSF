@@ -40,13 +40,13 @@ function BrowseCompanies() {
         {filteredUsers?.map((elem) => <>
             <div className="BrowseCompanies-card" onClick={() => window.open(`/company/${elem.id}`, "_blank")}>
                 <div>
-                    <img src={elem.profilePicture ? `data:image;base64${elem.profilePicture}` : defaltPic} width="180px" />
+                    <img src={elem.profilePicture ? `data:image;base64${elem.profilePicture}` : defaltPic} width="180px" style={{aspectRatio:'1/1'}} />
                 </div>
                 <div className="BrowseCompanies-card-info">
                     <h4>{elem.name}</h4>
                     <h6>{elem.email}, {elem.phoneNum}</h6>
                     <h6>Specialization: {elem.specialization}</h6>
-                    <p style={{ whiteSpace: 'pre-wrap' }}>{elem?.about?.length > 150 ? elem?.about?.slice(0, 150) + "..." : elem?.about}</p>
+                    <p style={{ whiteSpace: 'pre-wrap' }}>{elem?.about?.length > 100 ? elem?.about?.slice(0, 100) + "... See More" : elem?.about}</p>
                 </div>
 
             </div>
